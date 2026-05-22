@@ -1,0 +1,277 @@
+<!-- ==================================================== -->
+<!-- MANUEL CERVANTES GONZÁLEZ - MODAL FUNDAMENTOS        -->
+<!-- ==================================================== -->
+<div id="modal-fundamentos" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-book"></i> Fundamentos de Calidad de Software</h2>
+        
+        <!-- Video introductorio -->
+        <div class="video-compact">
+            <h4><i class="fab fa-youtube"></i> 🎬 Video: Fundamentos de la calidad del software</h4>
+            <iframe src="https://www.youtube.com/embed/XccIv4DurGI" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Imagen representativa -->
+        <img src="https://zimbronapps.com/wp-content/uploads/2017/11/calidad-de-sotfware.png" class="img-compact" alt="Calidad de Software">
+        
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab active" data-tab="f1">📖 Definición</button>
+            <button class="tab" data-tab="f2">⚖️ QC vs QA</button>
+            <button class="tab" data-tab="f3">💰 Costos de calidad</button>
+            <button class="tab" data-tab="f4">📜 Ley de Boehm</button>
+            <button class="tab" data-tab="f5">📚 Contenido extenso</button>
+            <button class="tab" data-tab="f6">🎮 Minijuego</button>
+        </div>
+        
+        <!-- Pestaña 1: Definición -->
+        <div id="f1" class="tab-pane active">
+            <!-- Botón en lugar de video (el original no funciona) -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <a href="https://www.youtube.com/watch?v=POsGLlJTdME" target="_blank" class="fill-btn" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+                    <i class="fab fa-youtube"></i> 🎬 Ver video: 8 dimensiones de la calidad (YouTube)
+                </a>
+            </div>
+            <h3>¿Qué es calidad en software?</h3>
+            <p>Según el IEEE (Instituto de Ingenieros Eléctricos y Electrónicos), la calidad de software se define como: <strong>"el grado en que un sistema, componente o proceso cumple los requisitos especificados y las necesidades o expectativas del cliente"</strong>.</p>
+            <p>No es simplemente que el software no tenga errores. Un software de calidad debe:</p>
+            <ul>
+                <li>✅ Hacer lo que el cliente espera (funcionalidad correcta)</li>
+                <li>✅ Ser rápido y eficiente (rendimiento)</li>
+                <li>✅ Ser fácil de usar (usabilidad)</li>
+                <li>✅ No fallar frecuentemente (confiabilidad)</li>
+                <li>✅ Poder modificarse fácilmente (mantenibilidad)</li>
+                <li>✅ Funcionar en diferentes entornos (portabilidad)</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>📊 Las 8 dimensiones de la calidad según Garvin (1987):</strong><br><br>
+                1. 🎯 Rendimiento - ¿El software hace lo que debe hacer?<br>
+                2. ✨ Características - ¿Tiene funcionalidades adicionales útiles?<br>
+                3. 🔒 Confiabilidad - ¿Funciona correctamente a lo largo del tiempo?<br>
+                4. 📋 Conformidad - ¿Cumple con estándares y especificaciones?<br>
+                5. 🏗️ Durabilidad - ¿Puede mantenerse y actualizarse fácilmente?<br>
+                6. 🔧 Capacidad de servicio - ¿Es fácil de reparar y mantener?<br>
+                7. 🎨 Estética - ¿La interfaz es agradable y profesional?<br>
+                8. 💭 Calidad percibida - ¿Qué opinan los usuarios?
+            </div>
+            
+            <h4>📌 Ejemplo práctico:</h4>
+            <p>Una calculadora que suma correctamente pero es extremadamente lenta o tiene botones mal ubicados NO tiene calidad. La calidad incluye rendimiento, usabilidad y confiabilidad, no solo que "funcione".</p>
+            
+            <h4>🎯 Importancia de la calidad:</h4>
+            <ul>
+                <li>Un software de calidad reduce costos de mantenimiento</li>
+                <li>Mejora la satisfacción del cliente</li>
+                <li>Reduce riesgos legales y de seguridad</li>
+                <li>Aumenta la productividad del equipo</li>
+                <li>Mejora la reputación de la empresa</li>
+            </ul>
+        </div>
+        
+        <!-- Pestaña 2: QC vs QA -->
+        <div id="f2" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: QA vs QC - Diferencia clave</h4>
+                <iframe src="https://www.youtube.com/embed/3tjHRpJf95U" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>Control de Calidad (QC) vs Aseguramiento de Calidad (QA)</h3>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4><i class="fas fa-search"></i> QC - Control de Calidad</h4>
+                    <p>Actividades para <strong>encontrar defectos</strong> después de que el producto ha sido desarrollado.</p>
+                    <p><strong>Ejemplos de actividades QC:</strong></p>
+                    <ul>
+                        <li>Pruebas unitarias</li>
+                        <li>Pruebas de integración</li>
+                        <li>Pruebas de sistema</li>
+                        <li>Inspecciones de código</li>
+                        <li>Pruebas de regresión</li>
+                        <li>Pruebas de aceptación</li>
+                        <li>Análisis estático</li>
+                        <li>Revisiones por pares</li>
+                    </ul>
+                    <p><strong>Responsables:</strong> Tester, equipo de control de calidad.</p>
+                    <p><strong>Enfoque:</strong> Reactivo (detecta problemas después)</p>
+                </div>
+                <div class="comparison-item">
+                    <h4><i class="fas fa-shield-alt"></i> QA - Aseguramiento de Calidad</h4>
+                    <p>Actividades para <strong>prevenir defectos</strong> durante todo el proceso de desarrollo.</p>
+                    <p><strong>Ejemplos de actividades QA:</strong></p>
+                    <ul>
+                        <li>Definición de procesos</li>
+                        <li>Estándares de codificación</li>
+                        <li>Revisiones de diseño</li>
+                        <li>Auditorías de proceso</li>
+                        <li>Mejora continua</li>
+                        <li>Capacitación del personal</li>
+                        <li>Métricas de calidad</li>
+                        <li>Análisis de causas raíz</li>
+                    </ul>
+                    <p><strong>Responsables:</strong> Equipo de QA, gerentes de proyecto, todo el equipo de desarrollo.</p>
+                    <p><strong>Enfoque:</strong> Proactivo (previene problemas antes)</p>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📊 Comparativa resumida:</strong><br><br>
+                ┌─────────────────┬─────────────────┬─────────────────┐<br>
+                │     Aspecto     │       QA        │       QC        │<br>
+                ├─────────────────┼─────────────────┼─────────────────┤<br>
+                │ Enfoque         │ Preventivo      │ Detectivo       │<br>
+                │ Cuándo          │ Durante todo    │ Al final        │<br>
+                │ Qué             │ Procesos        │ Producto        │<br>
+                │ Cómo            │ Planificación   │ Pruebas         │<br>
+                │ Responsable     │ Todo el equipo  │ Tester          │<br>
+                └─────────────────┴─────────────────┴─────────────────┘
+            </div>
+            
+            <p><strong>💡 Conclusión:</strong> Ambos son necesarios. QA construye calidad desde el inicio, QC la verifica al final. Una organización madura invierte más en QA que en QC.</p>
+        </div>
+        
+        <!-- Pestaña 3: Costos de calidad -->
+        <div id="f3" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Costo de la Mala Calidad (COPQ)</h4>
+                <iframe src="https://www.youtube.com/embed/hIwe8jKYGEE" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>Costos de la mala calidad (ASQ - American Society for Quality)</h3>
+            
+            <table class="info-table">
+                <tr><th>Categoría</th><th>Descripción</th><th>Ejemplo</th><th>% típico</th></tr>
+                <tr><td class="tg-0lax">Prevención</th><td class="tg-0lax">Actividades para evitar errores</th><td class="tg-0lax">Capacitación, herramientas, revisiones de diseño, estándares</th><td class="tg-0lax">5-10%</th></tr>
+                <tr><td class="tg-0lax">Evaluación</th><td class="tg-0lax">Actividades para detectar errores</th><td class="tg-0lax">Pruebas, inspecciones, auditorías, revisiones de código</th><td class="tg-0lax">15-25%</th></tr>
+                <tr><td class="tg-0lax">Fallos internos</th><td class="tg-0lax">Errores encontrados antes de entregar</th><td class="tg-0lax">Corrección de bugs, retrabajo, pruebas adicionales, tiempo perdido</th><td class="tg-0lax">25-40%</th></td>
+                <tr><td class="tg-0lax">Fallos externos</th><td class="tg-0lax">Errores encontrados por el cliente</th><td class="tg-0lax">Soporte urgente, demandas, pérdida de reputación, parches urgentes</th><td class="tg-0lax">30-50%</th></tr>
+            </table>
+            
+            <div class="diagram-box">
+                <strong>💰 El costo de la mala calidad (COPQ - Cost Of Poor Quality):</strong><br><br>
+                • Un error crítico encontrado por el cliente puede costar 100 veces más que si se hubiera detectado en requisitos.<br>
+                • La pérdida de reputación por un software defectuoso puede ser incalculable.<br>
+                • Empresas como Microsoft estiman que el 50% de su presupuesto de desarrollo se gasta en corregir errores.<br>
+                • Por cada dólar invertido en prevención, se ahorran entre 4 y 10 dólares en costos de corrección posteriores.
+            </div>
+            
+            <h4>📊 Costos ocultos de la mala calidad:</h4>
+            <ul>
+                <li><strong>Pérdida de productividad:</strong> El tiempo dedicado a corregir errores no se dedica a crear nuevo valor.</li>
+                <li><strong>Pérdida de oportunidades:</strong> Mientras se corrigen errores, no se atienden nuevos proyectos.</li>
+                <li><strong>Daño a la moral del equipo:</strong> Trabajar constantemente en modo "apaga fuegos" desmotiva.</li>
+                <li><strong>Pérdida de confianza del cliente:</strong> Un cliente que encuentra errores puede no volver.</li>
+                <li><strong>Costos legales y regulatorios:</strong> Demandas, multas, sanciones.</li>
+            </ul>
+        </div>
+        
+        <!-- Pestaña 4: Ley de Boehm -->
+        <div id="f4" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Modelo de evaluación de calidad Boehm</h4>
+                <iframe src="https://www.youtube.com/embed/dM_K0aAwRTQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>Ley de Boehm (1981) - El costo exponencial de los errores</h3>
+            
+            <div class="diagram-box">
+                <strong>💰 Costo relativo de corregir un error según cuándo se detecte:</strong><br><br>
+                ┌─────────────────────┬────────────────┬─────────────────────┐<br>
+                │    Fase donde se    │   Costo        │   Ejemplo (base     │<br>
+                │    detecta el error │   relativo     │   $10,000)          │<br>
+                ├─────────────────────┼────────────────┼─────────────────────┤<br>
+                │ 📋 Requisitos       │ 1x             │ $10,000             │<br>
+                │ 🎨 Diseño           │ 5x             │ $50,000             │<br>
+                │ 💻 Codificación     │ 15x            │ $150,000            │<br>
+                │ 🧪 Pruebas          │ 30x            │ $300,000            │<br>
+                │ 🌍 Producción       │ 100x           │ $1,000,000          │<br>
+                └─────────────────────┴────────────────┴─────────────────────┘
+            </div>
+            
+            <p>Barry Boehm demostró empíricamente esta relación en su libro "Software Engineering Economics". Por eso es vital revisar bien los requisitos al inicio y hacer pruebas desde temprano (principio de <strong>Shift-Left Testing</strong>).</p>
+            
+            <h4>📌 Ejemplo real:</h4>
+            <p>Un error que cuesta $10,000 corregirlo en la fase de requisitos, cuesta $1,000,000 si lo encuentra el cliente en producción. Las empresas que aplican pruebas tempranas reducen sus costos de calidad entre un 40% y un 60%.</p>
+            
+            <h4>🔄 Principio de "Shift Left":</h4>
+            <p>Mover las pruebas hacia la izquierda en el ciclo de vida (hacia etapas más tempranas) reduce drásticamente los costos y mejora la calidad. Esto implica:</p>
+            <ul>
+                <li>Involucrar a QA desde el inicio del proyecto</li>
+                <li>Realizar revisiones de requisitos</li>
+                <li>Hacer pruebas unitarias durante el desarrollo</li>
+                <li>Automatizar pruebas en el pipeline de CI/CD</li>
+            </ul>
+        </div>
+        
+        <!-- Pestaña 5: Contenido extenso -->
+        <div id="f5" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Historia de la calidad - evolución y etapas históricas</h4>
+                <iframe src="https://www.youtube.com/embed/5v9wtcGR1g0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>📚 Profundización en Fundamentos de Calidad</h3>
+            
+            <h4>1. Historia de la calidad del software</h4>
+            <p>La calidad del software como disciplina formal comenzó en la década de 1970, cuando los sistemas de software se volvieron más complejos y críticos. Antes, la calidad se basaba principalmente en pruebas al final del desarrollo. Figuras clave como Watts Humphrey, Barry Boehm y Gerald Weinberg sentaron las bases de la ingeniería de calidad.</p>
+            <p>En 1980, la ISO publicó los primeros estándares relacionados con calidad de software. En 1991, se publicó ISO 9126, el precursor de ISO 25010. CMMI se desarrolló en el SEI Carnegie Mellon a partir de 1987.</p>
+            
+            <h4>2. Principios de calidad según Deming</h4>
+            <p>W. Edwards Deming, padre de la calidad total, propuso 14 principios aplicables al software:</p>
+            <ul>
+                <li><strong>Principio 1:</strong> Crear constancia en el propósito de mejorar el producto y el servicio.</li>
+                <li><strong>Principio 2:</strong> Adoptar la nueva filosofía de calidad.</li>
+                <li><strong>Principio 3:</strong> No depender de la inspección masiva, sino construir calidad desde el proceso.</li>
+                <li><strong>Principio 4:</strong> Terminar con la práctica de comprar al precio más bajo.</li>
+                <li><strong>Principio 5:</strong> Mejorar constantemente el sistema de producción y servicio.</li>
+                <li><strong>Principio 6:</strong> Instituir la capacitación en el trabajo.</li>
+                <li><strong>Principio 7:</strong> Instituir el liderazgo.</li>
+                <li><strong>Principio 8:</strong> Desterrar el miedo.</li>
+                <li><strong>Principio 9:</strong> Derribar las barreras entre departamentos.</li>
+                <li><strong>Principio 10:</strong> Eliminar lemas y metas numéricas.</li>
+                <li><strong>Principio 11:</strong> Eliminar cuotas numéricas.</li>
+                <li><strong>Principio 12:</strong> Derribar las barreras que impiden el orgullo de un trabajo bien hecho.</li>
+                <li><strong>Principio 13:</strong> Instituir un programa vigoroso de educación y auto-mejora.</li>
+                <li><strong>Principio 14:</strong> Poner a toda la organización a trabajar para lograr la transformación.</li>
+            </ul>
+            
+            <h4>3. El modelo de calidad de Crosby</h4>
+            <p>Philip Crosby propuso que <strong>"la calidad es gratis"</strong> porque el costo de hacer las cosas bien la primera vez es menor que el costo de corregir errores. Sus principios clave:</p>
+            <ul>
+                <li>La calidad es conformidad con los requisitos, no "bondad" o "lujo".</li>
+                <li>El sistema de calidad es prevención, no detección de fallos.</li>
+                <li>El estándar de rendimiento es "cero defectos", no "suficientemente bueno".</li>
+                <li>La medida de la calidad es el precio de la no conformidad, no índices.</li>
+            </ul>
+            
+            <h4>4. El modelo de calidad de Juran</h4>
+            <p>Joseph Juran definió la calidad como <strong>"aptitud para el uso"</strong> y propuso la trilogía de la calidad:</p>
+            <ul>
+                <li><strong>Planificación de la calidad:</strong> identificar clientes, determinar necesidades, desarrollar características de producto.</li>
+                <li><strong>Control de la calidad:</strong> evaluar el rendimiento real, comparar con objetivos, actuar sobre las diferencias.</li>
+                <li><strong>Mejora de la calidad:</strong> establecer infraestructura, identificar proyectos de mejora, establecer equipos.</li>
+            </ul>
+            
+            <h4>5. Métricas clave de calidad</h4>
+            <table class="info-table">
+                <tr><th>Métrica</th><th>Definición</th><th>Fórmula</th><th>Objetivo típico</th></tr>
+                <tr><td class="tg-0lax">Densidad de defectos</th><td class="tg-0lax">Defectos por KLOC</th><td class="tg-0lax">Defectos totales / KLOC</th><td class="tg-0lax">&lt; 1-5 defectos/KLOC</th></tr>
+                <tr><td class="tg-0lax">Eficacia de pruebas</th><td class="tg-0lax">% defectos encontrados antes del lanzamiento</th><td class="tg-0lax">Defectos internos / Defectos totales</th><td class="tg-0lax">&gt; 95%</th></tr>
+                <tr><td class="tg-0lax">MTBF</th><td class="tg-0lax">Tiempo medio entre fallos</th><td class="tg-0lax">Horas totales / Número de fallos</th><td class="tg-0lax">&gt; 1000 horas</th></tr>
+                <tr><td class="tg-0lax">MTTR</th><td class="tg-0lax">Tiempo medio de reparación</th><td class="tg-0lax">Horas de reparación / Número de fallos</th><td class="tg-0lax">&lt; 2 horas</th></tr>
+            </table>
+        </div>
+        
+        <!-- Pestaña 6: Minijuego (sin video adicional) -->
+        <div id="f6" class="tab-pane">
+            <div id="juegoFundamentos">
+                <div class="game-container">
+                    <div class="game-title">🎮 Clasifica los conceptos: ¿QC o QA?</div>
+                    <p>Haz clic en cada concepto y escribe "QC" o "QA" según corresponda:</p>
+                    <div style="min-height: 300px;">
+                        <!-- El juego se cargará dinámicamente desde script.js -->
+                        <p style="text-align:center; color:var(--text-muted);">Cargando juego...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

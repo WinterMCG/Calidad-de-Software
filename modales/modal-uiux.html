@@ -1,0 +1,409 @@
+<!-- ==================================================== -->
+<!-- MANUEL CERVANTES GONZÁLEZ - MODAL UI/UX             -->
+<!-- ==================================================== -->
+<div id="modal-uiux" class="modal">
+    <script>
+    (function() {
+        // Esperar a que el DOM esté listo para asignar eventos a los checkboxes
+        const modal = document.getElementById('modal-uiux');
+        if (!modal) return;
+        const btn = modal.querySelector('#calcularChecklistBtn');
+        if (btn) {
+            btn.addEventListener('click', function() {
+                let total = 0;
+                for (let i = 1; i <= 10; i++) {
+                    const chk = modal.querySelector(`#check${i}`);
+                    if (chk && chk.checked) total++;
+                }
+                const porcentaje = (total / 10) * 100;
+                let mensaje = '';
+                if (porcentaje >= 90) mensaje = '🌟 Excelente usabilidad. Cumples casi todos los principios.';
+                else if (porcentaje >= 70) mensaje = '👍 Buena usabilidad. Revisa los puntos no marcados para mejorar.';
+                else if (porcentaje >= 50) mensaje = '⚠️ Usabilidad aceptable pero con muchas áreas de mejora.';
+                else mensaje = '❌ La usabilidad es deficiente. Te recomendamos rediseñar basándote en los principios de Nielsen.';
+                const resultadoDiv = modal.querySelector('#resultadoChecklist');
+                if (resultadoDiv) {
+                    resultadoDiv.innerHTML = `<strong>Puntuación: ${total}/10 (${porcentaje}%)</strong><br>${mensaje}`;
+                }
+            });
+        }
+    })();
+</script>
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-mouse-pointer"></i> Pruebas de Interfaz de Usuario (UI/UX)</h2>
+        
+        <!-- Video -->
+        <div class="video-compact">
+            <h4><i class="fab fa-youtube"></i> 🎬 Video: UX y UI explicado</h4>
+            <iframe src="https://www.youtube.com/embed/zUZSSkRQXQQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab active" data-tab="ux1">🎨 ¿Qué es la usabilidad?</button>
+            <button class="tab" data-tab="ux2">📊 Métricas cuantitativas</button>
+            <button class="tab" data-tab="ux3">♿ Accesibilidad (WCAG)</button>
+            <button class="tab" data-tab="ux4">🔧 Herramientas de prueba</button>
+            <button class="tab" data-tab="ux5">📚 Contenido extenso</button>
+            <button class="tab" data-tab="ux6">📋 Checklist de usabilidad</button>
+        </div>
+        
+        <!-- Pestaña 1: Usabilidad -->
+        <div id="ux1" class="tab-pane active">
+            <h3>🎨 ¿Qué es la usabilidad?</h3>
+            <p>La usabilidad es la <strong>facilidad con que los usuarios pueden usar el software</strong> para lograr sus objetivos de manera efectiva, eficiente y satisfactoria.</p>
+            
+            <div class="diagram-box">
+                <strong>📌 Los 5 atributos de la usabilidad (Jakob Nielsen):</strong><br><br>
+                1. 📚 <strong>Aprendizaje (Learnability):</strong> ¿Qué tan fácil es realizar tareas básicas la primera vez?<br>
+                2. ⚡ <strong>Eficiencia (Efficiency):</strong> ¿Qué tan rápido pueden realizar las tareas los usuarios experimentados?<br>
+                3. 🔄 <strong>Memorabilidad (Memorability):</strong> ¿Pueden los usuarios reanudar el uso después de un tiempo sin tener que volver a aprender?<br>
+                4. ❌ <strong>Errores (Errors):</strong> ¿Cuántos errores cometen los usuarios? ¿Qué tan graves son? ¿Pueden recuperarse fácilmente?<br>
+                5. 😊 <strong>Satisfacción (Satisfaction):</strong> ¿Qué tan agradable es usar el sistema?
+            </div>
+            
+            <h4>📌 Principios de diseño de usabilidad:</h4>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>Visibilidad del estado del sistema</h4>
+                    <p>El sistema debe mantener informado al usuario sobre lo que está ocurriendo.</p>
+                    <p><strong>Ejemplo:</strong> Barra de progreso, indicador de carga.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>Correspondencia con el mundo real</h4>
+                    <p>Usar un lenguaje y conceptos familiares para el usuario.</p>
+                    <p><strong>Ejemplo:</strong> Icono de carrito de compras, papelera de reciclaje.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>Control y libertad del usuario</h4>
+                    <p>Ofrecer "salidas de emergencia" para deshacer acciones.</p>
+                    <p><strong>Ejemplo:</strong> Botón "Deshacer", "Cancelar", "Atrás".</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>Consistencia y estándares</h4>
+                    <p>Mantener la misma convención en todo el sistema.</p>
+                    <p><strong>Ejemplo:</strong> Mismo color para botones de acción, misma ubicación del menú.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>Prevención de errores</h4>
+                    <p>Mejor prevenir errores que mostrar mensajes de error.</p>
+                    <p><strong>Ejemplo:</strong> Deshabilitar botón "Enviar" hasta que el formulario sea válido.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>Reconocimiento antes que recuerdo</h4>
+                    <p>Minimizar la carga de memoria del usuario.</p>
+                    <p><strong>Ejemplo:</strong> Menús visibles, autocompletado, historial.</p>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>✅ Beneficios de una buena usabilidad:</strong><br>
+                • Aumenta la satisfacción del usuario<br>
+                • Reduce los costos de soporte técnico<br>
+                • Aumenta la productividad de los usuarios<br>
+                • Reduce la tasa de abandono del producto<br>
+                • Aumenta las conversiones (en comercio electrónico)<br>
+                • Mejora la percepción de la marca
+            </div>
+        </div>
+        
+        <!-- Pestaña 2: Métricas cuantitativas -->
+        <div id="ux2" class="tab-pane">
+            <h3>📊 Métricas cuantitativas de usabilidad</h3>
+            
+            <table class="info-table">
+                <tr><th>Métrica</th><th>Definición</th><th>Fórmula</th><th>Objetivo</th></tr>
+                <tr><td class="tg-0lax">Tasa de éxito</th><td class="tg-0lax">% de usuarios que completan una tarea</th><td class="tg-0lax">(Tareas completadas / Total tareas) × 100</th><td class="tg-0lax">&gt; 90%</th></tr>
+                <tr><td class="tg-0lax">Tiempo en tarea</th><td class="tg-0lax">Tiempo que tarda un usuario en completar una tarea</th><td class="tg-0lax">Medición directa en segundos/minutos</th><td class="tg-0lax">Lo más bajo posible</th></tr>
+                <tr><td class="tg-0lax">Tasa de error</th><td class="tg-0lax">Número de errores por usuario/tarea</th><td class="tg-0lax">(Errores totales / Usuarios)</th><td class="tg-0lax">&lt; 5%</th></tr>
+                <tr><td class="tg-0lax">Satisfacción (SUS)</th><td class="tg-0lax">Escala de Usabilidad del Sistema</th><td class="tg-0lax">Cuestionario de 10 preguntas</th><td class="tg-0lax">&gt; 68 puntos</th></td>
+                <tr><td class="tg-0lax">Tasa de clics</th><td class="tg-0lax">Clics hasta completar una tarea</th><td class="tg-0lax">Clics totales / Usuarios</th><td class="tg-0lax">Lo más bajo posible</th></tr>
+                <tr><td class="tg-0lax">Tasa de abandono</th><td class="tg-0lax">% de usuarios que abandonan una tarea</th><td class="tg-0lax">(Abandonos / Total intentos) × 100</th><td class="tg-0lax">&lt; 10%</th></tr>
+            </table>
+            
+            <h4>📊 Escala SUS (System Usability Scale) - Explicación detallada:</h4>
+            <div class="diagram-box">
+                <strong>📝 SUS es un cuestionario de 10 preguntas con respuestas del 1 al 5:</strong><br>
+                1 = Totalmente en desacuerdo<br>
+                3 = Neutral<br>
+                5 = Totalmente de acuerdo<br><br>
+                
+                <strong>Preguntas (alternan positivas y negativas):</strong><br>
+                1. Pienso que me gustaría usar este sistema frecuentemente.<br>
+                2. Encontré el sistema innecesariamente complejo.<br>
+                3. Pensé que el sistema era fácil de usar.<br>
+                4. Creo que necesitaría el apoyo de un técnico para usar este sistema.<br>
+                5. Encontré las funciones del sistema bien integradas.<br>
+                6. Pensé que había mucha inconsistencia en el sistema.<br>
+                7. Imagino que la mayoría aprendería a usar el sistema rápidamente.<br>
+                8. Encontré el sistema muy difícil de usar.<br>
+                9. Me sentí muy confiado usando el sistema.<br>
+                10. Necesité aprender muchas cosas antes de poder usar el sistema.<br><br>
+                
+                <strong>Cálculo de la puntuación SUS:</strong><br>
+                • Preguntas impares (1,3,5,7,9): (respuesta - 1)<br>
+                • Preguntas pares (2,4,6,8,10): (5 - respuesta)<br>
+                • Sumar todas las puntuaciones y multiplicar por 2.5<br>
+                • Resultado: 0-100
+            </div>
+            
+            <h4>📊 Interpretación de la puntuación SUS:</h4>
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+Puntuación SUS        Calificación
+─────────────────────────────────────
+100-90               🌟 Excelente (Mejor que el 99%)
+89-80                👍 Bueno (Mejor que el 90%)
+79-70                📊 Aceptable (Promedio)
+69-60                ⚠️ Por debajo del promedio (Necesita mejora)
+59-0                 ❌ Malo (Requiere rediseño urgente)
+                </pre>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 Curiosidad:</strong><br>
+                • La puntuación SUS promedio de la industria es 68<br>
+                • Apps bancarias suelen tener 75-85<br>
+                • Apps de entretenimiento (Netflix, Spotify) tienen 85-95<br>
+                • Sistemas empresariales internos suelen tener 50-65
+            </div>
+        </div>
+        
+        <!-- Pestaña 3: Accesibilidad -->
+        <div id="ux3" class="tab-pane">
+            <h3>♿ Accesibilidad (WCAG 2.1)</h3>
+            <p>La accesibilidad garantiza que las <strong>personas con discapacidades</strong> puedan usar el software de manera efectiva.</p>
+            
+            <div class="diagram-box">
+                <strong>📌 Principios WCAG 2.1 (POUR):</strong><br><br>
+                <strong>P</strong>erceivable (Perceptible): La información debe ser presentada de forma que todos los usuarios puedan percibirla.<br>
+                &nbsp;&nbsp;→ Ejemplo: Texto alternativo para imágenes, subtítulos para videos.<br><br>
+                
+                <strong>O</strong>perable (Operable): Los componentes de la interfaz deben ser operables para todos.<br>
+                &nbsp;&nbsp;→ Ejemplo: Navegación por teclado, tiempo suficiente para leer contenido.<br><br>
+                
+                <strong>U</strong>nderstandable (Comprensible): La información y la operación deben ser comprensibles.<br>
+                &nbsp;&nbsp;→ Ejemplo: Texto legible, mensajes de error claros, navegación predecible.<br><br>
+                
+                <strong>R</strong>obust (Robusto): El contenido debe ser interpretable por diferentes tecnologías de asistencia.<br>
+                &nbsp;&nbsp;→ Ejemplo: HTML semántico, compatibilidad con lectores de pantalla.
+            </div>
+            
+            <h4>📊 Niveles de conformidad WCAG:</h4>
+            <table class="info-table">
+                <tr><th>Nivel</th><th>Descripción</th><th>Requisitos mínimos</th></tr>
+                <tr><td class="tg-0lax">A (Básico)</th><td class="tg-0lax">Cumple los criterios esenciales</th><td class="tg-0lax">20 criterios de éxito</th></tr>
+                <tr><td class="tg-0lax">AA (Intermedio)</th><td class="tg-0lax">Estándar para la mayoría de sitios web</th><td class="tg-0lax">50 criterios de éxito (recomendado)</th></tr>
+                <tr><td class="tg-0lax">AAA (Avanzado)</th><td class="tg-0lax">Máximo nivel de accesibilidad</th><td class="tg-0lax">70 criterios de éxito (difícil de alcanzar)</th></tr>
+            </table>
+            
+            <h4>🎯 Ejemplos de criterios de éxito (nivel AA):</h4>
+            <ul>
+                <li>🎨 <strong>Contraste de color:</strong> Relación de contraste de al menos 4.5:1 para texto normal</li>
+                <li>⌨️ <strong>Navegación por teclado:</strong> Todas las funcionalidades deben ser accesibles desde el teclado</li>
+                <li>🖼️ <strong>Texto alternativo:</strong> Todas las imágenes no decorativas deben tener alt text</li>
+                <li>📝 <strong>Etiquetas de formulario:</strong> Todos los campos de formulario deben tener etiquetas claras</li>
+                <li>🔍 <strong>Redimensionamiento de texto:</strong> El texto debe poder redimensionarse hasta 200% sin pérdida de funcionalidad</li>
+                <li>🎬 <strong>Subtítulos:</strong> Los videos deben tener subtítulos</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>🔧 Herramientas para probar accesibilidad:</strong><br>
+                • WAVE (Web Accessibility Evaluation Tool) - Extensión de navegador<br>
+                • axe DevTools - Extensión de navegador<br>
+                • Lighthouse (Chrome DevTools) - Análisis automático<br>
+                • NVDA / VoiceOver - Lectores de pantalla gratuitos<br>
+                • Color Contrast Analyzer - Prueba de contraste de colores
+            </div>
+        </div>
+        
+        <!-- Pestaña 4: Herramientas de prueba -->
+        <div id="ux4" class="tab-pane">
+            <h3>🔧 Herramientas para pruebas de UI/UX</h3>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>🤖 Automatización funcional</h4>
+                    <p><strong>Selenium</strong> - Automatización de navegadores multiplataforma</p>
+                    <p><strong>Cypress</strong> - Pruebas modernas para aplicaciones web</p>
+                    <p><strong>Playwright</strong> - Automatización confiable con múltiples navegadores</p>
+                    <p><strong>Puppeteer</strong> - Control de Chrome/Chromium sin interfaz</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📊 Analíticas y mapas de calor</h4>
+                    <p><strong>Hotjar</strong> - Mapas de calor, grabaciones de sesiones</p>
+                    <p><strong>FullStory</strong> - Replay de sesiones de usuario</p>
+                    <p><strong>Microsoft Clarity</strong> - Gratuito, mapas de calor y grabaciones</p>
+                    <p><strong>Crazy Egg</strong> - Mapas de calor y pruebas A/B</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>♿ Accesibilidad</h4>
+                    <p><strong>WAVE</strong> - Evaluación de accesibilidad web</p>
+                    <p><strong>axe DevTools</strong> - Extensión para desarrolladores</p>
+                    <p><strong>Lighthouse</strong> - Auditoría integrada en Chrome</p>
+                    <p><strong>NVDA / VoiceOver</strong> - Lectores de pantalla</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🎨 Pruebas visuales</h4>
+                    <p><strong>Percy</strong> - Pruebas de regresión visual</p>
+                    <p><strong>Applitools</strong> - Pruebas visuales con IA</p>
+                    <p><strong>BackstopJS</strong> - Pruebas visuales de código abierto</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>👥 Pruebas de usabilidad remotas</h4>
+                    <p><strong>UserTesting</strong> - Pruebas con usuarios reales</p>
+                    <p><strong>Maze</strong> - Pruebas de prototipos y usabilidad</p>
+                    <p><strong>Lookback</strong> - Grabación y moderación de pruebas</p>
+                    <p><strong>UsabilityHub</strong> - Pruebas rápidas de diseño</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📱 Pruebas multiplataforma</h4>
+                    <p><strong>BrowserStack</strong> - Pruebas en navegadores reales en la nube</p>
+                    <p><strong>Sauce Labs</strong> - Pruebas automatizadas multiplataforma</p>
+                    <p><strong>LambdaTest</strong> - Pruebas en 2000+ navegadores y dispositivos</p>
+                </div>
+            </div>
+            
+            <h4>📊 Comparativa de herramientas de automatización UI:</h4>
+            <table class="info-table">
+                <tr><th>Herramienta</th><th>Lenguaje</th><th>Curva aprendizaje</th><th>Velocidad</th><th>Comunidad</th></tr>
+                <tr><td class="tg-0lax">Selenium</th><td class="tg-0lax">Múltiples</th><td class="tg-0lax">Media</th><td class="tg-0lax">Media</th><td class="tg-0lax">Muy grande</th></tr>
+                <tr><td class="tg-0lax">Cypress</th><td class="tg-0lax">JavaScript</th><td class="tg-0lax">Baja</th><td class="tg-0lax">Rápida</th><td class="tg-0lax">Grande</th></tr>
+                <tr><td class="tg-0lax">Playwright</th><td class="tg-0lax">JS/Python/Java/.NET</th><td class="tg-0lax">Baja</th><td class="tg-0lax">Muy rápida</th><td class="tg-0lax">En crecimiento</th></td>
+                <tr><td class="tg-0lax">Puppeteer</th><td class="tg-0lax">JavaScript</th><td class="tg-0lax">Baja</th><td class="tg-0lax">Muy rápida</th><td class="tg-0lax">Grande</th></td>
+            </table>
+        </div>
+        
+        <!-- Pestaña 5: Contenido extenso -->
+        <div id="ux5" class="tab-pane">
+            <h3>📚 Profundización en UI/UX</h3>
+            
+            <h4>1. Leyes de UX (Jon Yablonski)</h4>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>Ley de Fitts</h4>
+                    <p>El tiempo para alcanzar un objetivo es función de la distancia y el tamaño del objetivo.</p>
+                    <p><strong>Aplicación:</strong> Botones grandes cerca del cursor, menús en bordes de pantalla.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>Ley de Hick</h4>
+                    <p>El tiempo de decisión aumenta con el número y complejidad de las opciones.</p>
+                    <p><strong>Aplicación:</strong> Simplificar menús, agrupar opciones similares.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>Ley de Tesler</h4>
+                    <p>La complejidad inherente de un sistema no se puede eliminar, solo trasladar.</p>
+                    <p><strong>Aplicación:</strong> Mover complejidad al código, no a la interfaz de usuario.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>Efecto estética-usabilidad</h4>
+                    <p>Los usuarios perciben los diseños estéticamente agradables como más usables.</p>
+                    <p><strong>Aplicación:</strong> Invertir en diseño visual mejora la percepción de usabilidad.</p>
+                </div>
+            </div>
+            
+            <h4>2. Métricas de UX cuantitativas avanzadas</h4>
+            <table class="info-table">
+                <tr><th>Métrica</th><th>Definición</th><th>Fórmula</th></tr>
+                <tr><td class="tg-0lax">UMUX (Usability Metric for User Experience)</th><td class="tg-0lax">Versión corta del SUS (4 preguntas)</th><td class="tg-0lax">Correlación del 0.95 con SUS</th></tr>
+                <tr><td class="tg-0lax">SEQ (Single Ease Question)</th><td class="tg-0lax">Pregunta única de dificultad</th><td class="tg-0lax">"¿Qué tan difícil fue completar esta tarea?" (1-7)</th></tr>
+                <tr><td class="tg-0lax">ASQ (After Scenario Questionnaire)</th><td class="tg-0lax">3 preguntas post-tarea</th><td class="tg-0lax">Facilidad, tiempo, soporte</th></tr>
+                <tr><td class="tg-0lax">NPS (Net Promoter Score)</th><td class="tg-0lax">Lealtad del usuario</th><td class="tg-0lax">"¿Recomendarías este producto?" (0-10)</th></tr>
+            </table>
+            
+            <h4>3. Pruebas de usabilidad: número de usuarios necesario</h4>
+            <div class="diagram-box">
+                <strong>📊 Curva de descubrimiento de problemas (Nielsen):</strong><br><br>
+                • 1 usuario → encuentra ~30% de problemas<br>
+                • 5 usuarios → encuentra ~85% de problemas<br>
+                • 10 usuarios → encuentra ~95% de problemas<br>
+                • 15+ usuarios → rendimiento decreciente<br><br>
+                
+                <strong>Recomendación:</strong> 5-8 usuarios por prueba de usabilidad es el punto óptimo costo-beneficio.
+            </div>
+            
+            <h4>4. Tipos de pruebas de usabilidad</h4>
+            <ul>
+                <li><strong>Moderadas en persona:</strong> Un moderador observa y guía al usuario en persona. Permite preguntas en profundidad.</li>
+                <li><strong>Moderadas remotas:</strong> El moderador observa al usuario a través de videollamada. Útil para usuarios distribuidos.</li>
+                <li><strong>No moderadas remotas:</strong> Los usuarios completan tareas por sí solos, grabando su pantalla y voz. Escalable, menos detalle.</li>
+                <li><strong>Pruebas A/B:</strong> Comparar dos versiones del diseño con diferentes usuarios. Para decisiones basadas en datos.</li>
+                <li><strong>Pruebas de guerrilla:</strong> Pruebas rápidas en lugares públicos (cafeterías, parques). Bajo costo, feedback inmediato.</li>
+                <li><strong>Pruebas de árbol (Tree testing):</strong> Evaluar la arquitectura de información sin diseño visual.</li>
+                <li><strong>Clasificación de tarjetas (Card sorting):</strong> Usuarios organizan contenido en categorías para definir estructura de navegación.</li>
+            </ul>
+            
+            <h4>5. Checklist de usabilidad para tu proyecto:</h4>
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+___  ¿La navegación es intuitiva y consistente?
+___  ¿Los botones y enlaces tienen etiquetas claras?
+___  ¿Los mensajes de error son útiles y específicos?
+___  ¿El sistema proporciona retroalimentación para cada acción?
+___  ¿Se puede deshacer/rehacer acciones importantes?
+___  ¿Los usuarios pueden completar tareas comunes en pocos clics?
+___  ¿El texto es legible (tamaño, contraste, fuente)?
+___  ¿El diseño es responsive (funciona en móviles)?
+___  ¿Se han probado los flujos críticos con usuarios reales?
+___  ¿La puntuación SUS es superior a 68?
+                </pre>
+            </div>
+        </div>
+        
+        <!-- Pestaña 6: Checklist de usabilidad (reemplazo del test SUS) -->
+        <div id="ux6" class="tab-pane">
+            <div class="game-container">
+                <div class="game-title">📋 Checklist de Usabilidad (10 principios de Nielsen)</div>
+                <p>Marca los elementos que tu sistema cumple. Al finalizar, obtendrás un puntaje orientativo.</p>
+                
+                <div id="checklistUsabilidad" style="margin-top: 20px;">
+                    <div class="checklist-item" style="margin-bottom: 15px; display: flex; align-items: center;">
+                        <input type="checkbox" id="check1" style="width: 20px; height: 20px; margin-right: 15px;">
+                        <label for="check1">🔍 <strong>Visibilidad del estado del sistema:</strong> El usuario siempre sabe qué está ocurriendo (ej. indicadores de carga, mensajes de éxito/error).</label>
+                    </div>
+                    <div class="checklist-item" style="margin-bottom: 15px; display: flex; align-items: center;">
+                        <input type="checkbox" id="check2" style="width: 20px; height: 20px; margin-right: 15px;">
+                        <label for="check2">🌍 <strong>Correspondencia con el mundo real:</strong> El lenguaje es familiar para el usuario (iconos conocidos, términos cotidianos).</label>
+                    </div>
+                    <div class="checklist-item" style="margin-bottom: 15px; display: flex; align-items: center;">
+                        <input type="checkbox" id="check3" style="width: 20px; height: 20px; margin-right: 15px;">
+                        <label for="check3">🕹️ <strong>Control y libertad del usuario:</strong> El usuario puede deshacer/ rehacer acciones, cancelar procesos fácilmente.</label>
+                    </div>
+                    <div class="checklist-item" style="margin-bottom: 15px; display: flex; align-items: center;">
+                        <input type="checkbox" id="check4" style="width: 20px; height: 20px; margin-right: 15px;">
+                        <label for="check4">🔄 <strong>Consistencia y estándares:</strong> Los elementos similares se comportan igual (botones, iconos, atajos de teclado).</label>
+                    </div>
+                    <div class="checklist-item" style="margin-bottom: 15px; display: flex; align-items: center;">
+                        <input type="checkbox" id="check5" style="width: 20px; height: 20px; margin-right: 15px;">
+                        <label for="check5">⚠️ <strong>Prevención de errores:</strong> El sistema evita que el usuario cometa errores (ej. confirmación antes de eliminar).</label>
+                    </div>
+                    <div class="checklist-item" style="margin-bottom: 15px; display: flex; align-items: center;">
+                        <input type="checkbox" id="check6" style="width: 20px; height: 20px; margin-right: 15px;">
+                        <label for="check6">🧠 <strong>Reconocimiento antes que recuerdo:</strong> La información está visible, el usuario no tiene que memorizar datos (menús, opciones visibles).</label>
+                    </div>
+                    <div class="checklist-item" style="margin-bottom: 15px; display: flex; align-items: center;">
+                        <input type="checkbox" id="check7" style="width: 20px; height: 20px; margin-right: 15px;">
+                        <label for="check7">⚡ <strong>Flexibilidad y eficiencia de uso:</strong> Usuarios avanzados pueden acelerar tareas (atajos de teclado, macros).</label>
+                    </div>
+                    <div class="checklist-item" style="margin-bottom: 15px; display: flex; align-items: center;">
+                        <input type="checkbox" id="check8" style="width: 20px; height: 20px; margin-right: 15px;">
+                        <label for="check8">🎨 <strong>Diseño estético y minimalista:</strong> La interfaz no contiene información irrelevante, es clara y ordenada.</label>
+                    </div>
+                    <div class="checklist-item" style="margin-bottom: 15px; display: flex; align-items: center;">
+                        <input type="checkbox" id="check9" style="width: 20px; height: 20px; margin-right: 15px;">
+                        <label for="check9">🆘 <strong>Ayuda a los usuarios a reconocer, diagnosticar y recuperarse de errores:</strong> Mensajes de error claros, con sugerencia de solución.</label>
+                    </div>
+                    <div class="checklist-item" style="margin-bottom: 15px; display: flex; align-items: center;">
+                        <input type="checkbox" id="check10" style="width: 20px; height: 20px; margin-right: 15px;">
+                        <label for="check10">📚 <strong>Ayuda y documentación:</strong> Se ofrece ayuda contextual, manuales o tutoriales accesibles.</label>
+                    </div>
+                    
+                    <button class="fill-btn" id="calcularChecklistBtn" style="margin-top: 20px;">📊 Calificar usabilidad</button>
+                    <div id="resultadoChecklist" style="margin-top: 20px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 12px; text-align: center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,303 @@
+{
+  "flashcards": {
+    "titulo": "Flashcards de Calidad de Software",
+    "descripcion": "Memoriza los conceptos clave de la materia. Cada tarjeta tiene un término en el frente y su definición en el reverso.",
+    "total": 50,
+    "categorias": [
+      {
+        "nombre": "Fundamentos",
+        "cards": [
+          {
+            "termino": "Calidad de Software",
+            "definicion": "Grado en que un sistema cumple los requisitos especificados y las expectativas del cliente (IEEE)."
+          },
+          {
+            "termino": "QC (Quality Control)",
+            "definicion": "Control de Calidad - Actividades para encontrar defectos: pruebas, inspecciones, revisiones."
+          },
+          {
+            "termino": "QA (Quality Assurance)",
+            "definicion": "Aseguramiento de Calidad - Actividades para prevenir defectos: procesos, capacitación, estándares."
+          },
+          {
+            "termino": "Ley de Boehm",
+            "definicion": "El costo de corregir un error se multiplica exponencialmente cuanto más tarde se detecte (1x requisitos → 100x producción)."
+          },
+          {
+            "termino": "COPQ",
+            "definicion": "Cost Of Poor Quality - Costo de la mala calidad, incluye prevención, evaluación, fallos internos y externos."
+          },
+          {
+            "termino": "Verificación",
+            "definicion": "¿Construimos bien el producto? Asegura que el software cumple las especificaciones."
+          },
+          {
+            "termino": "Validación",
+            "definicion": "¿Construimos el producto correcto? Asegura que el software satisface las necesidades del cliente."
+          },
+          {
+            "termino": "Principios de Deming",
+            "definicion": "14 principios para la mejora continua de la calidad, incluyendo 'constancia en el propósito' y 'eliminar el miedo'."
+          },
+          {
+            "termino": "Cero Defectos",
+            "definicion": "Concepto de Philip Crosby: el estándar de rendimiento debe ser cero defectos, no 'suficientemente bueno'."
+          },
+          {
+            "termino": "Trilogía de Juran",
+            "definicion": "Planificación de calidad, Control de calidad y Mejora de calidad."
+          }
+        ]
+      },
+      {
+        "nombre": "Modelos de Calidad",
+        "cards": [
+          {
+            "termino": "ISO 25010",
+            "definicion": "Estándar internacional que define 8 características de calidad de producto: Adecuación funcional, Confiabilidad, Usabilidad, Eficiencia, Seguridad, Compatibilidad, Mantenibilidad, Portabilidad."
+          },
+          {
+            "termino": "CMMI Nivel 1",
+            "definicion": "Inicial - Procesos caóticos, el éxito es accidental, no hay procesos definidos."
+          },
+          {
+            "termino": "CMMI Nivel 2",
+            "definicion": "Gestionado - Procesos planificados a nivel proyecto, requisitos gestionados."
+          },
+          {
+            "termino": "CMMI Nivel 3",
+            "definicion": "Definido - Procesos estandarizados en toda la organización."
+          },
+          {
+            "termino": "CMMI Nivel 4",
+            "definicion": "Cuantitativamente gestionado - Métricas estadísticas, control cuantitativo."
+          },
+          {
+            "termino": "CMMI Nivel 5",
+            "definicion": "Optimizado - Mejora continua basada en datos cuantitativos."
+          },
+          {
+            "termino": "Modelo de McCall",
+            "definicion": "Uno de los primeros modelos (1977), divide calidad en 3 perspectivas: Operación, Revisión, Transición. 11 factores de calidad."
+          },
+          {
+            "termino": "ISO 9126",
+            "definicion": "Predecesor de ISO 25010, definía 6 características de calidad (reemplazado en 2011)."
+          },
+          {
+            "termino": "SPICE",
+            "definicion": "ISO 15504 - Software Process Improvement and Capability dEtermination, alternativa a CMMI."
+          },
+          {
+            "termino": "ISO 9001:2015",
+            "definicion": "Estándar de sistemas de gestión de calidad, aplicable a cualquier organización."
+          }
+        ]
+      },
+      {
+        "nombre": "Pruebas de Software",
+        "cards": [
+          {
+            "termino": "Pruebas Unitarias",
+            "definicion": "Prueban funciones/métodos individuales de forma aislada. Responsables: desarrolladores. Rápidas y baratas."
+          },
+          {
+            "termino": "Pruebas de Integración",
+            "definicion": "Verifican la comunicación entre módulos o componentes. Detectan errores en interfaces."
+          },
+          {
+            "termino": "Pruebas de Sistema",
+            "definicion": "Evalúan el software completo en un entorno similar a producción. Última fase antes de aceptación."
+          },
+          {
+            "termino": "Pruebas de Aceptación",
+            "definicion": "Realizadas por el cliente para determinar si el software está listo para ser entregado. Alfa (interna) y Beta (usuarios reales)."
+          },
+          {
+            "termino": "Pruebas de Regresión",
+            "definicion": "Verifican que cambios recientes no hayan roto funcionalidades existentes. Críticas en CI/CD."
+          },
+          {
+            "termino": "Pruebas de Humo",
+            "definicion": "Pruebas rápidas que verifican que las funciones más críticas funcionen antes de pruebas más profundas."
+          },
+          {
+            "termino": "Caja Negra",
+            "definicion": "Técnica de prueba sin conocer el código interno. Basada en entradas y salidas esperadas."
+          },
+          {
+            "termino": "Caja Blanca",
+            "definicion": "Técnica de prueba conociendo el código fuente. Busca cobertura de líneas, ramas, caminos."
+          },
+          {
+            "termino": "Caja Gris",
+            "definicion": "Técnica con conocimiento parcial del sistema (arquitectura, BD, APIs). Ideal para pruebas de integración."
+          },
+          {
+            "termino": "Pruebas de Carga",
+            "definicion": "Simulan muchos usuarios concurrentes para medir rendimiento y tiempo de respuesta."
+          },
+          {
+            "termino": "Pruebas de Estrés",
+            "definicion": "Llevan el sistema más allá de sus límites para ver cómo falla y si se recupera."
+          },
+          {
+            "termino": "Pruebas de Seguridad",
+            "definicion": "Identifican vulnerabilidades que podrían ser explotadas por atacantes (OWASP Top 10)."
+          },
+          {
+            "termino": "Particiones de Equivalencia",
+            "definicion": "Técnica de caja negra que divide datos de entrada en grupos y prueba un valor representativo por grupo."
+          },
+          {
+            "termino": "Análisis de Valores Límite",
+            "definicion": "Técnica que prueba valores justo en los bordes de las particiones, donde suelen ocurrir errores."
+          },
+          {
+            "termino": "Tablas de Decisión",
+            "definicion": "Técnica para probar combinaciones de condiciones y sus acciones resultantes."
+          },
+          {
+            "termino": "Complejidad Ciclomática",
+            "definicion": "Métrica de McCabe que mide el número de caminos independientes en un programa."
+          },
+          {
+            "termino": "JMeter",
+            "definicion": "Herramienta de código abierto para pruebas de carga y rendimiento. Estándar en la industria."
+          },
+          {
+            "termino": "Selenium",
+            "definicion": "Herramienta de automatización de pruebas web. Soporta múltiples lenguajes y navegadores."
+          },
+          {
+            "termino": "JUnit",
+            "definicion": "Framework de pruebas unitarias para Java. El estándar en el ecosistema Java."
+          },
+          {
+            "termino": "OWASP ZAP",
+            "definicion": "Herramienta de seguridad para encontrar vulnerabilidades en aplicaciones web."
+          }
+        ]
+      },
+      {
+        "nombre": "Casos Reales",
+        "cards": [
+          {
+            "termino": "Patriot (1991)",
+            "definicion": "Error de redondeo acumulado en el sistema Patriot causó 28 muertos. Lección: probar en condiciones de larga duración."
+          },
+          {
+            "termino": "Mars Climate Orbiter (1999)",
+            "definicion": "Confusión entre newtons y libras-fuerza. Pérdida de $125 millones. Lección: estandarizar unidades."
+          },
+          {
+            "termino": "Therac-25 (1985-87)",
+            "definicion": "Condición de carrera en software médico causó sobredosis fatales. Lección: múltiples capas de seguridad."
+          },
+          {
+            "termino": "Knight Capital (2012)",
+            "definicion": "Error de despliegue causó pérdida de $440 millones en 45 minutos. Lección: automatizar despliegues."
+          },
+          {
+            "termino": "Ariane 5 (1996)",
+            "definicion": "Desbordamiento de entero por reutilizar código sin validación. Pérdida de $370 millones. Lección: validar supuestos."
+          },
+          {
+            "termino": "Toyota (2009-2011)",
+            "definicion": "Aceleración involuntaria por errores de software. 89 muertos, $1.2B en multas. Lección: estándares automotrices."
+          }
+        ]
+      },
+      {
+        "nombre": "Metodologías",
+        "cards": [
+          {
+            "termino": "Cascada",
+            "definicion": "Metodología secuencial: Requisitos → Diseño → Implementación → Pruebas → Mantenimiento. Ideal para requisitos estables."
+          },
+          {
+            "termino": "Scrum",
+            "definicion": "Metodología ágil con sprints de 1-4 semanas. Roles: Product Owner, Scrum Master, Equipo de desarrollo."
+          },
+          {
+            "termino": "Kanban",
+            "definicion": "Metodología de flujo continuo con tablero visual y límites de trabajo en progreso (WIP)."
+          },
+          {
+            "termino": "XP (Extreme Programming)",
+            "definicion": "Metodología ágil con prácticas como TDD, pair programming, integración continua y refactorización."
+          },
+          {
+            "termino": "Modelo en V",
+            "definicion": "Extensión de Cascada donde las pruebas se planifican desde el inicio, con trazabilidad vertical."
+          },
+          {
+            "termino": "TDD",
+            "definicion": "Test-Driven Development - Escribir la prueba antes que el código, luego implementar y refactorizar."
+          },
+          {
+            "termino": "Pair Programming",
+            "definicion": "Práctica de XP donde dos desarrolladores trabajan juntos en una misma estación."
+          },
+          {
+            "termino": "Sprint",
+            "definicion": "Iteración de tiempo fijo en Scrum (generalmente 1-4 semanas) donde se completa un incremento del producto."
+          },
+          {
+            "termino": "Product Backlog",
+            "definicion": "Lista priorizada de funcionalidades pendientes en Scrum, gestionada por el Product Owner."
+          },
+          {
+            "termino": "Daily Scrum",
+            "definicion": "Reunión diaria de 15 minutos en Scrum para sincronizar el equipo."
+          }
+        ]
+      },
+      {
+        "nombre": "Métricas y Calidad",
+        "cards": [
+          {
+            "termino": "Densidad de Defectos",
+            "definicion": "Número de defectos por KLOC (miles de líneas de código). Objetivo típico: &lt; 1-5 defectos/KLOC."
+          },
+          {
+            "termino": "MTBF",
+            "definicion": "Mean Time Between Failures - Tiempo promedio entre fallos del sistema. Objetivo: &gt; 1000 horas."
+          },
+          {
+            "termino": "MTTR",
+            "definicion": "Mean Time To Repair - Tiempo promedio para reparar un fallo. Objetivo: &lt; 2 horas."
+          },
+          {
+            "termino": "SUS",
+            "definicion": "System Usability Scale - Escala de 0-100 para medir usabilidad percibida. Promedio industrial: 68."
+          },
+          {
+            "termino": "Puntos de Función",
+            "definicion": "Medida de tamaño basada en funcionalidad desde perspectiva del usuario, independiente del lenguaje."
+          },
+          {
+            "termino": "COCOMO",
+            "definicion": "Constructive Cost Model - Modelo de estimación de costos basado en tamaño (KLOC) y factores de ajuste."
+          },
+          {
+            "termino": "Eficacia de Pruebas",
+            "definicion": "% de defectos encontrados antes del lanzamiento. Fórmula: (Defectos internos / Defectos totales) × 100. Objetivo: >95%."
+          },
+          {
+            "termino": "NPS",
+            "definicion": "Net Promoter Score - Métrica de lealtad: '¿Qué tan probable es que recomiendes este producto?' (0-10)."
+          },
+          {
+            "termino": "UMUX",
+            "definicion": "Usability Metric for User Experience - Versión corta del SUS con 4 preguntas."
+          },
+          {
+            "termino": "ISO 25010 Métricas",
+            "definicion": "Para cada característica de calidad existen métricas específicas medibles y cuantificables."
+          }
+        ]
+      }
+    ]
+  }
+}

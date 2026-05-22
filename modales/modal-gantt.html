@@ -1,0 +1,246 @@
+<!-- ==================================================== -->
+<!-- MANUEL CERVANTES GONZÁLEZ - MODAL DIAGRAMA DE GANTT -->
+<!-- ==================================================== -->
+<div id="modal-gantt" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-chart-simple"></i> Diagrama de Gantt - Planificación de Proyectos</h2>
+        
+        <!-- Dos videos juntos -->
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 15px;">
+            <div class="video-compact" style="flex: 1; min-width: 250px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: ¿Qué es un diagrama de Gantt?</h4>
+                <iframe src="https://www.youtube.com/embed/7dXAFrxBOCY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-compact" style="flex: 1; min-width: 250px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Cómo hacer un diagrama de Gantt</h4>
+                <iframe src="https://www.youtube.com/embed/MNLn9gIR1wg" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab active" data-tab="g1">📊 ¿Qué es un diagrama de Gantt?</button>
+            <button class="tab" data-tab="g2">📅 Ejemplo con fechas reales</button>
+            <button class="tab" data-tab="g3">📊 Ejemplo de diagrama</button>
+            <button class="tab" data-tab="g4">📚 Contenido extenso</button>
+            <button class="tab" data-tab="g5">🛠️ Herramientas y recursos</button>
+        </div>
+        
+        <!-- Pestaña 1: ¿Qué es un diagrama de Gantt? -->
+        <div id="g1" class="tab-pane active">
+            <h3>Definición</h3>
+            <p>El diagrama de Gantt es una herramienta visual de gestión de proyectos que muestra las tareas como <strong>barras horizontales</strong> a lo largo de un eje temporal. Fue desarrollado por <strong>Henry Gantt</strong> entre 1910 y 1915, y sigue siendo el estándar de facto en la industria para la planificación y seguimiento de proyectos.</p>
+            
+            <div class="diagram-box">
+                <strong>📊 Elementos clave del diagrama de Gantt:</strong><br><br>
+                
+                📌 <strong>Tareas/Actividades:</strong><br>
+                &nbsp;&nbsp;✓ Cada fila representa una tarea específica<br>
+                &nbsp;&nbsp;✓ Deben ser atómicas y medibles<br>
+                &nbsp;&nbsp;✓ Ejemplo: "Análisis de requisitos", "Diseño de BD", "Programación"<br><br>
+                
+                📅 <strong>Duración:</strong><br>
+                &nbsp;&nbsp;✓ La longitud de cada barra indica la duración de la tarea<br>
+                &nbsp;&nbsp;✓ Se mide en días, semanas o meses<br>
+                &nbsp;&nbsp;✓ Incluye tiempo estimado para cada actividad<br><br>
+                
+                🟦 <strong>Barras horizontales:</strong><br>
+                &nbsp;&nbsp;✓ Representan visualmente cada tarea<br>
+                &nbsp;&nbsp;✓ La posición indica fecha de inicio y fin<br>
+                &nbsp;&nbsp;✓ Pueden tener colores según estado o responsable<br><br>
+                
+                💎 <strong>Hitos (Milestones):</strong><br>
+                &nbsp;&nbsp;✓ Eventos importantes sin duración (diamantes)<br>
+                &nbsp;&nbsp;✓ Marcan entregas, aprobaciones o fases<br>
+                &nbsp;&nbsp;✓ Ejemplo: "Aprobación de requisitos", "Entrega final"<br><br>
+                
+                🔗 <strong>Dependencias:</strong><br>
+                &nbsp;&nbsp;✓ Relaciones entre tareas (flechas)<br>
+                &nbsp;&nbsp;✓ Tipos: FS (Finish-to-Start), SS, FF, SF<br>
+                &nbsp;&nbsp;✓ Ejemplo: No se puede diseñar sin tener requisitos aprobados<br><br>
+                
+                📍 <strong>Línea de progreso (Today line):</strong><br>
+                &nbsp;&nbsp;✓ Línea vertical que muestra la fecha actual<br>
+                &nbsp;&nbsp;✓ Permite ver rápidamente tareas atrasadas y adelantadas<br>
+                &nbsp;&nbsp;✓ Fundamental para seguimiento del proyecto
+            </div>
+            
+            <h4>📌 Tipos de dependencias:</h4>
+            <table class="info-table">
+                <tr><th>Tipo</th><th>Significado</th><th>Ejemplo</th></tr>
+                <tr><td class="tg-0lax">FS (Finish to Start)</th><td class="tg-0lax">Una tarea debe terminar para que otra comience</th><td class="tg-0lax">Terminar diseño antes de empezar codificación</th></tr>
+                <tr><td class="tg-0lax">SS (Start to Start)</th><td class="tg-0lax">Dos tareas comienzan juntas</th><td class="tg-0lax">Pruebas y documentación pueden empezar al mismo tiempo</th></tr>
+                <tr><td class="tg-0lax">FF (Finish to Finish)</th><td class="tg-0lax">Dos tareas terminan juntas</th><td class="tg-0lax">Pruebas y correcciones deben terminar al mismo tiempo</th></tr>
+                <tr><td class="tg-0lax">SF (Start to Finish)</th><td class="tg-0lax">Una tarea debe comenzar para que otra termine</th><td class="tg-0lax">(Menos común) Nueva guardia comienza para que la actual termine</th></tr>
+            </table>
+        </div>
+        
+        <!-- Pestaña 2: Ejemplo con fechas reales (sin cambios) -->
+        <div id="g2" class="tab-pane">
+            <h3>Ejemplo práctico: Proyecto de software de 4 semanas</h3>
+            <p>A continuación se muestra un ejemplo detallado de la planificación de un proyecto de desarrollo de software para un consultorio dental.</p>
+            
+            <div class="diagram-box">
+                <strong>📅 Proyecto: Sistema de gestión dental "Sonrisa Sana"</strong><br>
+                <strong>📆 Fecha de inicio:</strong> Lunes 5 de junio de 2025<br>
+                <strong>📆 Fecha de entrega:</strong> Viernes 30 de junio de 2025<br>
+                <strong>👥 Equipo:</strong> 2 desarrolladores, 1 tester<br><br>
+                
+                <table class="info-table">
+                    <tr><th>Actividad</th><th>Duración</th><th>Semana 1</th><th>Semana 2</th><th>Semana 3</th><th>Semana 4</th></tr>
+                    <tr><td class="tg-0lax">📋 Análisis de requisitos</th><td class="tg-0lax">5 días</th><td class="tg-0lax" style="background:var(--secondary); color:white;">███</th><td class="tg-0lax"></th><td class="tg-0lax"></th><td class="tg-0lax"></th></tr>
+                    <tr><td class="tg-0lax">🎨 Diseño de base de datos</th><td class="tg-0lax">5 días</th><td class="tg-0lax"></th><td class="tg-0lax" style="background:var(--secondary); color:white;">███</th><td class="tg-0lax"></th><td class="tg-0lax"></th></tr>
+                    <tr><td class="tg-0lax">💻 Programación backend</th><td class="tg-0lax">10 días</th><td class="tg-0lax"></th><td class="tg-0lax" style="background:var(--secondary); color:white;">███</th><td class="tg-0lax" style="background:var(--secondary); color:white;">███</th><td class="tg-0lax"></th></tr>
+                    <tr><td class="tg-0lax">🎨 Programación frontend</th><td class="tg-0lax">8 días</th><td class="tg-0lax"></th><td class="tg-0lax"></th><td class="tg-0lax" style="background:var(--secondary); color:white;">███</th><td class="tg-0lax" style="background:var(--secondary); color:white;">██</th></tr>
+                    <tr><td class="tg-0lax">🧪 Pruebas funcionales</th><td class="tg-0lax">5 días</th><td class="tg-0lax"></th><td class="tg-0lax"></th><td class="tg-0lax"></th><td class="tg-0lax" style="background:var(--secondary); color:white;">███</th></tr>
+                    <tr><td class="tg-0lax">🐛 Corrección de bugs</th><td class="tg-0lax">5 días</th><td class="tg-0lax"></th><td class="tg-0lax"></th><td class="tg-0lax"></th><td class="tg-0lax" style="background:var(--secondary); color:white;">███</th></tr>
+                    <tr><td class="tg-0lax">📝 Documentación</th><td class="tg-0lax">4 días</th><td class="tg-0lax"></th><td class="tg-0lax"></th><td class="tg-0lax"></th><td class="tg-0lax" style="background:var(--secondary); color:white;">██</th></tr>
+                    <tr><td class="tg-0lax">🚀 Despliegue</th><td class="tg-0lax">1 día</th><td class="tg-0lax"></th><td class="tg-0lax"></th><td class="tg-0lax"></th><td class="tg-0lax" style="background:var(--warning); color:black;">⚡</th></tr>
+                </table>
+                
+                <strong>💎 Hitos (diamantes):</strong><br>
+                🔹 <strong>Hito 1</strong> (Fin semana 1): Documento de requisitos aprobado por el cliente<br>
+                🔹 <strong>Hito 2</strong> (Fin semana 2): Modelo de base de datos diseñado y revisado<br>
+                🔹 <strong>Hito 3</strong> (Miércoles semana 3): Versión beta funcional<br>
+                🔹 <strong>Hito 4</strong> (Viernes semana 4): Entrega final y capacitación al usuario<br><br>
+                
+                <strong>🔗 Dependencias principales:</strong><br>
+                • Diseño de BD depende de Análisis de requisitos (FS)<br>
+                • Programación depende de Diseño de BD (FS)<br>
+                • Pruebas dependen de Programación (FS)<br>
+                • Despliegue depende de Corrección de bugs y Documentación (FS)
+            </div>
+            
+            <h4>📊 Recursos asignados por semana:</h4>
+            <table class="info-table">
+                <tr><th>Semana</th><th>Desarrollador 1</th><th>Desarrollador 2</th><th>Tester</th></tr>
+                <tr><td class="tg-0lax">Semana 1</th><td class="tg-0lax">Análisis</th><td class="tg-0lax">Documentación</th><td class="tg-0lax">Plan de pruebas</th></tr>
+                <td><td class="tg-0lax">Semana 2</th><td class="tg-0lax">Backend</th><td class="tg-0lax">Diseño BD</th><td class="tg-0lax">Casos de prueba</th></tr>
+                <tr><td class="tg-0lax">Semana 3</th><td class="tg-0lax">Frontend</th><td class="tg-0lax">Backend</th><td class="tg-0lax">Pruebas unitarias</th></tr>
+                <tr><td class="tg-0lax">Semana 4</th><td class="tg-0lax">Correcciones</th><td class="tg-0lax">Documentación</th><td class="tg-0lax">Pruebas finales</th></tr>
+            </table>
+        </div>
+        
+        <!-- Pestaña 3: Ejemplo de diagrama (antes simulador) -->
+        <div id="g3" class="tab-pane">
+            <h3>📊 Ejemplo visual de diagrama de Gantt</h3>
+            <p>A continuación se muestra un ejemplo real de un diagrama de Gantt utilizado en la gestión de proyectos. Puedes observar cómo se representan las tareas, duraciones, hitos y dependencias.</p>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <img src="https://www.egestionaconsultores.es/wp-content/uploads/2020/12/DIAGRAMA-DE-GANTT-EJEMPLO-EGESTIONA-CONSULTORES.png" 
+                     alt="Ejemplo de diagrama de Gantt" 
+                     style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border);">
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 Explicación del ejemplo:</strong><br><br>
+                En este diagrama se puede apreciar:
+                <ul>
+                    <li>Las <strong>barras horizontales</strong> representan cada tarea o fase del proyecto.</li>
+                    <li>La <strong>longitud de cada barra</strong> indica la duración estimada (días, semanas).</li>
+                    <li>Los <strong>hitos</strong> (diamantes) marcan eventos clave como entregas o aprobaciones.</li>
+                    <li>Las <strong>flechas o líneas</strong> entre tareas muestran dependencias (por ejemplo, una tarea no puede comenzar hasta que termine otra).</li>
+                    <li>La <strong>línea vertical</strong> representa la fecha actual y ayuda a ver el progreso real frente al planificado.</li>
+                </ul>
+                Este tipo de gráfico es muy utilizado en herramientas de gestión de proyectos (Microsoft Project, Jira, GanttPRO, etc.) y permite visualizar de forma intuitiva el cronograma completo.
+            </div>
+        </div>
+        
+        <!-- Pestaña 4: Contenido extenso (sin cambios) -->
+        <div id="g4" class="tab-pane">
+            <h3>📚 Profundización en Diagrama de Gantt</h3>
+            
+            <h4>1. Historia del diagrama de Gantt</h4>
+            <p>El diagrama de Gantt fue desarrollado por <strong>Henry Laurence Gantt</strong> (1861-1919), un ingeniero mecánico y consultor de gestión estadounidense. Trabajó junto a Frederick Taylor en la aplicación de métodos científicos a la gestión industrial.</p>
+            <p>Originalmente, los diagramas de Gantt se dibujaban a mano sobre grandes hojas de papel. Hoy en día, existen numerosas herramientas digitales como Microsoft Project, Jira, Trello, Asana, ClickUp, GanttPRO y muchas más.</p>
+            
+            <h4>2. Software popular para diagramas de Gantt</h4>
+            <table class="info-table">
+                <tr><th>Herramienta</th><th>Tipo</th><th>Precio</th><th>Características destacadas</th></tr>
+                <tr><td class="tg-0lax">Microsoft Project</th><td class="tg-0lax">Escritorio/Nube</th><td class="tg-0lax">$$$</th><td class="tg-0lax">Estándar empresarial, integración con Office</th></tr>
+                <tr><td class="tg-0lax">Jira (BigGantt)</th><td class="tg-0lax">Nube</th><td class="tg-0lax">$$</th><td class="tg-0lax">Integración con desarrollo ágil</th><tr>
+                <tr><td class="tg-0lax">GanttPRO</th><td class="tg-0lax">Web</th><td class="tg-0lax">$$</th><td class="tg-0lax">Interfaz intuitiva, exportación múltiple</th></tr>
+                <tr><td class="tg-0lax">TeamGantt</th><td class="tg-0lax">Web</th><td class="tg-0lax">$$</th><td class="tg-0lax">Colaboración en tiempo real</th></tr>
+                <tr><td class="tg-0lax">ClickUp</th><td class="tg-0lax">Web/Móvil</th><td class="tg-0lax">Gratis - $$</th><td class="tg-0lax">Todo en uno, versión gratuita potente</th></tr>
+                <tr><td class="tg-0lax">Asana</th><td class="tg-0lax">Web/Móvil</th><td class="tg-0lax">Gratis - $$</th><td class="tg-0lax">Vista de cronograma, fácil de usar</th></tr>
+                <tr><td class="tg-0lax">Trello</th><td class="tg-0lax">Web/Móvil</th><td class="tg-0lax">Gratis - $$</th><td class="tg-0lax">Power-Ups, sencillo para equipos pequeños</th></tr>
+            </table>
+            
+            <h4>3. Métricas clave para seguimiento de proyectos</h4>
+            <ul>
+                <li><strong>🏗️ SPI (Schedule Performance Index):</strong> EV / PV → Indica eficiencia del cronograma (valor &gt;1 es bueno)</li>
+                <li><strong>💰 CPI (Cost Performance Index):</strong> EV / AC → Indica eficiencia de costos (valor &gt;1 es bueno)</li>
+                <li><strong>⌛ Varianza de cronograma (SV):</strong> EV - PV → Diferencia entre planificado y real</li>
+                <li><strong>📊 Varianza de costo (CV):</strong> EV - AC → Diferencia entre presupuestado y gastado</li>
+                <li><strong>📅 Porcentaje completado:</strong> (Tareas completadas / Total tareas) × 100</li>
+                <li><strong>🐛 Densidad de defectos:</strong> Defectos encontrados / Tamaño del proyecto</li>
+            </ul>
+            
+            <h4>4. Buenas prácticas para diagramas de Gantt</h4>
+            <ul>
+                <li>✅ Desglosar tareas en unidades <strong>entre 4 y 80 horas</strong> (ni muy grandes ni muy pequeñas)</li>
+                <li>✅ Identificar la <strong>ruta crítica</strong> (secuencia de tareas que determina la duración total)</li>
+                <li>✅ Incluir <strong>margen de contingencia</strong> (buffer) para imprevistos (15-20%)</li>
+                <li>✅ Asignar <strong>recursos específicos</strong> a cada tarea (evitar sobrecarga)</li>
+                <li>✅ Revisar y actualizar el diagrama <strong>semanalmente</strong> con el equipo</li>
+                <li>✅ Comunicar los cambios a todos los <strong>stakeholders</strong></li>
+                <li>✅ Usar <strong>colores y etiquetas</strong> para identificar responsables y estados</li>
+                <li>✅ Mantener un <strong>registro de cambios</strong> para auditoría</li>
+            </ul>
+            
+            <h4>5. Ejercicio de reflexión</h4>
+            <ol>
+                <li>Planifica un proyecto de 3 meses para desarrollar una aplicación móvil usando diagrama de Gantt</li>
+                <li>Identifica al menos 5 dependencias entre tareas</li>
+                <li>¿Cuál es la ruta crítica de tu proyecto?</li>
+                <li>¿Qué factores podrían afectar la planificación original?</li>
+            </ol>
+        </div>
+        
+        <!-- Pestaña 5: Herramientas y recursos (antes plantilla descargable) -->
+        <div id="g5" class="tab-pane">
+            <h3>🛠️ Herramientas y recursos para crear diagramas de Gantt</h3>
+            <p>Existen múltiples aplicaciones, tanto de escritorio como en línea, que facilitan la creación y el seguimiento de diagramas de Gantt. A continuación se mencionan algunas de las más populares:</p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>📊 Microsoft Project</h4>
+                    <p>Software profesional de gestión de proyectos. Ofrece diagramas de Gantt avanzados, asignación de recursos, seguimiento de costos y generación de informes. Ideal para grandes empresas y proyectos complejos.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🔄 Jira + BigGantt</h4>
+                    <p>Jira es una herramienta ágil muy usada en desarrollo de software. Con el complemento BigGantt se pueden crear diagramas de Gantt integrados con los sprints, historias de usuario y tareas.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📈 GanttPRO</h4>
+                    <p>Aplicación web especializada en diagramas de Gantt. Interfaz intuitiva, permite importar/exportar desde MS Project, Excel, y colaboración en tiempo real.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🖥️ TeamGantt</h4>
+                    <p>Herramienta en línea centrada en la simplicidad. Ideal para equipos pequeños y medianos. Permite arrastrar y soltar tareas, gestionar dependencias y compartir el diagrama con clientes.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🎯 ClickUp</h4>
+                    <p>Plataforma todo-en-uno que incluye vista de Gantt, además de listas, tableros Kanban, calendarios y documentos. Versión gratuita con muchas funcionalidades.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📋 Asana</h4>
+                    <p>Conocida por su gestión de tareas, también ofrece una vista de cronograma (línea de tiempo) que funciona como un diagrama de Gantt básico. Muy fácil de usar.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📌 Trello</h4>
+                    <p>Originalmente Kanban, con Power-Ups como "Ganttify" o "Placker" se pueden generar diagramas de Gantt a partir de las tarjetas y fechas de vencimiento.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📱 Aplicaciones móviles</h4>
+                    <p>Existen apps como "Gantt Project", "Quick Gantt" o "Project Planner" que permiten gestionar cronogramas desde dispositivos móviles, útiles para equipos remotos.</p>
+                </div>
+            </div>
+            
+            <div class="diagram-box" style="margin-top: 20px;">
+                <strong>📌 Recomendación:</strong> Si recién comienzas, prueba primero con <strong>ClickUp</strong> o <strong>Asana</strong> (versiones gratuitas). Para proyectos profesionales, <strong>Microsoft Project</strong> o <strong>GanttPRO</strong> son opciones sólidas. Recuerda que la herramienta es solo un medio; lo importante es definir bien las tareas, duraciones y dependencias.
+            </div>
+        </div>
+    </div>
+</div>

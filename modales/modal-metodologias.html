@@ -1,0 +1,451 @@
+<!-- ==================================================== -->
+<!-- ALAN ADRIÁN ALONSO VALENZUELA - MODAL METODOLOGÍAS   -->
+<!-- ==================================================== -->
+<div id="modal-metodologias" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-sitemap"></i> Metodologías de Desarrollo de Software</h2>
+        
+        <p>La elección de la metodología adecuada es fundamental para el éxito de un proyecto. A continuación se presentan las principales metodologías, sus ventajas, desventajas y cuándo aplicarlas.</p>
+        
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab active" data-tab="met0">📊 Guía rápida de selección</button>
+            <button class="tab" data-tab="met1">💧 Cascada (Waterfall)</button>
+            <button class="tab" data-tab="met2">🔄 Scrum (Ágil)</button>
+            <button class="tab" data-tab="met3">📋 Kanban</button>
+            <button class="tab" data-tab="met4">⚡ XP (Extreme Programming)</button>
+            <button class="tab" data-tab="met5">📐 Modelo en V</button>
+            <button class="tab" data-tab="met6">📊 Tabla comparativa</button>
+            <button class="tab" data-tab="met7">🎮 Casos prácticos</button>
+        </div>
+        
+        <!-- Pestaña 0: Guía rápida -->
+        <div id="met0" class="tab-pane active">
+            <h3>📊 ¿Cómo elegir la metodología adecuada?</h3>
+            
+            <div class="diagram-box">
+                <strong>📌 Responde estas preguntas para tomar la decisión:</strong><br><br>
+                
+                ❓ <strong>¿Los requisitos están 100% claros y no van a cambiar?</strong><br>
+                &nbsp;&nbsp;✅ Sí → Cascada o Modelo en V<br>
+                &nbsp;&nbsp;❌ No → Scrum o XP<br><br>
+                
+                ❓ <strong>¿El cliente quiere ver resultados rápido?</strong><br>
+                &nbsp;&nbsp;✅ Sí → Scrum (sprints cortos)<br>
+                &nbsp;&nbsp;❌ No → Cascada<br><br>
+                
+                ❓ <strong>¿El equipo recibe muchas solicitudes urgentes e impredecibles?</strong><br>
+                &nbsp;&nbsp;✅ Sí → Kanban<br>
+                &nbsp;&nbsp;❌ No → Scrum o Cascada<br><br>
+                
+                ❓ <strong>¿Es un proyecto pequeño y de corta duración (menos de 3 meses)?</strong><br>
+                &nbsp;&nbsp;✅ Sí → Cascada<br>
+                &nbsp;&nbsp;❌ No → Scrum<br><br>
+                
+                ❓ <strong>¿Es un sistema crítico que requiere mucha documentación y trazabilidad?</strong><br>
+                &nbsp;&nbsp;✅ Sí → Cascada o Modelo en V<br>
+                &nbsp;&nbsp;❌ No → Scrum<br><br>
+                
+                ❓ <strong>¿La calidad del código es la máxima prioridad?</strong><br>
+                &nbsp;&nbsp;✅ Sí → XP (pair programming, TDD)<br>
+                &nbsp;&nbsp;❌ No → Scrum o Cascada
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📊 Árbol de decisión simplificado:</strong><br><br>
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+                    ¿Requisitos claros y estables?
+                           │
+                    ┌──────┴──────┐
+                    │             │
+                    Sí            No
+                    │             │
+                    ▼             ▼
+                [Cascada]     ¿Cliente quiere ver
+                [Modelo V]    resultados rápido?
+                                   │
+                            ┌──────┴──────┐
+                            │             │
+                            Sí            No
+                            │             │
+                            ▼             ▼
+                          [Scrum]      ¿Muchas solicitudes
+                          [XP]         urgentes?
+                                           │
+                                    ┌──────┴──────┐
+                                    │             │
+                                    Sí            No
+                                    │             │
+                                    ▼             ▼
+                                  [Kanban]     [Scrum]
+                </pre>
+            </div>
+        </div>
+        
+        <!-- Pestaña 1: Cascada -->
+        <div id="met1" class="tab-pane">
+            <h3>💧 Cascada (Waterfall) - Metodología Tradicional</h3>
+            
+            <div class="diagram-box">
+                <strong>📊 Fases del modelo en cascada:</strong><br><br>
+                ┌─────────────────────────────────────────────────────────────────┐<br>
+                │                    1. REQUISITOS                                │<br>
+                │         (Análisis, entrevistas, documentación SRS)              │<br>
+                └─────────────────────────────────────┬───────────────────────────┘<br>
+                                                      ▼<br>
+                ┌─────────────────────────────────────────────────────────────────┐<br>
+                │                     2. DISEÑO                                   │<br>
+                │        (Arquitectura, BD, interfaces, mockups)                  │<br>
+                └─────────────────────────────────────┬───────────────────────────┘<br>
+                                                      ▼<br>
+                ┌─────────────────────────────────────────────────────────────────┐<br>
+                │                  3. IMPLEMENTACIÓN                              │<br>
+                │             (Codificación, pruebas unitarias)                   │<br>
+                └─────────────────────────────────────┬───────────────────────────┘<br>
+                                                      ▼<br>
+                ┌─────────────────────────────────────────────────────────────────┐<br>
+                │                    4. PRUEBAS                                   │<br>
+                │       (Integración, sistema, aceptación, regresión)             │<br>
+                └─────────────────────────────────────┬───────────────────────────┘<br>
+                                                      ▼<br>
+                ┌─────────────────────────────────────────────────────────────────┐<br>
+                │                  5. MANTENIMIENTO                               │<br>
+                │         (Correcciones, mejoras, soporte técnico)                │<br>
+                └─────────────────────────────────────────────────────────────────┘<br>
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>✅ Ventajas</h4>
+                    <ul>
+                        <li>Simple y fácil de entender</li>
+                        <li>Hitos y entregables claros por fase</li>
+                        <li>Documentación exhaustiva desde el inicio</li>
+                        <li>Buena para proyectos con requisitos estables</li>
+                        <li>Facilita la planificación de recursos</li>
+                        <li>Ideal para equipos grandes y distribuidos</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>❌ Desventajas</h4>
+                    <ul>
+                        <li>No tolera cambios (muy costoso volver atrás)</li>
+                        <li>El cliente ve el producto hasta el final</li>
+                        <li>Riesgo de que los requisitos cambien durante el desarrollo</li>
+                        <li>Los errores se descubren tarde (en pruebas)</li>
+                        <li>Puede generar largos tiempos de espera</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 ¿Cuándo usar Cascada?</strong><br>
+                • Requisitos claros, estables y bien documentados<br>
+                • Proyectos pequeños o medianos (&lt; 6 meses)<br>
+                • Tecnologías conocidas por el equipo<br>
+                • Cliente no necesita ver avances frecuentes<br>
+                • Proyectos con regulaciones estrictas (gubernamentales, médicos)<br>
+                • Equipo distribuido que necesita documentación detallada
+            </div>
+        </div>
+        
+        <!-- Pestaña 2: Scrum -->
+        <div id="met2" class="tab-pane">
+            <h3>🔄 Scrum - Metodología Ágil</h3>
+            
+            <div class="diagram-box">
+                <strong>📊 Estructura de Scrum:</strong><br><br>
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+    Sprint Planning ──► Sprint (1-4 semanas) ──► Sprint Review
+          ▲                                         │
+          │                                         ▼
+    Product Backlog                          Sprint Retrospective
+    (lista de prioridades)                          │
+          ▲                                         │
+          │                                         ▼
+    Product Owner ──────────────────────► Incremento entregable
+                </pre>
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>👥 Roles en Scrum</h4>
+                    <ul>
+                        <li><strong>Product Owner:</strong> Define prioridades, gestiona el backlog</li>
+                        <li><strong>Scrum Master:</strong> Facilita el proceso, elimina impedimentos</li>
+                        <li><strong>Equipo de desarrollo:</strong> Autoorganizado, multifuncional (3-9 miembros)</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>📦 Artefactos de Scrum</h4>
+                    <ul>
+                        <li><strong>Product Backlog:</strong> Lista priorizada de funcionalidades</li>
+                        <li><strong>Sprint Backlog:</strong> Tareas seleccionadas para el sprint</li>
+                        <li><strong>Incremento:</strong> Versión funcional al final del sprint</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>⏰ Eventos de Scrum</h4>
+                    <ul>
+                        <li><strong>Sprint Planning:</strong> Planificar el sprint (máx 8 horas)</li>
+                        <li><strong>Daily Scrum:</strong> Reunión diaria de 15 minutos</li>
+                        <li><strong>Sprint Review:</strong> Demostrar lo construido (máx 4 horas)</li>
+                        <li><strong>Sprint Retrospective:</strong> Mejorar el proceso (máx 3 horas)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>✅ Ventajas</h4>
+                    <ul>
+                        <li>Adaptabilidad a cambios</li>
+                        <li>Entrega temprana de valor al cliente</li>
+                        <li>Visibilidad y transparencia</li>
+                        <li>Mejora continua (retrospectivas)</li>
+                        <li>Alta motivación del equipo (autogestión)</li>
+                        <li>Reducción de riesgos</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>❌ Desventajas</h4>
+                    <ul>
+                        <li>Requiere compromiso total del equipo</li>
+                        <li>El cliente debe estar disponible frecuentemente</li>
+                        <li>Menor documentación (puede ser problema para equipos grandes)</li>
+                        <li>Puede derivar en "scope creep" (más funcionalidades de lo planeado)</li>
+                        <li>Requiere experiencia en estimación ágil</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 ¿Cuándo usar Scrum?</strong><br>
+                • Requisitos cambiantes o inciertos<br>
+                • Cliente involucrado y disponible<br>
+                • Equipo pequeño a mediano (3-9 personas)<br>
+                • Proyectos donde la velocidad de entrega es prioritaria<br>
+                • Equipo con capacidad de autoorganización<br>
+                • Productos innovadores o con alta incertidumbre
+            </div>
+        </div>
+        
+        <!-- Pestaña 3: Kanban -->
+        <div id="met3" class="tab-pane">
+            <h3>📋 Kanban - Flujo Continuo</h3>
+            
+            <div class="diagram-box">
+                <strong>📊 Tablero Kanban básico:</strong><br><br>
+                ┌─────────────────┬─────────────────┬─────────────────┬─────────────────┐<br>
+                │     POR HACER   │   EN PROGRESO   │     EN REVISIÓN │     HECHO      │<br>
+                │   (Backlog)     │   (WIP: 3)      │    (WIP: 2)     │                │<br>
+                ├─────────────────┼─────────────────┼─────────────────┼─────────────────┤<br>
+                │ • Tarea 1       │ • Tarea 2       │ • Tarea 3       │ ✓ Tarea 4      │<br>
+                │ • Tarea 5       │ • Tarea 6       │                 │ ✓ Tarea 7      │<br>
+                │ • Tarea 8       │ • Tarea 9       │                 │ ✓ Tarea 10     │<br>
+                │ • Tarea 11      │                 │                 │                │<br>
+                └─────────────────┴─────────────────┴─────────────────┴─────────────────┘<br>
+                <em>WIP = Work In Progress (trabajo en progreso)</em>
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>✅ Ventajas</h4>
+                    <ul>
+                        <li>Visualización clara del flujo de trabajo</li>
+                        <li>Límites de WIP evitan cuellos de botella</li>
+                        <li>Flexibilidad para priorizar tareas</li>
+                        <li>No requiere sprints fijos</li>
+                        <li>Reduce el tiempo de ciclo</li>
+                        <li>Ideal para equipos de soporte/mantenimiento</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>❌ Desventajas</h4>
+                    <ul>
+                        <li>No tiene iteraciones fijas (puede faltar planificación a largo plazo)</li>
+                        <li>Puede generar procrastinación si no se gestiona bien</li>
+                        <li>Requiere disciplina para respetar límites de WIP</li>
+                        <li>Menor previsibilidad en fechas de entrega</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 ¿Cuándo usar Kanban?</strong><br>
+                • Equipos de soporte técnico o mantenimiento<br>
+                • Proyectos con tareas heterogéneas y urgentes<br>
+                • Equipos que reciben solicitudes impredecibles<br>
+                • Cuando se quiere mejorar el flujo existente sin cambios disruptivos<br>
+                • Proyectos donde la prioridad cambia constantemente<br>
+                • Equipos que ya tienen un proceso pero quieren visualizarlo
+            </div>
+        </div>
+        
+        <!-- Pestaña 4: XP -->
+        <div id="met4" class="tab-pane">
+            <h3>⚡ XP (Extreme Programming)</h3>
+            
+            <div class="diagram-box">
+                <strong>📊 Prácticas clave de XP:</strong><br><br>
+                🔄 <strong>Programación en pares (Pair Programming):</strong> Dos desarrolladores trabajan juntos en una misma estación<br>
+                🧪 <strong>TDD (Test-Driven Development):</strong> Escribir pruebas antes del código<br>
+                🔁 <strong>Integración continua:</strong> Integrar código varias veces al día<br>
+                📝 <strong>Refactorización:</strong> Mejorar el código sin cambiar funcionalidad<br>
+                🗣️ <strong>Cliente en sitio:</strong> Un cliente real disponible todo el tiempo<br>
+                📊 <strong>Velocidad medida:</strong> Estimar basado en historias completadas<br>
+                🎨 <strong>Estándares de codificación:</strong> Reglas consistentes para todo el equipo<br>
+                🔒 <strong>Propiedad colectiva del código:</strong> Cualquiera puede modificar cualquier parte<br>
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>✅ Ventajas</h4>
+                    <ul>
+                        <li>Altísima calidad de código (TDD, pair programming)</li>
+                        <li>Reducción drástica de defectos</li>
+                        <li>Feedback continuo del cliente</li>
+                        <li>Alta capacidad de respuesta a cambios</li>
+                        <li>Mejora la comunicación del equipo</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>❌ Desventajas</h4>
+                    <ul>
+                        <li>Requiere programadores muy disciplinados</li>
+                        <li>Cliente debe estar 100% disponible (costoso)</li>
+                        <li>Pair programming puede ser ineficiente para tareas simples</li>
+                        <li>Difícil de escalar a equipos grandes</li>
+                        <li>Menor documentación (el código es la documentación)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 ¿Cuándo usar XP?</strong><br>
+                • Proyectos donde la calidad del código es la máxima prioridad<br>
+                • Equipo pequeño (2-10 personas) con alta disciplina<br>
+                • Requisitos cambiantes y poco claros<br>
+                • Cliente disponible para resolver dudas constantemente<br>
+                • Proyectos de alto riesgo donde los errores son muy costosos
+            </div>
+        </div>
+        
+        <!-- Pestaña 5: Modelo en V -->
+        <div id="met5" class="tab-pane">
+            <h3>📐 Modelo en V (V-Model)</h3>
+            
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+                    REQUISITOS ─────────────────────────► VALIDACIÓN
+                        │                                   │
+                        ▼                                   ▼
+                      DISEÑO ──────────────────────────► PRUEBAS SISTEMA
+                        │                                   │
+                        ▼                                   ▼
+                 IMPLEMENTACIÓN ◄─────────────────────► PRUEBAS UNITARIAS
+                (código + pruebas unitarias)
+
+                Lado izquierdo: desarrollo         Lado derecho: pruebas
+                </pre>
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>✅ Ventajas</h4>
+                    <ul>
+                        <li>Las pruebas se planifican desde el inicio</li>
+                        <li>Relación clara entre fase de desarrollo y prueba</li>
+                        <li>Alta trazabilidad de requisitos a pruebas</li>
+                        <li>Bueno para sistemas críticos (seguridad, médicos)</li>
+                        <li>Documentación exhaustiva</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>❌ Desventajas</h4>
+                    <ul>
+                        <li>Rígido como Cascada (no tolera cambios)</li>
+                        <li>El cliente ve el producto hasta el final</li>
+                        <li>Puede generar burocracia excesiva</li>
+                        <li>Requiere mucha documentación</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 ¿Cuándo usar el Modelo en V?</strong><br>
+                • Sistemas críticos (aeronáutica, médico, nuclear)<br>
+                • Proyectos con regulaciones estrictas (DO-178C, IEC 62304)<br>
+                • Requisitos estables y bien documentados<br>
+                • Cuando la seguridad es prioridad máxima<br>
+                • Equipos grandes que necesitan trazabilidad completa
+            </div>
+        </div>
+        
+        <!-- Pestaña 6: Tabla comparativa -->
+        <div id="met6" class="tab-pane">
+            <h3>📊 Tabla comparativa de metodologías</h3>
+            
+            <table class="info-table">
+                <tr><th>Característica</th><th>Cascada</th><th>Scrum</th><th>Kanban</th><th>XP</th><th>Modelo V</th></tr>
+                <tr><td class="tg-0lax">Tipo</th><td class="tg-0lax">Tradicional</th><td class="tg-0lax">Ágil</th><td class="tg-0lax">Ágil</th><td class="tg-0lax">Ágil</th><td class="tg-0lax">Tradicional</th></tr>
+                <tr><td class="tg-0lax">Iteraciones</th><td class="tg-0lax">No</th><td class="tg-0lax">Sí (sprints)</th><td class="tg-0lax">Flujo continuo</th><td class="tg-0lax">Sí (iteraciones)</th><td class="tg-0lax">No</th></tr>
+                <tr><td class="tg-0lax">Documentación</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Media</th><td class="tg-0lax">Baja-Media</th><td class="tg-0lax">Baja</th><td class="tg-0lax">Muy alta</th></tr>
+                <tr><td class="tg-0lax">Flexibilidad a cambios</th><td class="tg-0lax">Muy baja</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Muy alta</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Baja</th></td>
+                <tr><td class="tg-0lax">Involucración del cliente</th><td class="tg-0lax">Baja</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Media</th><td class="tg-0lax">Muy alta</th><td class="tg-0lax">Baja</th></tr>
+                <tr><td class="tg-0lax">Tamaño de equipo</th><td class="tg-0lax">Cualquiera</th><td class="tg-0lax">3-9</th><td class="tg-0lax">Cualquiera</th><td class="tg-0lax">2-10</th><td class="tg-0lax">Cualquiera</th></tr>
+                <tr><td class="tg-0lax">Entrega de valor temprana</th><td class="tg-0lax">No</th><td class="tg-0lax">Sí</th><td class="tg-0lax">Sí</th><td class="tg-0lax">Sí</th><td class="tg-0lax">No</th></tr>
+                <tr><td class="tg-0lax">Calidad del código</th><td class="tg-0lax">Media</th><td class="tg-0lax">Media-Alta</th><td class="tg-0lax">Media</th><td class="tg-0lax">Muy alta</th><td class="tg-0lax">Media-Alta</th></tr>
+                <tr><td class="tg-0lax">Curva de aprendizaje</th><td class="tg-0lax">Baja</th><td class="tg-0lax">Media</th><td class="tg-0lax">Baja</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Media</th></tr>
+                <tr><td class="tg-0lax">Caso de uso típico</th><td class="tg-0lax">Proyectos estables</th><td class="tg-0lax">Productos innovadores</th><td class="tg-0lax">Soporte/mantenimiento</th><td class="tg-0lax">Alta calidad</th><td class="tg-0lax">Sistemas críticos</th></tr>
+            <tr>
+            
+            <h4>📊 Matriz de selección rápida:</h4>
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+┌──────────────────────┬────────────────────────┬────────────────────────┐
+│   Si necesitas...    │   Usa...               │   Evita...             │
+├──────────────────────┼────────────────────────┼────────────────────────┤
+│ Documentación formal │ Cascada o Modelo V     │ XP, Kanban             │
+│ Adaptabilidad a      │ Scrum, XP, Kanban      │ Cascada, Modelo V      │
+│ cambios              │                        │                        │
+│ Calidad de código    │ XP (TDD, pair prog)    │ Cascada (sin pruebas)  │
+│ máxima               │                        │                        │
+│ Entregas rápidas     │ Scrum (sprints)        │ Cascada                │
+│ al cliente           │                        │                        │
+│ Gestionar solicitudes│ Kanban                 │ Scrum (sprints fijos)  │
+│ urgentes             │                        │                        │
+│ Trazabilidad total   │ Modelo V, Cascada      │ XP                     │
+│ Proyecto pequeño     │ Cascada, Scrum         │ Modelo V (mucha        │
+│                      │                        │ documentación)         │
+│ Equipo distribuido   │ Cascada, Modelo V      │ XP (pair prog requiere │
+│                      │ (documentación)        │ cercanía)              │
+└──────────────────────┴────────────────────────┴────────────────────────┘
+                </pre>
+            </div>
+        </div>
+        
+        <!-- Pestaña 7: Casos prácticos -->
+        <div id="met7" class="tab-pane">
+            <div class="game-container">
+                <div class="game-title">🎮 Casos prácticos: ¿Qué metodología elegirías?</div>
+                <div id="juegoMetodologias" style="min-height: 300px;">
+                    <div id="preguntaMetodologia" style="margin-bottom: 20px;">
+                        <p><strong>Caso 1/5:</strong> Una startup está desarrollando un producto nuevo. El mercado es cambiante y los requisitos no están claros. El cliente quiere ver versiones funcionales cada 2 semanas. ¿Qué metodología recomendarías?</p>
+                    </div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-caso="cascada">Cascada</div>
+                        <div class="quiz-option" data-caso="scrum">Scrum</div>
+                        <div class="quiz-option" data-caso="kanban">Kanban</div>
+                        <div class="quiz-option" data-caso="xp">XP</div>
+                    </div>
+                    <div id="feedbackMetodologia" style="margin-top: 15px;"></div>
+                    <div style="margin-top: 20px;">
+                        <p><strong>Puntuación:</strong> <span id="puntosMetodologia">0</span> / 5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

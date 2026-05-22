@@ -1,0 +1,359 @@
+<!-- ==================================================== -->
+<!-- MANUEL CERVANTES GONZÁLEZ - MODAL PROYECTOS EJEMPLO  -->
+<!-- ==================================================== -->
+<div id="modal-proyectos" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-briefcase"></i> Proyectos de Ejemplo: Casos Reales Desarrollados</h2>
+        
+        <p>A continuación se presentan dos proyectos reales desarrollados por los alumnos de la materia, que sirven como caso de estudio para aplicar los conceptos de calidad de software.</p>
+        
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab active" data-tab="proy1">🦷 Consultorio Dental "Sonrisa Sana"</button>
+            <button class="tab" data-tab="proy2">🧠 Consultorio de Psicología</button>
+            <button class="tab" data-tab="proy3">📊 Comparativa de proyectos</button>
+            <button class="tab" data-tab="proy4">📚 Lecciones aprendidas</button>
+            <button class="tab" data-tab="proy5">📝 Plantilla de documentación</button>
+        </div>
+        
+        <!-- Pestaña 1: Consultorio Dental -->
+        <div id="proy1" class="tab-pane active">
+            <h3>🦷 Sistema "Sonrisa Sana" - Consultorio Odontológico</h3>
+            
+            <div class="diagram-box">
+                <strong>📊 Ficha del proyecto:</strong><br>
+                • <strong>Cliente:</strong> Dra. Laura Méndez, consultorio dental particular<br>
+                • <strong>Problema detectado:</strong> Mala organización manual de citas, pérdida de historiales clínicos, dificultad para hacer seguimiento de tratamientos, falta de control financiero<br>
+                • <strong>Metodología:</strong> Scrum (sprints semanales)<br>
+                • <strong>Tecnologías:</strong> PHP, MySQL, Bootstrap, JavaScript, Chart.js, Dompdf<br>
+                • <strong>Duración:</strong> 5 semanas (1 sprint por semana)<br>
+                • <strong>Equipo:</strong> 2 desarrolladores, 1 tester<br>
+                • <strong>Costo final:</strong> $21,000 MXN (pago único)
+            </div>
+            
+            <h4>📋 Funcionalidades implementadas:</h4>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>👥 Gestión de pacientes</h4>
+                    <ul>
+                        <li>Registro de pacientes con datos personales</li>
+                        <li>Historial clínico digital</li>
+                        <li>Buscador en tiempo real</li>
+                        <li>Edición y eliminación de registros</li>
+                        <li>Subida de radiografías y documentos</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>📅 Gestión de citas</h4>
+                    <ul>
+                        <li>Calendario interactivo (semanal/mensual)</li>
+                        <li>Bloqueo de horarios no disponibles</li>
+                        <li>Recordatorios automáticos por email</li>
+                        <li>Reagendación y cancelación</li>
+                        <li>Historial de citas por paciente</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>💊 Gestión de tratamientos</h4>
+                    <ul>
+                        <li>Catálogo de tratamientos predefinidos</li>
+                        <li>Asignación de tratamientos a pacientes</li>
+                        <li>Seguimiento de evolución</li>
+                        <li>Escala de dolor (1-10)</li>
+                        <li>Fotografías de evolución</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>💰 Módulo financiero</h4>
+                    <ul>
+                        <li>Registro de pagos y abonos</li>
+                        <li>Generación de facturas (PDF)</li>
+                        <li>Reporte de ingresos mensuales</li>
+                        <li>Gráficos de evolución financiera</li>
+                        <li>Estado de cuenta por paciente</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h4>📊 Entregas por sprint (Scrum):</h4>
+            <table class="info-table">
+                <tr><th>Sprint</th><th>Entregable</th><th>Historias de usuario completadas</th></tr>
+                <tr><td class="tg-0lax">Sprint 1</th><td class="tg-0lax">Base de datos + Requerimientos</th><td class="tg-0lax">"Como secretaria quiero registrar pacientes", "Como dentista quiero ver listado de pacientes"</th></tr>
+                <tr><td class="tg-0lax">Sprint 2</th><td class="tg-0lax">Maquetado HTML + Estructura base</th><td class="tg-0lax">"Como secretaria quiero navegar por el sistema", "Como dentista quiero ver dashboard"</th></tr>
+                <tr><td class="tg-0lax">Sprint 3</th><td class="tg-0lax">Estilos CSS + Bootstrap + Buscador</th><td class="tg-0lax">"Como secretaria quiero buscar pacientes", "Como usuario quiero interfaz responsiva"</th></tr>
+                <tr><td class="tg-0lax">Sprint 4</th><td class="tg-0lax">Controladores PHP + Conexión BD + Seguridad</th><td class="tg-0lax">"Como secretaria quiero agendar citas", "Como dentista quiero registrar tratamientos"</th></tr>
+                <tr><td class="tg-0lax">Sprint 5</th><td class="tg-0lax">Módulo de pagos + Facturas + Gráficos</th><td class="tg-0lax">"Como dentista quiero generar facturas", "Como dentista quiero ver reportes financieros"</th></tr>
+            </table>
+            
+            <h4>📊 Principales dificultades y soluciones:</h4>
+            <ul>
+                <li><strong>Dificultad:</strong> El cliente solicitó módulo de pagos a mitad del desarrollo → <strong>Solución:</strong> Scrum permitió agregar nuevas historias en sprints posteriores sin afectar entregas anteriores</li>
+                <li><strong>Dificultad:</strong> Problemas de rendimiento en el buscador de pacientes → <strong>Solución:</strong> Optimización de consultas SQL y adición de índices</li>
+                <li><strong>Dificultad:</strong> Conflictos de horarios en citas → <strong>Solución:</strong> Validación en tiempo real y bloqueo automático de horarios ocupados</li>
+                <li><strong>Dificultad:</strong> El cliente no sabía exactamente qué reportes necesitaba → <strong>Solución:</strong> Reuniones semanales de revisión de sprint para ajustar prioridades</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>📌 Lección principal del proyecto dental:</strong><br>
+                "Scrum permitió adaptarse a cambios solicitados por el cliente durante el desarrollo. Si hubiéramos usado Cascada, el módulo de pagos habría sido difícil de agregar sin rehacer partes del sistema."
+            </div>
+        </div>
+        
+        <!-- Pestaña 2: Consultorio Psicología -->
+        <div id="proy2" class="tab-pane">
+            <h3>🧠 Sistema para Consultorio de Psicología</h3>
+            
+            <div class="diagram-box">
+                <strong>📊 Ficha del proyecto:</strong><br>
+                • <strong>Cliente:</strong> Lic. Carlos Rodríguez, psicólogo clínico<br>
+                • <strong>Problema detectado:</strong> Información de pacientes en papel, duplicidad de registros, errores en agenda, falta de control de consultas, dificultad para acceder a historiales antiguos<br>
+                • <strong>Metodología:</strong> Cascada (fases secuenciales)<br>
+                • <strong>Tecnologías:</strong> Java, MySQL, Swing (interfaz gráfica)<br>
+                • <strong>Duración:</strong> 5 semanas<br>
+                • <strong>Equipo:</strong> 2 desarrolladores, 1 tester<br>
+                • <strong>Costo final:</strong> $11,000 MXN (pago único)
+            </div>
+            
+            <h4>📋 Funcionalidades implementadas:</h4>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>🔐 Seguridad y autenticación</h4>
+                    <ul>
+                        <li>Login con roles (secretaria/psicólogo)</li>
+                        <li>Contraseñas encriptadas (SHA-256)</li>
+                        <li>Bitácora de accesos</li>
+                        <li>Cierre de sesión automático por inactividad</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>👥 Gestión de pacientes</h4>
+                    <ul>
+                        <li>Alta, baja y modificación de pacientes</li>
+                        <li>Búsqueda por nombre, teléfono o correo</li>
+                        <li>Ficha psicológica básica</li>
+                        <li>Historial de consultas</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>📅 Agenda de citas</h4>
+                    <ul>
+                        <li>Vista semanal de horarios</li>
+                        <li>Validación de horarios (evita doble reserva)</li>
+                        <li>Bloqueo de horas de comida/descanso</li>
+                        <li>Recordatorios visuales</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>📝 Registro de consultas</h4>
+                    <ul>
+                        <li>Notas de sesión (diagnóstico, observaciones)</li>
+                        <li>Escalas de evaluación (ansiedad, depresión)</li>
+                        <li>Recomendaciones y tareas para el paciente</li>
+                        <li>Historial cronológico</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h4>📊 Fases ejecutadas (Cascada):</h4>
+            <table class="info-table">
+                <tr><th>Fase</th><th>Entregable</th><th>Duración</th><th>Validación del cliente</th></tr>
+                <tr><td class="tg-0lax">Fase 1</th><td class="tg-0lax">Análisis y requerimientos</th><td class="tg-0lax">1 semana</th><td class="tg-0lax">Documento SRS aprobado</th></tr>
+                <tr><td class="tg-0lax">Fase 2</th><td class="tg-0lax">Diseño de base de datos e interfaces</th><td class="tg-0lax">1 semana</th><td class="tg-0lax">Modelo ER y mockups aprobados</th></tr>
+                <tr><td class="tg-0lax">Fase 3</th><td class="tg-0lax">Programación de módulos</th><td class="tg-0lax">2 semanas</th><td class="tg-0lax">Demo funcional aprobada</th></tr>
+                <tr><td class="tg-0lax">Fase 4</th><td class="tg-0lax">Pruebas funcionales y validación</th><td class="tg-0lax">3 días</th><td class="tg-0lax">Sin bugs críticos</th></td>
+                <tr><td class="tg-0lax">Fase 5</th><td class="tg-0lax">Implementación y entrega</th><td class="tg-0lax">2 días</th><td class="tg-0lax">Capacitación y firma de aceptación</th></td>
+            </table>
+            
+            <h4>📊 Principales dificultades y soluciones:</h4>
+            <ul>
+                <li><strong>Dificultad:</strong> El cliente no tenía claros todos los requisitos al inicio → <strong>Solución:</strong> Se invirtió más tiempo en la fase de análisis (1 semana adicional) para garantizar que el SRS fuera completo</li>
+                <li><strong>Dificultad:</strong> Problemas de rendimiento en Java Swing con muchos registros → <strong>Solución:</strong> Implementación de paginación y carga diferida (lazy loading)</li>
+                <li><strong>Dificultad:</strong> El cliente solicitó un cambio después de iniciada la fase 3 → <strong>Solución:</strong> Se evaluó el impacto y se acordó posponer el cambio para una versión futura (evitó retrabajo)</li>
+                <li><strong>Dificultad:</strong> Integración de la base de datos MySQL con Java Swing → <strong>Solución:</strong> Uso de JDBC con pool de conexiones</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>📌 Lección principal del proyecto psicología:</strong><br>
+                "Cascada fue adecuada porque los requisitos eran estables y el cliente los tenía claros. La documentación detallada permitió que el cliente entendiera exactamente qué iba a recibir antes de comenzar el desarrollo."
+            </div>
+        </div>
+        
+        <!-- Pestaña 3: Comparativa -->
+        <div id="proy3" class="tab-pane">
+            <h3>📊 Comparativa entre los dos proyectos</h3>
+            
+            <table class="info-table">
+                <tr><th>Aspecto</th><th>Consultorio Dental</th><th>Consultorio Psicología</th></tr>
+                <tr><td class="tg-0lax">Metodología</th><td class="tg-0lax">Scrum (Ágil)</th><td class="tg-0lax">Cascada (Tradicional)</th></tr>
+                <tr><td class="tg-0lax">Tecnología</th><td class="tg-0lax">Web (PHP, MySQL, Bootstrap)</th><td class="tg-0lax">Escritorio (Java, MySQL, Swing)</th></tr>
+                <tr><td class="tg-0lax">Tamaño del equipo</th><td class="tg-0lax">2 dev + 1 tester</th><td class="tg-0lax">2 dev + 1 tester</th></tr>
+                <tr><td class="tg-0lax">Duración</th><td class="tg-0lax">5 semanas</th><td class="tg-0lax">5 semanas</th></td>
+                <tr><td class="tg-0lax">Costo total</th><td class="tg-0lax">$21,000 MXN</th><td class="tg-0lax">$11,000 MXN</th></tr>
+                <tr><td class="tg-0lax">Horas trabajadas</th><td class="tg-0lax">~220 horas</th><td class="tg-0lax">~130 horas</th></td>
+                <tr><td class="tg-0lax">Cambios durante desarrollo</th><td class="tg-0lax">Sí (varios)</th><td class="tg-0lax">No</th></tr>
+                <tr><td class="tg-0lax">Documentación generada</th><td class="tg-0lax">SRS, Manual de usuario</th><td class="tg-0lax">SRS, Manual de usuario, Casos de prueba</th></tr>
+                <tr><td class="tg-0lax">Complejidad</th><td class="tg-0lax">Alta (pagos, facturación, gráficos)</th><td class="tg-0lax">Media (CRUD básico)</th></tr>
+                <tr><td class="tg-0lax">Despliegue</th><td class="tg-0lax">Hosting web + dominio</th><td class="tg-0lax">Instalación local (ejecutable)</th></tr>
+            </table>
+            
+            <h4>📊 Métricas de calidad de los proyectos:</h4>
+            <table class="info-table">
+                <tr><th>Métrica</th><th>Dental</th><th>Psicología</th></tr>
+                <tr><td class="tg-0lax">Densidad de defectos (bugs/KLOC)</th><td class="tg-0lax">1.2</th><td class="tg-0lax">0.8</th></tr>
+                <tr><td class="tg-0lax">Eficacia de pruebas (%)</th><td class="tg-0lax">95%</th><td class="tg-0lax">98%</th></tr>
+                <tr><td class="tg-0lax">Satisfacción del cliente (1-10)</th><td class="tg-0lax">9.5</th><td class="tg-0lax">9.0</th></tr>
+                <tr><td class="tg-0lax">Tiempo de respuesta (promedio)</th><td class="tg-0lax">1.2 segundos</th><td class="tg-0lax">0.5 segundos</th></tr>
+                <tr><td class="tg-0lax">Cobertura de pruebas (%)</th><td class="tg-0lax">85%</th><td class="tg-0lax">90%</th></tr>
+            </table>
+            
+            <div class="diagram-box">
+                <strong>📌 Conclusión de la comparativa:</strong><br><br>
+                ✅ <strong>Scrum fue la mejor opción para el proyecto dental</strong> porque el cliente no tenía todos los requisitos claros al inicio y solicitó cambios durante el desarrollo.<br><br>
+                ✅ <strong>Cascada fue la mejor opción para el proyecto psicología</strong> porque los requisitos eran estables y el cliente sabía exactamente lo que necesitaba desde el principio.
+            </div>
+        </div>
+        
+        <!-- Pestaña 4: Lecciones aprendidas -->
+        <div id="proy4" class="tab-pane">
+            <h3>📚 Lecciones aprendidas de ambos proyectos</h3>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>✅ Lo que funcionó bien</h4>
+                    <ul>
+                        <li>Reuniones semanales con el cliente para revisar avances</li>
+                        <li>Documentación clara de requisitos (SRS)</li>
+                        <li>Pruebas continuas durante el desarrollo</li>
+                        <li>Uso de control de versiones (Git) desde el día 1</li>
+                        <li>Márgenes de contingencia en costos (15%)</li>
+                        <li>Capacitación al cliente al final del proyecto</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>⚠️ Lo que se podría mejorar</h4>
+                    <ul>
+                        <li>Más pruebas automatizadas (solo se hicieron manuales)</li>
+                        <li>Mejor estimación inicial de esfuerzo (hubo desviaciones del 10-15%)</li>
+                        <li>Documentación más detallada de la API (para el proyecto web)</li>
+                        <li>Más tiempo para pruebas de usabilidad</li>
+                        <li>Implementar un entorno de pruebas separado de desarrollo</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>💡 Recomendaciones para futuros proyectos</h4>
+                    <ul>
+                        <li>Involucrar a QA desde la fase de requisitos</li>
+                        <li>Realizar pruebas de carga antes del despliegue</li>
+                        <li>Usar herramientas de automatización para regresión</li>
+                        <li>Establecer métricas de calidad desde el inicio</li>
+                        <li>Realizar retrospectivas al final de cada sprint/fase</li>
+                        <li>Documentar lecciones aprendidas para proyectos futuros</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 Top 10 lecciones aprendidas:</strong><br><br>
+                1. 📋 La fase de requisitos es la más crítica (invertir tiempo aquí ahorra costos después)<br>
+                2. 🔄 Scrum es ideal cuando los requisitos pueden cambiar; Cascada cuando son estables<br>
+                3. 🧪 Las pruebas continuas reducen los defectos en producción<br>
+                4. 💬 La comunicación semanal con el cliente evita malentendidos<br>
+                5. 📝 La documentación clara facilita el mantenimiento futuro<br>
+                6. 🔧 El control de versiones es obligatorio incluso en equipos pequeños<br>
+                7. 💰 Siempre incluir un margen de contingencia (15-20%) en presupuestos<br>
+                8. 👥 La capacitación al cliente mejora la adopción del sistema<br>
+                9. 📊 Las métricas ayudan a medir y mejorar la calidad<br>
+                10. 🎯 Elegir la tecnología adecuada (web vs escritorio) según necesidades del cliente
+            </div>
+        </div>
+        
+        <!-- Pestaña 5: Plantilla de documentación -->
+        <div id="proy5" class="tab-pane">
+            <h3>📝 Plantilla de documentación de proyecto</h3>
+            
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; white-space: pre-wrap; background: transparent;">
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    DOCUMENTACIÓN DEL PROYECTO DE SOFTWARE                      ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📋 1. IDENTIFICACIÓN DEL PROYECTO
+─────────────────────────────────────────────────────────────────────────────────
+Nombre del proyecto: ____________________________________________________________
+Cliente: ________________________________________________________________________
+Fecha de inicio: ___________________  Fecha de entrega: _________________________
+Metodología: _______________________  Tecnologías: ______________________________
+Equipo: _________________________________________________________________________
+
+📋 2. REQUISITOS FUNCIONALES (SRS)
+─────────────────────────────────────────────────────────────────────────────────
+ID  | Nombre                    | Descripción                    | Prioridad
+----|---------------------------|--------------------------------|----------
+RF01| _________________________ | ______________________________ | __________
+RF02| _________________________ | ______________________________ | __________
+RF03| _________________________ | ______________________________ | __________
+
+📋 3. REQUISITOS NO FUNCIONALES
+─────────────────────────────────────────────────────────────────────────────────
+ID  | Categoría                 | Descripción                    | Métrica
+----|---------------------------|--------------------------------|----------
+RNF01| Rendimiento              | ______________________________ | __________
+RNF02| Seguridad                | ______________________________ | __________
+RNF03| Usabilidad               | ______________________________ | __________
+
+📋 4. DISEÑO DE LA BASE DE DATOS
+─────────────────────────────────────────────────────────────────────────────────
+Tabla: _________________    Descripción: ________________________________________
+Columnas: _______________________________________________________________________
+Relaciones: _____________________________________________________________________
+
+📋 5. PLAN DE PRUEBAS
+─────────────────────────────────────────────────────────────────────────────────
+Tipos de pruebas: ______________________________________________________________
+Casos de prueba: _______________________________________________________________
+Herramientas: __________________________________________________________________
+Criterios de aceptación: ________________________________________________________
+
+📋 6. CRONOGRAMA (DIAGRAMA DE GANTT)
+─────────────────────────────────────────────────────────────────────────────────
+Actividad        | Duración | Sem 1 | Sem 2 | Sem 3 | Sem 4 | Sem 5
+-----------------|----------|-------|-------|-------|-------|-------
+Análisis         |    ___   |   █   |       |       |       |
+Diseño           |    ___   |       |   █   |       |       |
+Desarrollo       |    ___   |       |       |   █   |   █   |
+Pruebas          |    ___   |       |       |       |       |   █
+Despliegue       |    ___   |       |       |       |       |   █
+
+📋 7. MÉTRICAS DE CALIDAD
+─────────────────────────────────────────────────────────────────────────────────
+Densidad de defectos: _________ (defectos/KLOC)
+Cobertura de pruebas: _________ (%)
+Tasa de éxito: ________________ (%)
+Satisfacción del cliente (1-10): _________
+Tiempo de respuesta promedio: _________ segundos
+
+📋 8. COSTOS Y PRESUPUESTO
+─────────────────────────────────────────────────────────────────────────────────
+Horas estimadas: _________   Horas reales: _________
+Costo estimado: $_________   Costo real: $_________
+Margen de contingencia: _________ (%)
+
+📋 9. LECCIONES APRENDIDAS
+─────────────────────────────────────────────────────────────────────────────────
+_________________________________________________________________________________
+_________________________________________________________________________________
+_________________________________________________________________________________
+
+📋 10. ACEPTACIÓN DEL CLIENTE
+─────────────────────────────────────────────────────────────────────────────────
+Nombre y firma del cliente: _____________________________________________________
+Fecha de aceptación: ____________________________________________________________
+                </pre>
+            </div>
+            
+            <button class="fill-btn" id="copiarPlantillaProyecto">📋 Copiar plantilla al portapapeles</button>
+            <div id="copiarPlantillaMsg" style="margin-top: 10px; text-align:center;"></div>
+        </div>
+    </div>
+</div>

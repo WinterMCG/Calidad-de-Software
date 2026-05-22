@@ -1,0 +1,132 @@
+<!-- ==================================================== -->
+<!-- ALAN ADRIÁN ALONSO VALENZUELA - MODAL EJERCICIOS     -->
+<!-- ==================================================== -->
+<div id="modal-ejercicios" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-gamepad"></i> Ejercicios Interactivos</h2>
+        
+        <p>Refuerza tu aprendizaje con estos ejercicios prácticos y divertidos. Cada ejercicio está diseñado para ayudarte a consolidar los conceptos clave de la materia.</p>
+        
+        <!-- Pestañas de ejercicios -->
+        <div class="tabs">
+            <button class="tab active" data-tab="ej1">🎮 Verdadero o Falso</button>
+            <button class="tab" data-tab="ej2">✏️ Completar espacios</button>
+            <button class="tab" data-tab="ej3">🃏 Flashcards</button>
+            <button class="tab" data-tab="ej4">🔗 Relacionar conceptos</button>
+            <button class="tab" data-tab="ej5">🔍 Sopa de letras</button>
+            <button class="tab" data-tab="ej6">📊 Crucigrama</button>
+        </div>
+        
+        <!-- Pestaña 1: Verdadero o Falso -->
+        <div id="ej1" class="tab-pane active">
+            <div class="game-container">
+                <div class="game-title">🎮 Verdadero o Falso - Pon a prueba tus conocimientos</div>
+                <div id="vfGameContainer" style="min-height: 300px;">
+                    <div id="vfPreguntaActual" style="margin-bottom: 20px; font-size: 1.1rem;">
+                        <p>Cargando preguntas...</p>
+                    </div>
+                    <div style="display: flex; gap: 15px; justify-content: center;">
+                        <button class="fill-btn" id="vfVerdaderoBtn" style="background: #22c55e;">✅ Verdadero</button>
+                        <button class="fill-btn" id="vfFalsoBtn" style="background: #ef4444;">❌ Falso</button>
+                    </div>
+                    <div id="vfFeedbackEj" style="margin-top: 15px; text-align: center;"></div>
+                    <div style="margin-top: 20px; text-align: center;">
+                        <p><strong>Progreso:</strong> <span id="vfProgreso">0</span> / <span id="vfTotal">20</span> | ✅ Aciertos: <span id="vfAciertosCont">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pestaña 2: Completar espacios -->
+        <div id="ej2" class="tab-pane">
+            <div class="game-container">
+                <div class="game-title">✏️ Completa los espacios en blanco</div>
+                <div id="fillGameContainer">
+                    <p style="text-align: center;">Cargando ejercicios...</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pestaña 3: Flashcards -->
+        <div id="ej3" class="tab-pane">
+            <div class="game-container">
+                <div class="game-title">🃏 Flashcards - Memoriza conceptos clave</div>
+                <div id="flashcardContainer" style="min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <div id="flashcardCard" style="background: var(--secondary); width: 100%; max-width: 400px; min-height: 200px; border-radius: 16px; display: flex; align-items: center; justify-content: center; cursor: pointer; text-align: center; padding: 20px; font-size: 1.2rem;">
+                        Cargando flashcards...
+                    </div>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <button class="fill-btn" id="flashcardPrev">◀ Anterior</button>
+                        <button class="fill-btn" id="flashcardNext">Siguiente ▶</button>
+                    </div>
+                    <p style="margin-top: 15px;">💡 Haz clic en la tarjeta para voltear</p>
+                    <p><span id="flashcardCounter">0</span> / <span id="flashcardTotal">0</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pestaña 4: Relacionar conceptos -->
+        <div id="ej4" class="tab-pane">
+            <div class="game-container">
+                <div class="game-title">🔗 Relaciona cada concepto con su definición</div>
+                <div id="relacionarContainer" style="min-height: 400px;">
+                    <p style="text-align: center;">Cargando juego...</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pestaña 5: Sopa de letras -->
+        <div id="ej5" class="tab-pane">
+            <div class="game-container">
+                <div class="game-title">🔍 Sopa de letras - Encuentra los términos de calidad</div>
+                <div id="sopaLetrasContainer" style="min-height: 400px; text-align: center;">
+                    <p>Busca las siguientes palabras en la sopa de letras:</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 15px 0;">
+                        <span class="badge" style="background: var(--secondary);">CALIDAD</span>
+                        <span class="badge" style="background: var(--secondary);">PRUEBAS</span>
+                        <span class="badge" style="background: var(--secondary);">ISO</span>
+                        <span class="badge" style="background: var(--secondary);">CMMI</span>
+                        <span class="badge" style="background: var(--secondary);">SCRUM</span>
+                        <span class="badge" style="background: var(--secondary);">QA</span>
+                        <span class="badge" style="background: var(--secondary);">QC</span>
+                        <span class="badge" style="background: var(--secondary);">ERROR</span>
+                        <span class="badge" style="background: var(--secondary);">BOEHM</span>
+                    </div>
+                    <div id="sopaGrid" style="display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; max-width: 500px; margin: 20px auto; background: var(--card-bg); padding: 15px; border-radius: 12px;">
+                        <!-- Grid generado dinámicamente -->
+                    </div>
+                    <div id="palabrasEncontradas" style="margin-top: 15px;">
+                        <p>Palabras encontradas: <span id="encontradasCont">0</span> / <span id="totalPalabras">9</span></p>
+                    </div>
+                    <button class="fill-btn" id="reiniciarSopa">🔄 Reiniciar sopa de letras</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pestaña 6: Crucigrama -->
+        <div id="ej6" class="tab-pane">
+            <div class="game-container">
+                <div class="game-title">📊 Crucigrama de Calidad de Software</div>
+                <div id="crucigramaContainer" style="min-height: 400px; text-align: center;">
+                    <p>Resuelve el crucigrama con los términos aprendidos:</p>
+                    <div id="crucigramaGrid" style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 2px; max-width: 500px; margin: 20px auto; background: var(--card-bg); padding: 10px; border-radius: 12px;">
+                        <!-- Grid generado dinámicamente -->
+                    </div>
+                    <div id="pistasCrucigrama" style="margin-top: 20px; text-align: left; max-width: 500px; margin: 20px auto;">
+                        <p><strong>Horizontales:</strong></p>
+                        <p>1. Modelo de calidad con 5 niveles de madurez (4 letras) → CMMI</p>
+                        <p>3. Metodología ágil con sprints (5 letras) → SCRUM</p>
+                        <p>5. Estándar de calidad de producto (3 letras + 4 números) → ISO25010</p>
+                        <p><strong>Verticales:</strong></p>
+                        <p>2. Pruebas que verifican que cambios no rompan (9 letras) → REGRESION</p>
+                        <p>4. Técnica de prueba que conoce el código interno (8 letras) → BLANCA</p>
+                        <p>6. Acrónimo de la escala de usabilidad (3 letras) → SUS</p>
+                    </div>
+                    <button class="fill-btn" id="verificarCrucigrama">✅ Verificar respuestas</button>
+                    <div id="crucigramaResultado" style="margin-top: 15px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

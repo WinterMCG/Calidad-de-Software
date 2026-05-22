@@ -1,0 +1,257 @@
+<!-- ==================================================== -->
+<!-- MANUEL CERVANTES GONZÁLEZ - MODAL REQUERIMIENTOS     -->
+<!-- ==================================================== -->
+<div id="modal-requerimientos" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-clipboard-list"></i> Ingeniería de Requerimientos</h2>
+        
+        <!-- Tres videos pequeños en fila -->
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+            <div class="video-compact" style="flex: 1; min-width: 200px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Ingeniería de Requerimientos</h4>
+                <iframe src="https://www.youtube.com/embed/Hedi-Qobgbc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-compact" style="flex: 1; min-width: 200px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Requerimientos Funcionales y No Funcionales</h4>
+                <iframe src="https://www.youtube.com/embed/qqizbSCp7aY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-compact" style="flex: 1; min-width: 200px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Cómo tomar requerimientos (5 consejos)</h4>
+                <iframe src="https://www.youtube.com/embed/2KZKMY75cJM" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab active" data-tab="re1">📋 Proceso de requisitos</button>
+            <button class="tab" data-tab="re2">⚙️ Funcionales vs No funcionales</button>
+            <button class="tab" data-tab="re3">📊 Tabla de especificación</button>
+            <button class="tab" data-tab="re4">📚 Contenido extenso</button>
+            <button class="tab" data-tab="re5">🎮 Trivia interactiva</button>
+        </div>
+        
+        <!-- Pestaña 1: Proceso de requisitos -->
+        <div id="re1" class="tab-pane active">
+            <h3>Proceso de obtención de requisitos (Sommerville)</h3>
+            <p>La ingeniería de requisitos es una de las fases más críticas del desarrollo de software. Un error en esta fase puede costar hasta 100 veces más corregirlo en producción.</p>
+            
+            <!-- Video adicional dentro de la pestaña (tamaño compacto) -->
+            <div class="video-compact" style="margin-bottom: 20px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Principios de la Ingeniería de Requerimientos</h4>
+                <iframe src="https://www.youtube.com/embed/fLcWpOY3h7k" frameborder="0" allowfullscreen></iframe>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📋 Las 4 etapas fundamentales:</strong><br><br>
+                
+                🔍 <strong>1. Estudio de viabilidad</strong><br>
+                &nbsp;&nbsp;✓ ¿Es técnicamente posible?<br>
+                &nbsp;&nbsp;✓ ¿Es económicamente viable?<br>
+                &nbsp;&nbsp;✓ ¿Cumple con requisitos legales y regulatorios?<br>
+                &nbsp;&nbsp;✓ ¿Se puede implementar en el plazo establecido?<br><br>
+                
+                🗣️ <strong>2. Obtención y análisis</strong><br>
+                &nbsp;&nbsp;✓ Entrevistas con stakeholders<br>
+                &nbsp;&nbsp;✓ Talleres de requisitos<br>
+                &nbsp;&nbsp;✓ Observación etnográfica<br>
+                &nbsp;&nbsp;✓ Análisis de documentos existentes<br>
+                &nbsp;&nbsp;✓ Prototipado rápido<br><br>
+                
+                📝 <strong>3. Especificación</strong><br>
+                &nbsp;&nbsp;✓ Redactar requisitos claros y sin ambigüedades<br>
+                &nbsp;&nbsp;✓ Crear documento SRS (Software Requirements Specification)<br>
+                &nbsp;&nbsp;✓ Usar plantillas estandarizadas (IEEE 830)<br>
+                &nbsp;&nbsp;✓ Incluir diagramas y modelos<br><br>
+                
+                ✅ <strong>4. Validación</strong><br>
+                &nbsp;&nbsp;✓ Revisar con el cliente que los requisitos sean correctos<br>
+                &nbsp;&nbsp;✓ Verificar que sean completos y consistentes<br>
+                &nbsp;&nbsp;✓ Asegurar que sean realistas y alcanzables<br>
+                &nbsp;&nbsp;✓ Obtener aprobación formal
+            </div>
+            
+            <p><strong>⚠️ Error común:</strong> Saltarse la validación es uno de los errores más frecuentes y costosos. Luego el software no sirve y hay que rehacer, generando retrasos y sobrecostos.</p>
+            
+            <h4>📊 Estadísticas importantes:</h4>
+            <ul>
+                <li>El 40-50% de los defectos en software se originan en requisitos mal definidos</li>
+                <li>Invertir tiempo en una buena especificación puede ahorrar hasta un 80% del costo total</li>
+                <li>Los proyectos con requisitos bien gestionados tienen 2.5 veces más probabilidad de éxito</li>
+            </ul>
+        </div>
+        
+        <!-- Pestaña 2: Funcionales vs No funcionales -->
+        <div id="re2" class="tab-pane">
+            <h3>Requisitos Funcionales y No Funcionales</h3>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4><i class="fas fa-cog"></i> Requisitos Funcionales</h4>
+                    <p>Describen <strong>comportamientos específicos</strong> que el sistema debe ejecutar. Responden a la pregunta: <em>"¿Qué debe hacer el sistema?"</em></p>
+                    <p><strong>Características:</strong></p>
+                    <ul>
+                        <li>Describen acciones concretas</li>
+                        <li>Son verificables mediante pruebas</li>
+                        <li>Definen entradas y salidas esperadas</li>
+                        <li>Son específicos del dominio del problema</li>
+                    </ul>
+                    <p><strong>Ejemplos:</strong></p>
+                    <ul>
+                        <li>✓ "El sistema debe permitir registrar pacientes con nombre, teléfono y correo"</li>
+                        <li>✓ "El sistema debe enviar un correo de confirmación al registrarse"</li>
+                        <li>✓ "El sistema debe generar un reporte de ventas mensual en PDF"</li>
+                        <li>✓ "El sistema debe validar que el usuario existe antes de iniciar sesión"</li>
+                        <li>✓ "El sistema debe calcular el total de una compra incluyendo impuestos"</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4><i class="fas fa-chart-line"></i> Requisitos No Funcionales</h4>
+                    <p>Describen <strong>cualidades o restricciones</strong> del sistema. Responden a la pregunta: <em>"¿Cómo debe ser el sistema?"</em></p>
+                    <p><strong>Categorías principales:</strong></p>
+                    <ul>
+                        <li><strong>Rendimiento:</strong> tiempos de respuesta, throughput</li>
+                        <li><strong>Seguridad:</strong> confidencialidad, integridad, disponibilidad</li>
+                        <li><strong>Usabilidad:</strong> facilidad de uso, curva de aprendizaje</li>
+                        <li><strong>Confiabilidad:</strong> disponibilidad, MTBF, tolerancia a fallos</li>
+                        <li><strong>Mantenibilidad:</strong> modularidad, capacidad de prueba</li>
+                        <li><strong>Portabilidad:</strong> compatibilidad entre plataformas</li>
+                        <li><strong>Escalabilidad:</strong> capacidad de crecer con la demanda</li>
+                        <li><strong>Interoperabilidad:</strong> integración con otros sistemas</li>
+                    </ul>
+                    <p><strong>Ejemplos:</strong></p>
+                    <ul>
+                        <li>⚡ "La consulta debe resolverse en menos de 2 segundos" (rendimiento)</li>
+                        <li>🔒 "Solo el administrador puede eliminar citas" (seguridad)</li>
+                        <li>💻 "El sistema debe funcionar en Windows 10 y Linux" (portabilidad)</li>
+                        <li>📱 "La interfaz debe ser responsive en dispositivos móviles" (usabilidad)</li>
+                        <li>🔄 "El sistema debe estar disponible el 99.9% del tiempo" (confiabilidad)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📊 Diferencia clave:</strong><br><br>
+                Si un requisito funcional NO se cumple → el sistema <strong>no hace algo que debería hacer</strong>.<br>
+                Si un requisito no funcional NO se cumple → el sistema <strong>hace lo que debe, pero mal</strong> (lento, inseguro, difícil de usar).
+            </div>
+            
+            <p>Los requisitos no funcionales son igual de importantes que los funcionales, pero a menudo se olvidan o se posponen. Una aplicación que funciona pero es extremadamente lenta o insegura es inservible.</p>
+        </div>
+        
+        <!-- Pestaña 3: Tabla de especificación -->
+        <div id="re3" class="tab-pane">
+            <h3>Tabla de especificación de requisitos (SRS - Software Requirements Specification)</h3>
+            <p>Un documento SRS bien estructurado es fundamental para el éxito del proyecto. La siguiente tabla muestra un ejemplo real de especificación:</p>
+            
+            <table class="info-table">
+                <tr><th>ID</th><th>Nombre</th><th>Tipo</th><th>Descripción</th><th>Prioridad</th><th>Cómo se implementa</th><th>Validación</th></tr>
+                <tr><td class="tg-0lax">R001</th><td class="tg-0lax">Inicio de sesión</th><td class="tg-0lax">Funcional</th><td class="tg-0lax">Validar usuario y contraseña</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Formulario HTML, consulta SELECT a tabla Usuarios</th><td class="tg-0lax">Probar con credenciales correctas e incorrectas</th></tr>
+                <tr><td class="tg-0lax">R002</th><td class="tg-0lax">Registro de pacientes</th><td class="tg-0lax">Funcional</th><td class="tg-0lax">Almacenar datos del paciente</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Formulario con validación, INSERT en BD</th><td class="tg-0lax">Verificar que los datos se guarden correctamente</th></tr>
+                <tr><td class="tg-0lax">R003</th><td class="tg-0lax">No duplicar citas</th><td class="tg-0lax">Funcional</th><td class="tg-0lax">No permitir dos citas misma fecha y hora</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Antes de INSERT, verificar si ya existe cita</th><td class="tg-0lax">Insertar cita duplicada debe dar error</th></tr>
+                <tr><td class="tg-0lax">R004</th><td class="tg-0lax">Tiempo de respuesta</th><td class="tg-0lax">No funcional</th><td class="tg-0lax">Listado de pacientes en menos de 2 seg</th><td class="tg-0lax">Media</th><td class="tg-0lax">Optimizar consultas SQL, agregar índices, caché</th><td class="tg-0lax">Prueba de carga con JMeter</th></tr>
+                <tr><td class="tg-0lax">R005</th><td class="tg-0lax">Seguridad de datos</th><td class="tg-0lax">No funcional</th><td class="tg-0lax">Las contraseñas deben encriptarse</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Usar bcrypt o Argon2 para hash de contraseñas</th><td class="tg-0lax">Verificar que no se almacenen en texto plano</th></tr>
+                <tr><td class="tg-0lax">R006</th><td class="tg-0lax">Reporte de ventas</th><td class="tg-0lax">Funcional</th><td class="tg-0lax">Generar reporte mensual en PDF</th><td class="tg-0lax">Media</th><td class="tg-0lax">Usar biblioteca PDF (iText, dompdf, etc.)</th><td class="tg-0lax">Verificar formato y datos correctos</th></tr>
+                <tr><td class="tg-0lax">R007</th><td class="tg-0lax">Usabilidad</th><td class="tg-0lax">No funcional</th><td class="tg-0lax">Interfaz intuitiva, menos de 5 clics por tarea</th><td class="tg-0lax">Media</th><td class="tg-0lax">Diseño centrado en el usuario, pruebas de usabilidad</th><td class="tg-0lax">Pruebas con usuarios reales, medir tiempo por tarea</th></tr>
+            </table>
+            
+            <h4>📌 Características de un buen requisito (SMART):</h4>
+            <ul>
+                <li><strong>S</strong>pecific (Específico): No ambiguo, claro y preciso</li>
+                <li><strong>M</strong>easurable (Medible): Se puede cuantificar o verificar</li>
+                <li><strong>A</strong>chievable (Alcanzable): Técnicamente factible</li>
+                <li><strong>R</strong>elevant (Relevante): Aporta valor al negocio</li>
+                <li><strong>T</strong>ime-bound (Temporal): Tiene plazo definido (si aplica)</li>
+            </ul>
+        </div>
+        
+        <!-- Pestaña 4: Contenido extenso -->
+        <div id="re4" class="tab-pane">
+            <h3>📚 Profundización en Ingeniería de Requerimientos</h3>
+            
+            <h4>1. Técnicas de elicitación de requisitos</h4>
+            <p>Existen múltiples técnicas para obtener requisitos de los stakeholders:</p>
+            <ul>
+                <li><strong>📋 Entrevistas:</strong> Conversaciones uno a uno con stakeholders. Pueden ser estructuradas o no estructuradas.</li>
+                <li><strong>👥 Talleres (JAD - Joint Application Development):</strong> Sesiones grupales donde stakeholders y desarrolladores colaboran.</li>
+                <li><strong>🔍 Observación etnográfica:</strong> Observar a los usuarios en su entorno de trabajo real.</li>
+                <li><strong>📄 Análisis de documentos:</strong> Revisar documentación existente (manuales, formularios, reportes).</li>
+                <li><strong>🎨 Prototipado:</strong> Crear versiones tempranas del sistema para obtener retroalimentación.</li>
+                <li><strong>📊 Cuestionarios y encuestas:</strong> Útiles para grandes grupos de usuarios.</li>
+                <li><strong>🧠 Brainstorming:</strong> Generación creativa de ideas en grupo.</li>
+                <li><strong>📖 Historias de usuario:</strong> Descripciones cortas desde la perspectiva del usuario ("Como [rol], quiero [acción], para [beneficio]").</li>
+            </ul>
+            
+            <h4>2. Documento SRS según IEEE 830</h4>
+            <p>IEEE 830 define la estructura estándar para un documento de especificación de requisitos:</p>
+            <div class="diagram-box">
+                <strong>📑 Estructura de un SRS según IEEE 830:</strong><br><br>
+                1. Introducción<br>
+                &nbsp;&nbsp;1.1 Propósito<br>
+                &nbsp;&nbsp;1.2 Alcance<br>
+                &nbsp;&nbsp;1.3 Definiciones y acrónimos<br>
+                &nbsp;&nbsp;1.4 Referencias<br>
+                &nbsp;&nbsp;1.5 Visión general<br><br>
+                2. Descripción general<br>
+                &nbsp;&nbsp;2.1 Perspectiva del producto<br>
+                &nbsp;&nbsp;2.2 Funciones del producto<br>
+                &nbsp;&nbsp;2.3 Características de los usuarios<br>
+                &nbsp;&nbsp;2.4 Restricciones<br>
+                &nbsp;&nbsp;2.5 Suposiciones y dependencias<br><br>
+                3. Requisitos específicos<br>
+                &nbsp;&nbsp;3.1 Interfaces externas<br>
+                &nbsp;&nbsp;3.2 Funciones<br>
+                &nbsp;&nbsp;3.3 Requisitos de rendimiento<br>
+                &nbsp;&nbsp;3.4 Restricciones de diseño<br>
+                &nbsp;&nbsp;3.5 Atributos de software (confiabilidad, seguridad, mantenibilidad)<br>
+                &nbsp;&nbsp;3.6 Otros requisitos<br><br>
+                4. Apéndices<br>
+                5. Índice
+            </div>
+            
+            <h4>3. Gestión de cambios en requisitos</h4>
+            <p>Los requisitos cambian durante el proyecto. Es fundamental tener un proceso de gestión de cambios:</p>
+            <ul>
+                <li><strong>Solicitud de cambio:</strong> Cualquier stakeholder puede solicitar un cambio</li>
+                <li><strong>Análisis de impacto:</strong> Evaluar cómo afecta el cambio al costo, tiempo y alcance</li>
+                <li><strong>Comité de control de cambios:</strong> Grupo que aprueba o rechaza cambios</li>
+                <li><strong>Implementación:</strong> Ejecutar el cambio aprobado</li>
+                <li><strong>Actualización de trazabilidad:</strong> Mantener la matriz de trazabilidad actualizada</li>
+                <li><strong>Comunicación:</strong> Notificar a todos los interesados sobre el cambio</li>
+            </ul>
+            
+            <h4>4. Matriz de trazabilidad de requisitos</h4>
+            <p>La matriz de trazabilidad permite rastrear cada requisito a lo largo del ciclo de vida:</p>
+            <table class="info-table">
+                <tr><th>ID Requisito</th><th>Fuente</th><th>Diseño asociado</th><th>Código asociado</th><th>Prueba asociada</th><th>Estado</th></tr>
+                <tr><td class="tg-0lax">R001</th><td class="tg-0lax">Cliente</th><td class="tg-0lax">Diagrama de secuencia login</th><td class="tg-0lax">auth.js</th><td class="tg-0lax">TC001-TC005</th><td class="tg-0lax">Implementado</th></tr>
+                <tr><td class="tg-0lax">R002</th><td class="tg-0lax">Stakeholder</th><td class="tg-0lax">Modelo ER paciente</th><td class="tg-0lax">paciente.py</th><td class="tg-0lax">TC010-TC015</th><td class="tg-0lax">En prueba</th></tr>
+                <tr><td class="tg-0lax">R003</th><td class="tg-0lax">Regulatorio</th><td class="tg-0lax">Arquitectura seguridad</th><td class="tg-0lax">security.js</th><td class="tg-0lax">TC020-TC025</th><td class="tg-0lax">Pendiente</th></tr>
+            </table>
+            
+            <h4>5. Ejercicio de reflexión</h4>
+            <p>Preguntas para pensar:</p>
+            <ol>
+                <li>¿Qué técnica de elicitación usarías para un sistema hospitalario crítico?</li>
+                <li>¿Cómo manejarías un cambio de requisitos solicitado por el cliente en etapa avanzada?</li>
+                <li>¿Por qué es importante tener una matriz de trazabilidad?</li>
+                <li>¿Qué diferencia hay entre validación y verificación de requisitos?</li>
+            </ol>
+        </div>
+        
+        <!-- Pestaña 5: Trivia interactiva -->
+        <div id="re5" class="tab-pane">
+            <div id="triviaRequerimientos">
+                <div class="game-container">
+                    <div class="game-title">🎮 Trivia: ¿Funcional o No Funcional?</div>
+                    <p>Clasifica cada requisito en Funcional (F) o No Funcional (NF)</p>
+                    <div id="preguntaTrivia" style="margin: 20px 0;">
+                        <!-- Preguntas dinámicas desde script.js -->
+                        <p style="text-align:center;">Cargando preguntas...</p>
+                    </div>
+                    <div id="feedbackTrivia" style="margin-top: 15px; text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

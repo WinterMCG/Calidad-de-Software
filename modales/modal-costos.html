@@ -1,0 +1,373 @@
+<!-- ==================================================== -->
+<!-- ALAN ADRIÁN ALONSO VALENZUELA - MODAL COSTOS         -->
+<!-- ==================================================== -->
+<div id="modal-costos" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-calculator"></i> Estimación de Costos en Proyectos de Software</h2>
+        
+        <!-- Video -->
+        <div class="video-compact">
+            <h4><i class="fab fa-youtube"></i> 🎬 Video: Cómo estimar un proyecto de software</h4>
+            <iframe src="https://www.youtube.com/embed/eUX7e3WWicw" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab active" data-tab="c1">💰 Modelos de estimación</button>
+            <button class="tab" data-tab="c2">📊 Tabla de costos reales</button>
+            <button class="tab" data-tab="c3">📐 Modelo COCOMO</button>
+            <button class="tab" data-tab="c4">📋 Puntos de función</button>
+            <button class="tab" data-tab="c5">📚 Contenido extenso</button>
+            <button class="tab" data-tab="c6">🎮 Calculadora interactiva</button>
+        </div>
+        
+        <!-- Pestaña 1: Modelos de estimación -->
+        <div id="c1" class="tab-pane active">
+            <h3>💰 Principales modelos de estimación de costos</h3>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>📐 COCOMO (Boehm, 1981)</h4>
+                    <p>Modelo empírico basado en tamaño (KLOC) y factores de ajuste.</p>
+                    <p><strong>Fórmula básica:</strong> Esfuerzo = a × (KLOC)^b × EAF</p>
+                    <p><strong>Niveles:</strong> Básico, Intermedio, Detallado</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📊 Puntos de función (Albrecht, 1979)</h4>
+                    <p>Mide funcionalidad desde perspectiva del usuario, independiente del lenguaje.</p>
+                    <p><strong>Componentes:</strong> Entradas, Salidas, Consultas, Archivos, Interfaces</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🔄 Use Case Points (Karner, 1993)</h4>
+                    <p>Basado en casos de uso y su complejidad. Popular en metodologías ágiles.</p>
+                    <p><strong>Factores:</strong> Actores, casos de uso, complejidad técnica</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>👥 Planning Poker</h4>
+                    <p>Técnica ágil donde el equipo estima en puntos de historia. Basado en consenso.</p>
+                    <p><strong>Escala:</strong> Fibonacci (1,2,3,5,8,13,21,34,55,89)</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📈 Estimación paramétrica</h4>
+                    <p>Usa datos históricos y modelos estadísticos. Ej: SEER-SEM, SLIM.</p>
+                    <p><strong>Ventaja:</strong> Más precisa si hay datos históricos.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>👨‍🏫 Juicio de expertos</h4>
+                    <p>Basado en experiencia de expertos. Método Delphi o consulta a expertos.</p>
+                    <p><strong>Ventaja:</strong> Rápido. <strong>Desventaja:</strong> Subjetivo.</p>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 Factores que afectan la estimación de costos:</strong><br><br>
+                • 🔧 Tamaño del proyecto (funcionalidades, líneas de código)<br>
+                • 👥 Experiencia del equipo (senior vs junior)<br>
+                • 📅 Plazo del proyecto (más plazo = menos costo? No siempre)<br>
+                • 🔄 Complejidad técnica (tecnologías nuevas vs conocidas)<br>
+                • 📚 Calidad requerida (más calidad = más pruebas = más costo)<br>
+                • 🔒 Requisitos de seguridad (más seguridad = más costo)<br>
+                • 🌐 Metodología (ágil vs cascada vs híbrida)<br>
+                • 📍 Ubicación del equipo (costos varían por país)
+            </div>
+        </div>
+        
+        <!-- Pestaña 2: Tabla de costos reales -->
+        <div id="c2" class="tab-pane">
+            <h3>📊 Tabla de costos para proyectos de software (México, 2025)</h3>
+            
+            <div class="diagram-box">
+                <strong>💰 Costos de desarrollo por tipo de proyecto (pago único):</strong>
+            </div>
+            
+            <table class="info-table">
+                <tr><th>Tipo de proyecto</th><th>Descripción</th><th>Tiempo estimado</th><th>Costo (MXN)</th></tr>
+                <tr><td class="tg-0lax">Sitio web institucional</th><td class="tg-0lax">5-10 páginas, diseño responsive, formulario de contacto</th><td class="tg-0lax">2-3 semanas</th><td class="tg-0lax">$5,000 - $12,000</th></tr>
+                <tr><td class="tg-0lax">E-commerce básico</th><td class="tg-0lax">Catálogo de productos, carrito, pasarela de pago</th><td class="tg-0lax">4-6 semanas</th><td class="tg-0lax">$15,000 - $35,000</th></tr>
+                <tr><td class="tg-0lax">Sistema de escritorio (Java/C#)</th><td class="tg-0lax">CRUD, reportes, login, roles de usuario</th><td class="tg-0lax">4-6 semanas</th><td class="tg-0lax">$12,000 - $25,000</th></tr>
+                <tr><td class="tg-0lax">Sistema web a medida</th><td class="tg-0lax">Gestión de pacientes, citas, facturación, reportes</th><td class="tg-0lax">6-8 semanas</th><td class="tg-0lax">$20,000 - $45,000</th></tr>
+                <tr><td class="tg-0lax">Aplicación móvil (iOS/Android)</th><td class="tg-0lax">App nativa o multiplataforma, backend, notificaciones</th><td class="tg-0lax">8-12 semanas</th><td class="tg-0lax">$40,000 - $150,000</th></tr>
+                <tr><td class="tg-0lax">Sistema empresarial completo</th><td class="tg-0lax">ERP, CRM, logística, múltiples módulos</th><td class="tg-0lax">3-6 meses</th><td class="tg-0lax">$150,000 - $500,000+</th></tr>
+            </table>
+            
+            <h4>📊 Costos de mantenimiento (anual):</h4>
+            <table class="info-table">
+                <tr><th>Tipo de proyecto</th><th>Mantenimiento correctivo</th><th>Mantenimiento evolutivo</th><th>Hosting + dominio</th></tr>
+                <tr><td class="tg-0lax">Sitio web</th><td class="tg-0lax">$2,000 - $5,000</th><td class="tg-0lax">$5,000 - $10,000</th><td class="tg-0lax">$1,000 - $3,000</th></tr>
+                <tr><td class="tg-0lax">Sistema web</th><td class="tg-0lax">$5,000 - $10,000</th><td class="tg-0lax">$10,000 - $25,000</th><td class="tg-0lax">$2,000 - $6,000</th></tr>
+                <tr><td class="tg-0lax">App móvil</th><td class="tg-0lax">$10,000 - $20,000</th><td class="tg-0lax">$20,000 - $50,000</th><td class="tg-0lax">$3,000 - $8,000</th></tr>
+            </table>
+            
+            <h4>📊 Tarifas por hora (desarrolladores freelance en México):</h4>
+            <table class="info-table">
+                <tr><th>Perfil</th><th>Junior (0-2 años)</th><th>Semisenior (3-5 años)</th><th>Senior (5+ años)</th></tr>
+                <tr><td class="tg-0lax">Frontend</th><td class="tg-0lax">$150 - $250</th><td class="tg-0lax">$250 - $400</th><td class="tg-0lax">$400 - $600</th></tr>
+                <tr><td class="tg-0lax">Backend</th><td class="tg-0lax">$150 - $250</th><td class="tg-0lax">$250 - $400</th><td class="tg-0lax">$400 - $650</th></tr>
+                <tr><td class="tg-0lax">Full Stack</th><td class="tg-0lax">$180 - $300</th><td class="tg-0lax">$300 - $500</th><td class="tg-0lax">$500 - $800</th></tr>
+                <tr><td class="tg-0lax">QA/Tester</th><td class="tg-0lax">$120 - $200</th><td class="tg-0lax">$200 - $350</th><td class="tg-0lax">$350 - $500</th></tr>
+                <tr><td class="tg-0lax">DevOps</th><td class="tg-0lax">$200 - $350</th><td class="tg-0lax">$350 - $550</th><td class="tg-0lax">$550 - $900</th></tr>
+            </table>
+        </div>
+        
+        <!-- Pestaña 3: Modelo COCOMO -->
+        <div id="c3" class="tab-pane">
+            <h3>📐 Modelo COCOMO (Constructive Cost Model)</h3>
+            <p>COCOMO fue desarrollado por <strong>Barry Boehm</strong> en 1981 y es el modelo de estimación más conocido. Se basa en el tamaño del software medido en <strong>KLOC (miles de líneas de código)</strong>.</p>
+            
+            <div class="diagram-box">
+                <strong>📐 Fórmulas COCOMO Básico:</strong><br><br>
+                <strong>Esfuerzo (personas-mes):</strong> E = a × (KLOC)^b<br>
+                <strong>Tiempo de desarrollo (meses):</strong> D = c × (E)^d<br>
+                <strong>Productividad:</strong> P = KLOC / E (KLOC por persona-mes)<br>
+                <strong>Costo total:</strong> Costo = E × costo_por_persona_mes<br><br>
+                
+                <strong>Parámetros según tipo de proyecto:</strong><br><br>
+                ┌─────────────────┬───────────┬───────────┬───────────┬───────────┐<br>
+                │ Tipo de proyecto│     a     │     b     │     c     │     d     │<br>
+                ├─────────────────┼───────────┼───────────┼───────────┼───────────┤<br>
+                │ Orgánico        │   2.4     │   1.05    │   2.5     │   0.38    │<br>
+                │ Semiacoplado    │   3.0     │   1.12    │   2.5     │   0.35    │<br>
+                │ Empotrado       │   3.6     │   1.20    │   2.5     │   0.32    │<br>
+                └─────────────────┴───────────┴───────────┴───────────┴───────────┘
+            </div>
+            
+            <h4>📌 Tipos de proyectos COCOMO:</h4>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>🌱 Orgánico</h4>
+                    <p>Proyectos pequeños con equipos experimentados y requisitos flexibles.</p>
+                    <p><strong>Ejemplo:</strong> 2-50 KLOC, equipo pequeño, poca complejidad.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>⚙️ Semiacoplado</h4>
+                    <p>Proyectos medianos con cierta rigidez en requisitos.</p>
+                    <p><strong>Ejemplo:</strong> 50-300 KLOC, equipo mediano, complejidad media.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🚀 Empotrado</h4>
+                    <p>Proyectos grandes con restricciones estrictas (tiempo real, seguridad).</p>
+                    <p><strong>Ejemplo:</strong> >300 KLOC, equipo grande, alta complejidad.</p>
+                </div>
+            </div>
+            
+            <h4>📊 COCOMO Intermedio: Factores de ajuste (EAF)</h4>
+            <div class="diagram-box">
+                <strong>Factores de ajuste COCOMO (15 factores):</strong><br><br>
+                <strong>Atributos de producto:</strong><br>
+                • REQUIRED_RELIABILITY (RELY) - Confiabilidad requerida<br>
+                • DATA_BASE_SIZE (DATA) - Tamaño de la base de datos<br>
+                • PRODUCT_COMPLEXITY (CPLX) - Complejidad del producto<br><br>
+                
+                <strong>Atributos de hardware:</strong><br>
+                • EXECUTION_TIME_CONSTRAINT (TIME) - Restricción de tiempo<br>
+                • MAIN_STORAGE_CONSTRAINT (STOR) - Restricción de memoria<br>
+                • VIRTUAL_MACHINE_VOLATILITY (VIRT) - Cambios en la máquina virtual<br>
+                • COMPUTER_TURNAROUND_TIME (TURN) - Tiempo de respuesta<br><br>
+                
+                <strong>Atributos de personal:</strong><br>
+                • ANALYST_CAPABILITY (ACAP) - Capacidad de los analistas<br>
+                • PROGRAMMER_CAPABILITY (PCAP) - Capacidad de los programadores<br>
+                • APPLICATIONS_EXPERIENCE (AEXP) - Experiencia en la aplicación<br>
+                • VIRTUAL_MACHINE_EXPERIENCE (VEXP) - Experiencia en la máquina virtual<br>
+                • LANGUAGE_EXPERIENCE (LEXP) - Experiencia en el lenguaje<br><br>
+                
+                <strong>Atributos de proyecto:</strong><br>
+                • MODERN_PRACTICES (MODP) - Prácticas modernas<br>
+                • SOFTWARE_TOOLS (TOOL) - Uso de herramientas<br>
+                • SCHEDULE_CONSTRAINT (SCED) - Restricción del calendario
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 Ejemplo COCOMO:</strong><br><br>
+                Proyecto orgánico de 20 KLOC:<br>
+                E = 2.4 × (20)^1.05 = 2.4 × 23.7 = 56.9 personas-mes<br>
+                D = 2.5 × (56.9)^0.38 = 2.5 × 4.5 = 11.3 meses<br>
+                Productividad = 20 / 56.9 = 0.35 KLOC/persona-mes
+            </div>
+        </div>
+        
+        <!-- Pestaña 4: Puntos de función -->
+        <div id="c4" class="tab-pane">
+            <h3>📋 Puntos de función (Function Points)</h3>
+            <p>Los puntos de función miden la funcionalidad del software desde la <strong>perspectiva del usuario</strong>, independientemente de la tecnología o lenguaje de programación.</p>
+            
+            <div class="diagram-box">
+                <strong>📋 Componentes de los puntos de función:</strong><br><br>
+                <strong>1. Entradas externas (EI - External Inputs):</strong><br>
+                &nbsp;&nbsp;Datos que entran al sistema desde el exterior.<br>
+                &nbsp;&nbsp;Ejemplo: Formulario de registro, login, carga de archivos.<br><br>
+                
+                <strong>2. Salidas externas (EO - External Outputs):</strong><br>
+                &nbsp;&nbsp;Datos que salen del sistema hacia el exterior.<br>
+                &nbsp;&nbsp;Ejemplo: Reportes, listados, gráficos.<br><br>
+                
+                <strong>3. Consultas externas (EQ - External Queries):</strong><br>
+                &nbsp;&nbsp;Combinaciones de entrada/salida para consultas.<br>
+                &nbsp;&nbsp;Ejemplo: Búsqueda de productos, consulta de saldo.<br><br>
+                
+                <strong>4. Archivos lógicos internos (ILF - Internal Logical Files):</strong><br>
+                &nbsp;&nbsp;Grupos de datos mantenidos dentro del sistema.<br>
+                &nbsp;&nbsp;Ejemplo: Tablas de usuarios, productos, pedidos.<br><br>
+                
+                <strong>5. Interfaces externas (EIF - External Interface Files):</strong><br>
+                &nbsp;&nbsp;Archivos referenciados por el sistema pero mantenidos externamente.<br>
+                &nbsp;&nbsp;Ejemplo: API de pagos, servicio de mapas.
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📊 Cálculo de puntos de función no ajustados (UFP):</strong><br><br>
+                Cada componente se clasifica por complejidad (baja, media, alta) con pesos:<br><br>
+                ┌─────────────────┬──────┬───────┬──────┐<br>
+                │ Componente      │ Baja │ Media │ Alta │<br>
+                ├─────────────────┼──────┼───────┼──────┤<br>
+                │ EI (Entradas)   │  3   │   4   │  6   │<br>
+                │ EO (Salidas)    │  4   │   5   │  7   │<br>
+                │ EQ (Consultas)  │  3   │   4   │  6   │<br>
+                │ ILF (Archivos)  │  7   │  10   │ 15   │<br>
+                │ EIF (Interfaces)│  5   │   7   │ 10   │<br>
+                └─────────────────┴──────┴───────┴──────┘
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📊 Ajuste por complejidad técnica (14 factores):</strong><br><br>
+                Factor de ajuste (FA) = 0.65 + 0.01 × Σ (valores_i)<br>
+                Puntos de función ajustados (FP) = UFP × FA<br><br>
+                
+                <strong>Factores de ajuste (0-5):</strong><br>
+                1. Comunicación de datos<br>
+                2. Procesamiento distribuido<br>
+                3. Rendimiento<br>
+                4. Carga de trabajo<br>
+                5. Frecuencia de transacciones<br>
+                6. Entrada de datos en línea<br>
+                7. Eficiencia del usuario final<br>
+                8. Actualización en línea<br>
+                9. Procesamiento complejo<br>
+                10. Reusabilidad<br>
+                11. Facilidad de instalación<br>
+                12. Facilidad de operación<br>
+                13. Múltiples sitios<br>
+                14. Facilidad de cambio
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 Conversión FP a KLOC (líneas de código por punto de función):</strong><br><br>
+                • C++: 30-180 (promedio 60)<br>
+                • Java: 30-120 (promedio 50)<br>
+                • C#/.NET: 25-100 (promedio 45)<br>
+                • Python: 15-50 (promedio 25)<br>
+                • JavaScript: 15-60 (promedio 30)<br>
+                • Ruby: 10-40 (promedio 20)<br>
+                • SQL: 5-20 (promedio 10)
+            </div>
+        </div>
+        
+        <!-- Pestaña 5: Contenido extenso -->
+        <div id="c5" class="tab-pane">
+            <h3>📚 Profundización en Estimación de Costos</h3>
+            
+            <h4>1. Errores comunes en estimación de costos</h4>
+            <ul>
+                <li><strong>Optimismo:</strong> Subestimar la complejidad real del proyecto</li>
+                <li><strong>Olvidar costos ocultos:</strong> Capacitación, documentación, pruebas, gestión de proyectos</li>
+                <li><strong>No considerar contingencias:</strong> 15-20% de margen para imprevistos</li>
+                <li><strong>Basarse solo en experiencia pasada:</strong> Cada proyecto es único</li>
+                <li><strong>Presionar para estimar rápido:</strong> Las estimaciones rápidas suelen ser inexactas</li>
+                <li><strong>No actualizar estimaciones:</strong> Ajustar según avanza el proyecto</li>
+            </ul>
+            
+            <h4>2. Técnicas de estimación ágil (Scrum)</h4>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>🃏 Planning Poker</h4>
+                    <p>Cada miembro del equipo da una estimación en puntos de historia usando una baraja de Fibonacci. Luego discuten diferencias hasta llegar a consenso.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>✍️ Estimación de afinidad</h4>
+                    <p>Los usuarios ordenan las historias de usuario en grupos por tamaño relativo. Rápida para grandes backlogs.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📊 Velocidad del equipo</h4>
+                    <p>Usar la velocidad histórica (puntos por sprint) para predecir duración de futuros sprints.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🔢 T-shirt sizing</h4>
+                    <p>Clasificar tareas como XS, S, M, L, XL. Útil para estimaciones iniciales rápidas.</p>
+                </div>
+            </div>
+            
+            <h4>3. Casos de estudio de estimación</h4>
+            <div class="diagram-box">
+                <strong>🏥 Consultorio Dental (Sonrisa Sana):</strong><br>
+                Tamaño: Sistema web con 8 módulos principales<br>
+                Tecnología: PHP, MySQL, Bootstrap<br>
+                Equipo: 2 desarrolladores, 4 semanas<br>
+                Estimación inicial: 200 horas → Real: 220 horas (10% desviación)<br>
+                Costo final: $21,000 MXN<br><br>
+                
+                <strong>🩺 Consultorio Psicología:</strong><br>
+                Tamaño: Aplicación escritorio con 5 módulos<br>
+                Tecnología: Java, MySQL, Swing<br>
+                Equipo: 2 desarrolladores, 3 semanas<br>
+                Estimación inicial: 120 horas → Real: 130 horas (8% desviación)<br>
+                Costo final: $11,000 MXN
+            </div>
+            
+            <h4>4. Checklist para estimar un proyecto</h4>
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+___  ¿Se han identificado todos los requisitos funcionales?
+___  ¿Se han identificado todos los requisitos no funcionales?
+___  ¿Se ha considerado el tamaño del equipo y su experiencia?
+___  ¿Se ha aplicado al menos un modelo de estimación?
+___  ¿Se han incluido costos de pruebas y QA?
+___  ¿Se ha incluido margen de contingencia (15-20%)?
+___  ¿Se han considerado costos de infraestructura?
+___  ¿Se han considerado costos de capacitación y documentación?
+___  ¿Se ha incluido el mantenimiento post-lanzamiento?
+___  ¿Se ha validado la estimación con el equipo?
+                </pre>
+            </div>
+        </div>
+        
+        <!-- Pestaña 6: Calculadora interactiva -->
+        <div id="c6" class="tab-pane">
+            <div class="game-container">
+                <div class="game-title">💰 Calculadora interactiva de costos de software</div>
+                
+                <div id="calculadoraCostos" style="min-height: 400px;">
+                    <div style="display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 0 auto;">
+                        <label>📐 Tamaño estimado (KLOC):</label>
+                        <input type="number" id="klocInput" value="20" step="1" style="background:var(--primary); border:1px solid var(--border); padding:10px; border-radius:8px; color:white;">
+                        
+                        <label>🏢 Tipo de proyecto:</label>
+                        <select id="tipoProyectoInput" style="background:var(--primary); border:1px solid var(--border); padding:10px; border-radius:8px; color:white;">
+                            <option value="organico">Orgánico (pequeño, flexible)</option>
+                            <option value="semiacoplado" selected>Semiacoplado (mediano)</option>
+                            <option value="empotrado">Empotrado (grande, restringido)</option>
+                        </select>
+                        
+                        <label>💰 Costo por persona-mes (MXN):</label>
+                        <input type="number" id="costoPersonaMes" value="30000" step="5000" style="background:var(--primary); border:1px solid var(--border); padding:10px; border-radius:8px; color:white;">
+                        
+                        <label>📊 Factor de ajuste (0.8 - 1.4):</label>
+                        <input type="range" id="eafInput" min="0.8" max="1.4" step="0.05" value="1.0" style="width:100%;">
+                        <span id="eafValue">1.00</span>
+                        
+                        <button class="fill-btn" id="calcularCostoCOCOMO">🧮 Calcular costo con COCOMO</button>
+                        
+                        <div id="resultadoCOCOMO" style="margin-top: 20px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 12px; text-align: center;">
+                            <p>📊 <strong>Resultados:</strong></p>
+                            <p>Esfuerzo: <strong id="resultadoEsfuerzo">--</strong> personas-mes</p>
+                            <p>Duración: <strong id="resultadoDuracion">--</strong> meses</p>
+                            <p>💰 Costo total estimado: <strong id="resultadoCostoTotal" style="font-size: 1.2rem; color: #4aa8d4;">--</strong></p>
+                        </div>
+                        
+                        <p style="font-size: 0.8rem; text-align: center; margin-top: 20px;">⚠️ Esta es una estimación preliminar. Los costos reales pueden variar según requisitos específicos, experiencia del equipo y condiciones del mercado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<!-- ==================================================== -->
+<!-- EXAMEN FINAL - 30 PREGUNTAS (NUEVO DISEÑO)           -->
+<!-- ==================================================== -->
+<div id="modal-examen" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-pencil-alt"></i> Examen Final de Calidad de Software</h2>
+
+        <div class="diagram-box">
+            <strong>📋 Instrucciones:</strong><br><br>
+            • Este examen consta de <strong>30 preguntas</strong> sobre todos los temas del curso.<br>
+            • Cada pregunta tiene una sola respuesta correcta.<br>
+            • La calificación mínima para aprobar es <strong>7.0</strong> (70% de respuestas correctas).<br>
+            • No hay límite de tiempo. Tómate el tiempo necesario.<br>
+            • Al finalizar, haz clic en <strong>"Calificar examen"</strong> para ver tu resultado.<br>
+            • ¡Mucho éxito!
+        </div>
+
+        <!-- Contenedor donde se generarán las 30 preguntas -->
+        <div id="examenPreguntasContainer"></div>
+
+        <!-- Botón de calificación y área de resultados -->
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="fill-btn" id="btnCalificarExamen" style="background: var(--success); font-size: 1.1rem;">✅ Calificar examen</button>
+        </div>
+        <div id="examenResultadoFinal" style="margin-top: 25px; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 16px; text-align: center; display: none;">
+            <!-- Aquí se mostrará el resultado dinámicamente -->
+        </div>
+    </div>
+</div>

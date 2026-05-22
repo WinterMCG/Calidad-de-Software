@@ -1,0 +1,342 @@
+{
+  "contenido_dinamico": {
+    "version": "3.0",
+    "ultima_actualizacion": "2025-06-15",
+    "descripcion": "Contenido dinámico para la plataforma de Calidad de Software",
+    "autores": ["Manuel Cervantes González", "Alan Adrián Alonso Valenzuela"]
+  },
+  "bienvenida": {
+    "mensaje": "Bienvenido a la plataforma interactiva de aprendizaje de Calidad de Software. Explora los módulos, realiza los ejercicios y pon a prueba tus conocimientos.",
+    "frases_motivacionales": [
+      "La calidad no es un acto, es un hábito. - Aristóteles",
+      "La calidad nunca es un accidente; siempre es el resultado de un esfuerzo inteligente. - John Ruskin",
+      "La calidad significa hacerlo bien cuando nadie está mirando. - Henry Ford",
+      "El costo de la calidad es la educación, no la inspección. - Philip Crosby",
+      "La calidad es gratis, pero no es un regalo. - Philip Crosby"
+    ]
+  },
+  "estadisticas": {
+    "total_modulos": 16,
+    "total_preguntas_examen": 30,
+    "total_flashcards": 50,
+    "total_ejercicios": 6,
+    "total_videos": 11,
+    "total_imagenes": 12
+  },
+  "modulos": [
+    {
+      "id": 1,
+      "nombre": "Fundamentos de Calidad",
+      "slug": "fundamentos",
+      "descripcion": "Conceptos básicos, QC vs QA, costos de calidad, Ley de Boehm",
+      "nivel": "Introducción",
+      "duracion_minutos": 45,
+      "videos": [
+        {
+          "titulo": "Introducción a la Calidad de Software",
+          "url": "https://www.youtube.com/embed/XccIv4DurGI",
+          "duracion": "12:34"
+        }
+      ],
+      "imagenes": [
+        "https://zimbronapps.com/wp-content/uploads/2017/11/calidad-de-sotfware.png"
+      ],
+      "ejercicios": ["quiz_fundamentos", "verdadero_falso"],
+      "minijuego": "clasificar_qc_qa"
+    },
+    {
+      "id": 2,
+      "nombre": "Modelos de Calidad",
+      "slug": "modelos",
+      "descripcion": "ISO 25010, CMMI, McCall, comparativa",
+      "nivel": "Intermedio",
+      "duracion_minutos": 60,
+      "videos": [
+        {
+          "titulo": "ISO 25010 explicado",
+          "url": "https://www.youtube.com/embed/syiwCk5dOfQ",
+          "duracion": "15:20"
+        },
+        {
+          "titulo": "¿Qué es CMMI?",
+          "url": "https://www.youtube.com/embed/8t2iNqbPxlA",
+          "duracion": "18:45"
+        }
+      ],
+      "ejercicios": ["memoria_modelos", "completar_cmmi"],
+      "minijuego": "memory_game"
+    },
+    {
+      "id": 3,
+      "nombre": "Ingeniería de Requerimientos",
+      "slug": "requerimientos",
+      "descripcion": "Requisitos funcionales y no funcionales, SRS, validación",
+      "nivel": "Intermedio",
+      "duracion_minutos": 50,
+      "videos": [
+        {
+          "titulo": "Ingeniería de Requerimientos",
+          "url": "https://www.youtube.com/embed/Hedi-Qobgbc",
+          "duracion": "14:12"
+        }
+      ],
+      "ejercicios": ["clasificar_requisitos", "trivia_requisitos"],
+      "minijuego": "trivia_requerimientos"
+    },
+    {
+      "id": 4,
+      "nombre": "Casos de Uso UML",
+      "slug": "casos-uso",
+      "descripcion": "Actores, relaciones include/extend, plantillas",
+      "nivel": "Intermedio",
+      "duracion_minutos": 45,
+      "videos": [
+        {
+          "titulo": "Casos de Uso UML desde cero",
+          "url": "https://www.youtube.com/embed/fJa3cshrFWs",
+          "duracion": "22:18"
+        }
+      ],
+      "imagenes": [
+        "https://www.webyempresas.com/wp-content/uploads/2022/01/diagrama-casos-de-uso-ejemplo-2.jpg"
+      ],
+      "ejercicios": ["relacionar_terminos"],
+      "minijuego": "relacionar_casos_uso"
+    },
+    {
+      "id": 5,
+      "nombre": "Diagrama de Gantt",
+      "slug": "gantt",
+      "descripcion": "Planificación, hitos, dependencias",
+      "nivel": "Básico",
+      "duracion_minutos": 30,
+      "videos": [
+        {
+          "titulo": "Qué es el Diagrama de Gantt",
+          "url": "https://www.youtube.com/shorts/iLNoKJYNbNE",
+          "duracion": "1:45"
+        }
+      ],
+      "imagenes": [
+        "https://cdnb.ganttpro.com/uploads/2023/08/ejemplo-de-diagrama-de-gantt-de-una-empresa.png"
+      ],
+      "ejercicios": ["simulador_gantt"],
+      "minijuego": "simulador_gantt"
+    },
+    {
+      "id": 6,
+      "nombre": "Pruebas de Caja",
+      "slug": "pruebas-caja",
+      "descripcion": "Caja Negra, Caja Blanca, Caja Gris",
+      "nivel": "Intermedio",
+      "duracion_minutos": 55,
+      "videos": [
+        {
+          "titulo": "Pruebas de caja blanca, negra y gris",
+          "url": "https://www.youtube.com/embed/N-a5DEa_f0U",
+          "duracion": "16:30"
+        }
+      ],
+      "imagenes": [
+        "https://media.licdn.com/dms/image/v2/D4D22AQGgXq8HnlEpAg/feedshare-shrink_800/B4DZiYMgBnH8Ag-/0/1754900071235"
+      ],
+      "ejercicios": ["simulador_pruebas"],
+      "minijuego": "simulador_pruebas"
+    },
+    {
+      "id": 7,
+      "nombre": "Tipos de Pruebas",
+      "slug": "tipos-pruebas",
+      "descripcion": "Unitarias, integración, regresión, carga, seguridad",
+      "nivel": "Avanzado",
+      "duracion_minutos": 75,
+      "videos": [
+        {
+          "titulo": "Tipos y Niveles de Pruebas",
+          "url": "https://www.youtube.com/embed/hSxXuRxA9mo",
+          "duracion": "20:15"
+        }
+      ],
+      "imagenes": [
+        "https://patriciaemiguel.com/assets/2021-06-07-unit-tests.png",
+        "https://saberpunto.com/wp-content/uploads/pruebas-de-software-estrategias-y-ejemplos.png"
+      ],
+      "ejercicios": ["quiz_tipos_pruebas", "crucigrama_pruebas"],
+      "minijuego": "crucigrama",
+      "enfasis": "MUCHO_ÉNFASIS"
+    },
+    {
+      "id": 8,
+      "nombre": "Casos Reales",
+      "slug": "casos-reales",
+      "descripcion": "Patriot, Mars Orbiter, Therac-25, Knight Capital, Ariane 5, Toyota",
+      "nivel": "Avanzado",
+      "duracion_minutos": 60,
+      "videos": [
+        {
+          "titulo": "Errores de Software que provocaron catástrofes",
+          "url": "https://www.youtube.com/embed/usC6hCHJ_H8",
+          "duracion": "25:00"
+        }
+      ],
+      "imagenes": [
+        "https://apca.esan.edu.pe/images/8.png"
+      ],
+      "ejercicios": ["analisis_casos"],
+      "minijuego": "analisis_casos"
+    },
+    {
+      "id": 9,
+      "nombre": "Pruebas UI/UX",
+      "slug": "uiux",
+      "descripcion": "Usabilidad, accesibilidad, SUS, herramientas",
+      "nivel": "Intermedio",
+      "duracion_minutos": 50,
+      "videos": [
+        {
+          "titulo": "UX y UI explicado",
+          "url": "https://www.youtube.com/embed/zUZSSkRQXQQ",
+          "duracion": "17:22"
+        }
+      ],
+      "ejercicios": ["test_sus"],
+      "minijuego": "test_sus"
+    },
+    {
+      "id": 10,
+      "nombre": "Plan CUCi",
+      "slug": "plancuci",
+      "descripcion": "Temario oficial, competencias, estrategias de enseñanza",
+      "nivel": "Informativo",
+      "duracion_minutos": 20,
+      "videos": [],
+      "ejercicios": []
+    },
+    {
+      "id": 11,
+      "nombre": "Estándares y Herramientas",
+      "slug": "estandares",
+      "descripcion": "ISO, IEEE, herramientas de prueba",
+      "nivel": "Intermedio",
+      "duracion_minutos": 45,
+      "videos": [
+        {
+          "titulo": "ISO/IEC/IEEE 29119-2",
+          "url": "https://www.youtube.com/embed/xwSHrrfStiA",
+          "duracion": "13:40"
+        }
+      ],
+      "ejercicios": ["emparejar_estandares"],
+      "minijuego": "drag_drop_estandares"
+    },
+    {
+      "id": 12,
+      "nombre": "Estimación de Costos",
+      "slug": "costos",
+      "descripcion": "Modelos COCOMO, puntos de función, presupuestos reales",
+      "nivel": "Avanzado",
+      "duracion_minutos": 55,
+      "videos": [
+        {
+          "titulo": "Cómo estimar un proyecto de software",
+          "url": "https://www.youtube.com/embed/eUX7e3WWicw",
+          "duracion": "19:35"
+        }
+      ],
+      "ejercicios": ["calculadora_cocomo"],
+      "minijuego": "calculadora_costos"
+    },
+    {
+      "id": 13,
+      "nombre": "Proyectos de Ejemplo",
+      "slug": "proyectos",
+      "descripcion": "Consultorio Dental (Scrum), Consultorio Psicología (Cascada)",
+      "nivel": "Práctico",
+      "duracion_minutos": 40,
+      "videos": [],
+      "ejercicios": ["comparativa_proyectos"]
+    },
+    {
+      "id": 14,
+      "nombre": "Metodologías",
+      "slug": "metodologias",
+      "descripcion": "Cascada, Scrum, Kanban, XP, Modelo en V",
+      "nivel": "Intermedio",
+      "duracion_minutos": 60,
+      "videos": [],
+      "ejercicios": ["seleccion_metodologia"],
+      "minijuego": "quiz_metodologias"
+    }
+  ],
+  "preguntas_frecuentes": [
+    {
+      "id": 1,
+      "pregunta": "¿Cuál es la diferencia entre verificación y validación?",
+      "respuesta": "Verificación: ¿Construimos el producto correctamente? (cumple especificaciones). Validación: ¿Construimos el producto correcto? (satisface necesidades del cliente)."
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Qué nivel de CMMI es el más común?",
+      "respuesta": "El nivel 3 (Definido) es el más común entre organizaciones que buscan certificación, ya que implica procesos estandarizados en toda la organización."
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Cuántos usuarios se necesitan para una prueba de usabilidad?",
+      "respuesta": "Jakob Nielsen demostró que con 5 usuarios se encuentra aproximadamente el 85% de los problemas de usabilidad. 15 usuarios alcanzan el 100%."
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Qué es el 'Shift Left Testing'?",
+      "respuesta": "Es la práctica de mover las pruebas hacia la izquierda en el ciclo de vida del desarrollo (a etapas más tempranas) para detectar errores más baratos."
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Qué relación hay entre QC y QA?",
+      "respuesta": "QA (Aseguramiento) se enfoca en prevenir defectos mediante procesos. QC (Control) se enfoca en detectar defectos mediante pruebas. Ambos son necesarios."
+    }
+  ],
+  "recursos_externos": [
+    {
+      "nombre": "ISTQB - Certificación internacional en pruebas",
+      "url": "https://www.istqb.org",
+      "tipo": "Certificación"
+    },
+    {
+      "nombre": "OWASP - Seguridad en aplicaciones web",
+      "url": "https://owasp.org",
+      "tipo": "Organización"
+    },
+    {
+      "nombre": "SEI Carnegie Mellon - CMMI",
+      "url": "https://www.sei.cmu.edu/cmmi",
+      "tipo": "Recurso académico"
+    },
+    {
+      "nombre": "ISO - Estándares internacionales",
+      "url": "https://www.iso.org",
+      "tipo": "Organización"
+    },
+    {
+      "nombre": "IEEE Xplore - Biblioteca digital",
+      "url": "https://ieeexplore.ieee.org",
+      "tipo": "Biblioteca académica"
+    },
+    {
+      "nombre": "Ministerio de Calidad de Software - España",
+      "url": "https://www.calidadsoftware.es",
+      "tipo": "Portal educativo"
+    }
+  ],
+  "tips_calidad": [
+    "Invertir en prevención ahorra costos de corrección (10:1)",
+    "Las pruebas tempranas (Shift Left) reducen defectos hasta un 50%",
+    "5 usuarios encuentran el 85% de problemas de usabilidad",
+    "La documentación clara de requisitos previene el 40% de los defectos",
+    "Automatizar pruebas de regresión ahorra semanas de trabajo manual",
+    "La pirámide de pruebas recomienda 70% unitarias, 20% integración, 10% E2E",
+    "ISO 25010 es el estándar actual para evaluar calidad de producto",
+    "CMMI nivel 3 reduce defectos hasta un 40% y aumenta productividad",
+    "La Ley de Boehm: error en producción cuesta 100 veces más",
+    "El testing de seguridad debe incluir SAST, DAST y pentesting"
+  ]
+}

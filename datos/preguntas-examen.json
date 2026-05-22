@@ -1,0 +1,295 @@
+{
+  "examen": {
+    "titulo": "Examen Final de Calidad de Software",
+    "instrucciones": "Responde las siguientes 30 preguntas. Necesitas al menos 70% para aprobar.",
+    "tiempo_limite_minutos": 60,
+    "calificacion_minima": 7.0,
+    "secciones": [
+      {
+        "nombre": "Fundamentos y Conceptos Básicos",
+        "preguntas": [
+          {
+            "id": 1,
+            "texto": "Según IEEE, ¿qué es la calidad de software?",
+            "opciones": [
+              "Rapidez y bajo costo",
+              "Cumple requisitos y expectativas del cliente",
+              "Cantidad de funciones",
+              "Ausencia de errores"
+            ],
+            "correcta": 1,
+            "explicacion": "IEEE define calidad como 'el grado en que un sistema cumple los requisitos especificados y las necesidades o expectativas del cliente'."
+          },
+          {
+            "id": 2,
+            "texto": "¿Cuál es la principal diferencia entre QA y QC?",
+            "opciones": [
+              "QA es más costoso que QC",
+              "QA previene defectos, QC los encuentra",
+              "QC se hace al inicio, QA al final",
+              "No hay diferencia significativa"
+            ],
+            "correcta": 1,
+            "explicacion": "QA (Aseguramiento) es preventivo, QC (Control) es detectivo."
+          },
+          {
+            "id": 3,
+            "texto": "Según la Ley de Boehm, corregir un error en producción cuesta hasta ___ veces más que en requisitos.",
+            "opciones": ["10", "50", "100", "200"],
+            "correcta": 2,
+            "explicacion": "Boehm demostró que el costo se multiplica exponencialmente: 1x en requisitos, 100x en producción."
+          },
+          {
+            "id": 4,
+            "texto": "¿Cuál es un costo de prevención?",
+            "opciones": [
+              "Soporte técnico",
+              "Capacitación del personal",
+              "Corrección de errores",
+              "Demandas legales"
+            ],
+            "correcta": 1,
+            "explicacion": "Capacitación, herramientas y revisiones de diseño son costos de prevención."
+          },
+          {
+            "id": 5,
+            "texto": "¿Qué principios de calidad propuso Deming?",
+            "opciones": [
+              "Cero defectos",
+              "14 principios de mejora continua",
+              "Trilogía de la calidad",
+              "Calidad es gratis"
+            ],
+            "correcta": 1,
+            "explicacion": "Deming es conocido por sus 14 principios para la mejora continua de la calidad."
+          },
+          {
+            "id": 6,
+            "texto": "¿Cuál es un costo de fallos externos?",
+            "opciones": [
+              "Pruebas de sistema",
+              "Capacitación",
+              "Demandas de clientes",
+              "Inspecciones de código"
+            ],
+            "correcta": 2,
+            "explicacion": "Los fallos externos ocurren cuando el cliente encuentra errores, generando demandas, pérdida de reputación y soporte urgente."
+          },
+          {
+            "id": 7,
+            "texto": "¿Qué es la verificación en calidad de software?",
+            "opciones": [
+              "¿Construimos el producto correcto?",
+              "¿Construimos bien el producto?",
+              "¿Es rentable el producto?",
+              "¿Cumple los plazos?"
+            ],
+            "correcta": 1,
+            "explicacion": "Verificación: asegurar que el producto se construye correctamente según especificaciones."
+          },
+          {
+            "id": 8,
+            "texto": "¿Qué es la validación en calidad de software?",
+            "opciones": [
+              "¿Construimos el producto correcto?",
+              "¿Construimos bien el producto?",
+              "¿Es rentable el producto?",
+              "¿Cumple los plazos?"
+            ],
+            "correcta": 0,
+            "explicacion": "Validación: asegurar que el producto correcto (el que el cliente necesita) se construye."
+          },
+          {
+            "id": 9,
+            "texto": "¿Qué autor propuso que 'la calidad es gratis'?",
+            "opciones": ["Deming", "Juran", "Crosby", "Boehm"],
+            "correcta": 2,
+            "explicacion": "Philip Crosby propuso que hacer las cosas bien la primera vez cuesta menos que corregir errores."
+          },
+          {
+            "id": 10,
+            "texto": "¿Qué es la trilogía de la calidad de Juran?",
+            "opciones": [
+              "Planificar, Controlar, Mejorar",
+              "Analizar, Diseñar, Probar",
+              "Requisitos, Código, Pruebas",
+              "Prevenir, Detectar, Corregir"
+            ],
+            "correcta": 0,
+            "explicacion": "Juran propuso: Planificación de calidad, Control de calidad y Mejora de calidad."
+          }
+        ]
+      },
+      {
+        "nombre": "Modelos de Calidad y Estándares",
+        "preguntas": [
+          {
+            "id": 11,
+            "texto": "¿Cuántas características de calidad define ISO/IEC 25010?",
+            "opciones": ["5", "6", "8", "10"],
+            "correcta": 2,
+            "explicacion": "ISO 25010 define 8 características: Adecuación funcional, Confiabilidad, Usabilidad, Eficiencia, Seguridad, Compatibilidad, Mantenibilidad y Portabilidad."
+          },
+          {
+            "id": 12,
+            "texto": "¿Cuál NO es una característica del modelo ISO 25010?",
+            "opciones": ["Usabilidad", "Portabilidad", "Popularidad", "Seguridad"],
+            "correcta": 2,
+            "explicacion": "Popularidad no es una característica de calidad en ISO 25010."
+          },
+          {
+            "id": 13,
+            "texto": "¿Cuántos niveles de madurez tiene CMMI?",
+            "opciones": ["3", "5", "6", "4"],
+            "correcta": 1,
+            "explicacion": "CMMI tiene 5 niveles: Inicial, Gestionado, Definido, Cuantitativo, Optimizado."
+          },
+          {
+            "id": 14,
+            "texto": "Nivel más alto de CMMI:",
+            "opciones": ["Gestionado", "Definido", "Optimizado", "Cuantitativo"],
+            "correcta": 2,
+            "explicacion": "El nivel 5 es 'Optimizado', con mejora continua basada en datos."
+          },
+          {
+            "id": 15,
+            "texto": "El modelo de McCall se divide en:",
+            "opciones": [
+              "Operación, revisión, transición",
+              "Calidad en uso, producto, datos",
+              "Funcional, no funcional",
+              "Niveles 1 a 5"
+            ],
+            "correcta": 0,
+            "explicacion": "McCall divide la calidad en 3 perspectivas: Operación, Revisión y Transición del producto."
+          },
+          {
+            "id": 16,
+            "texto": "¿Qué estándar IEEE se usa para documentación de pruebas?",
+            "opciones": ["IEEE 830", "IEEE 829", "IEEE 610", "IEEE 730"],
+            "correcta": 1,
+            "explicacion": "IEEE 829 define la estructura para documentación de pruebas de software."
+          },
+          {
+            "id": 17,
+            "texto": "¿Qué estándar IEEE se usa para especificación de requisitos (SRS)?",
+            "opciones": ["IEEE 830", "IEEE 829", "IEEE 610", "IEEE 730"],
+            "correcta": 0,
+            "explicacion": "IEEE 830 define la estructura del documento de especificación de requisitos."
+          },
+          {
+            "id": 18,
+            "texto": "¿Qué estándar reemplazó a ISO 9126?",
+            "opciones": ["ISO 9001", "ISO/IEC 25010", "ISO 27001", "IEEE 829"],
+            "correcta": 1,
+            "explicacion": "ISO 25010 reemplazó a ISO 9126 en 2011 como el modelo estándar de calidad de producto."
+          },
+          {
+            "id": 19,
+            "texto": "¿Qué significa CMMI?",
+            "opciones": [
+              "Capability Maturity Model Integration",
+              "Code Management Maturity Index",
+              "Continuous Measurement Model Interface",
+              "Configuration Management Maturity Integration"
+            ],
+            "correcta": 0,
+            "explicacion": "CMMI = Capability Maturity Model Integration, modelo de madurez de procesos."
+          },
+          {
+            "id": 20,
+            "texto": "¿Qué modelo de calidad fue pionero y data de 1977?",
+            "opciones": ["ISO 25010", "CMMI", "McCall", "ISO 9126"],
+            "correcta": 2,
+            "explicacion": "El modelo de McCall fue propuesto en 1977 y es uno de los primeros modelos de calidad."
+          }
+        ]
+      },
+      {
+        "nombre": "Pruebas y Casos Prácticos",
+        "preguntas": [
+          {
+            "id": 21,
+            "texto": "¿Qué técnica de caja negra prueba valores justo en los bordes?",
+            "opciones": [
+              "Partición de equivalencia",
+              "Valores límite",
+              "Cobertura de ramas",
+              "Tablas de decisión"
+            ],
+            "correcta": 1,
+            "explicacion": "El análisis de valores límite prueba los valores en los bordes de las particiones."
+          },
+          {
+            "id": 22,
+            "texto": "¿Qué tipo de prueba verifica que cambios no rompan lo existente?",
+            "opciones": ["Unitaria", "Humo", "Regresión", "Estrés"],
+            "correcta": 2,
+            "explicacion": "Las pruebas de regresión verifican que cambios recientes no hayan roto funcionalidades existentes."
+          },
+          {
+            "id": 23,
+            "texto": "En pruebas de caja gris, el evaluador:",
+            "opciones": [
+              "No conoce nada",
+              "Conoce todo el código",
+              "Tiene conocimiento parcial",
+              "Solo conoce la UI"
+            ],
+            "correcta": 2,
+            "explicacion": "Caja gris: conocimiento parcial del sistema (arquitectura, BD, APIs)."
+          },
+          {
+            "id": 24,
+            "texto": "¿Qué herramienta se usa para pruebas de carga?",
+            "opciones": ["JUnit", "Selenium", "JMeter", "OWASP ZAP"],
+            "correcta": 2,
+            "explicacion": "Apache JMeter es el estándar para pruebas de carga y rendimiento."
+          },
+          {
+            "id": 25,
+            "texto": "¿Qué prueba se ejecuta rápidamente para verificar funciones críticas?",
+            "opciones": ["Regresión", "Humo", "Carga", "Seguridad"],
+            "correcta": 1,
+            "explicacion": "Las pruebas de humo verifican rápidamente que las funciones críticas funcionen."
+          },
+          {
+            "id": 26,
+            "texto": "Causa principal del fallo del Mars Climate Orbiter:",
+            "opciones": ["Redondeo", "Confusión newtons/libras", "Fallo en respaldo", "Sobrecalentamiento"],
+            "correcta": 1,
+            "explicacion": "Confusión entre unidades: libras-fuerza (Lockheed) vs newtons (NASA)."
+          },
+          {
+            "id": 27,
+            "texto": "El accidente de Therac-25 fue causado por:",
+            "opciones": ["Redondeo", "Condición de carrera", "Unidades", "Base de datos"],
+            "correcta": 1,
+            "explicacion": "Condición de carrera (race condition) en el software de radioterapia."
+          },
+          {
+            "id": 28,
+            "texto": "La escala SUS mide:",
+            "opciones": ["Seguridad", "Rendimiento", "Usabilidad", "Confiabilidad"],
+            "correcta": 2,
+            "explicacion": "SUS (System Usability Scale) mide la usabilidad percibida del sistema."
+          },
+          {
+            "id": 29,
+            "texto": "¿Qué metodología es más recomendable si los requisitos cambian constantemente?",
+            "opciones": ["Cascada", "Scrum", "Modelo en V", "Cascada pura"],
+            "correcta": 1,
+            "explicacion": "Scrum es ágil y permite adaptarse a cambios frecuentes en requisitos."
+          },
+          {
+            "id": 30,
+            "texto": "¿Qué prueba es más adecuada para simular 1000 usuarios concurrentes?",
+            "opciones": ["Unitaria", "Integración", "Carga", "Usabilidad"],
+            "correcta": 2,
+            "explicacion": "Las pruebas de carga simulan múltiples usuarios concurrentes para evaluar rendimiento."
+          }
+        ]
+      }
+    ]
+  }
+}

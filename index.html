@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Calidad de Software | Plataforma Educativa UDG CUCi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="udg-badge">
+    <i class="fas fa-university"></i>
+    <span>UDG · CUCi · Ingeniería Informática</span>
+</div>
+
+<div id="welcomeScreen" class="welcome">
+    <div class="welcome-box" style="max-width: 550px; width: 100%; margin: 0 auto; background: rgba(15, 35, 55, 0.98); padding: 40px 45px; border-radius: var(--border-radius-3xl); text-align: center; border: 1px solid var(--accent); backdrop-filter: blur(10px); box-shadow: var(--shadow-xl);">
+        
+        <!-- Logo centrado arriba -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="https://moodle2.cuci.udg.mx/pluginfile.php/249/course/overviewfiles/LogoUdeG.jpg" 
+                 alt="Logo Universidad de Guadalajara" 
+                 style="max-width: 180px; width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow-md);">
+        </div>
+        
+        <h1 style="font-size: 1.6rem; color: var(--accent-glow); margin-bottom: 12px; font-weight: 700;">Plataforma de Aprendizaje</h1>
+        <h2 style="color: var(--accent-glow); font-size: 1.2rem; margin-bottom: 25px;">Calidad de Software</h2>
+        
+        <div class="welcome-about" style="background: rgba(0, 0, 0, 0.4); padding: 20px 25px; border-radius: var(--border-radius-xl); margin: 20px 0; text-align: left; border-left: 4px solid var(--accent);">
+            <p style="margin: 8px 0; font-size: 0.9rem;"><strong>👨‍🎓 Alumnos:</strong></p>
+            <p style="margin: 2px 0 5px 20px; font-size: 0.85rem;">Manuel Cervantes González</p>
+            <p style="margin: 2px 0 15px 20px; font-size: 0.85rem;">Alan Adrián Alonso Valenzuela</p>
+            
+            <p style="margin: 8px 0; font-size: 0.9rem;"><strong>📅 Semestre:</strong> 6to - Ingeniería Informática</p>
+            <p style="margin: 8px 0; font-size: 0.9rem;"><strong>👨‍🏫 Docente:</strong> Mtra. Imelda Karina Salinas Ocegueda</p>
+            <p style="margin: 8px 0; font-size: 0.9rem;"><strong>🏛️ Universidad:</strong> UDG - Centro Universitario de la Ciénega</p>
+        </div>
+        
+        <button class="enter-btn" id="enterBtn" style="padding: 12px 40px; font-size: 1rem; margin-top: 10px;"><i class="fas fa-arrow-right"></i> Comenzar a aprender</button>
+    </div>
+</div>
+
+<div id="mainContent" class="main">
+    <div class="header animate-fade-up">
+        <h2><i class="fas fa-star-of-life"></i> Calidad de Software</h2>
+        <p>Material didáctico interactivo con videos, imágenes, ejercicios, juegos y recursos multimedia</p>
+    </div>
+
+    <div class="progress-container animate-fade-up">
+        <div class="progress-bar" id="globalProgressBar"></div>
+        <div class="progress-text" id="progressText">Progreso: 0% completado</div>
+    </div>
+
+    <!-- ==================================================== -->
+<!-- DASHBOARD DE ESTADÍSTICAS -->
+<!-- ==================================================== -->
+
+<div class="dashboard-container animate-fade-up">
+
+    <div class="dashboard-card">
+        <i class="fas fa-book-open"></i>
+        <h3>Temas completados</h3>
+        <p id="temasCompletados">0</p>
+    </div>
+
+    <div class="dashboard-card">
+        <i class="fas fa-chart-pie"></i>
+        <h3>Progreso</h3>
+        <p id="progresoTotal">0%</p>
+    </div>
+
+    <div class="dashboard-card">
+        <i class="fas fa-gamepad"></i>
+        <h3>Juegos completados</h3>
+        <p id="juegosCompletados">0</p>
+    </div>
+
+    <div class="dashboard-card">
+        <i class="fas fa-award"></i>
+        <h3>Promedio</h3>
+        <p id="promedioUsuario">0%</p>
+    </div>
+
+</div>
+
+
+
+    <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="globalSearch" placeholder="Buscar temas: calidad, pruebas, ISO, CMMI, juegos...">
+    </div>
+    <div class="no-results" id="noResults"><i class="fas fa-search-minus"></i><p>No se encontraron resultados</p></div>
+
+    <div class="grid">
+        <div class="card" data-modal="modal-fundamentos" data-progress="fundamentos"><i class="fas fa-book"></i><h3>Fundamentos de Calidad</h3><p>Conceptos, QC vs QA, costos, Ley de Boehm + MINIJUEGO</p></div>
+        <div class="card" data-modal="modal-modelos" data-progress="modelos"><i class="fas fa-chart-line"></i><h3>Modelos de Calidad</h3><p>ISO 25010, CMMI, McCall + MINIJUEGO</p></div>
+        <div class="card" data-modal="modal-requerimientos" data-progress="requerimientos"><i class="fas fa-clipboard-list"></i><h3>Ingeniería de Requerimientos</h3><p>Funcionales, no funcionales, SRS + MINIJUEGO</p></div>
+        <div class="card" data-modal="modal-casos-uso" data-progress="casosuso"><i class="fas fa-project-diagram"></i><h3>Casos de Uso UML</h3><p>Actores, include, extend, plantillas + MINIJUEGO</p></div>
+        <div class="card" data-modal="modal-gantt" data-progress="gantt"><i class="fas fa-chart-simple"></i><h3>Diagrama de Gantt</h3><p>Planificación, hitos, dependencias + MINIJUEGO</p></div>
+        <div class="card" data-modal="modal-pruebas-caja" data-progress="pruebascaja"><i class="fas fa-cubes"></i><h3>Pruebas de Caja</h3><p>Negra, blanca, gris con ejemplos + MINIJUEGO</p></div>
+        <div class="card" data-modal="modal-tipos-pruebas" data-progress="tipospruebas"><i class="fas fa-vial"></i><h3>Tipos de Pruebas</h3><p>Unitarias, integración, regresión, carga + MINIJUEGO</p></div>
+        <div class="card" data-modal="modal-casos-reales" data-progress="casosreales"><i class="fas fa-history"></i><h3>Casos Reales</h3><p>Patriot, Mars Orbiter, Therac-25 + MINIJUEGO</p></div>
+        <div class="card" data-modal="modal-uiux" data-progress="uiux"><i class="fas fa-mouse-pointer"></i><h3>Pruebas UI/UX</h3><p>Usabilidad, accesibilidad, SUS + MINIJUEGO</p></div>
+        <div class="card" data-modal="modal-plancuci" data-progress="plancuci"><i class="fas fa-graduation-cap"></i><h3>Plan CUCi</h3><p>Temario, competencias, programa</p></div>
+        <div class="card" data-modal="modal-estandares" data-progress="estandares"><i class="fas fa-certificate"></i><h3>Estándares y Herramientas</h3><p>ISO, IEEE, herramientas de prueba + MINIJUEGO</p></div>
+        <div class="card" data-modal="modal-costos" data-progress="costos"><i class="fas fa-calculator"></i><h3>Estimación de Costos</h3><p>Presupuestos reales para proyectos + MINIJUEGO</p></div>
+        <div class="card" data-modal="modal-proyectos" data-progress="proyectos"><i class="fas fa-briefcase"></i><h3>Proyectos de Ejemplo</h3><p>Dental con Scrum, Psicología con Cascada</p></div>
+        <div class="card" data-modal="modal-metodologias" data-progress="metodologias"><i class="fas fa-sitemap"></i><h3>Metodologías</h3><p>Cómo elegir metodología, guía práctica</p></div>
+        <div class="card" data-modal="modal-examen" data-progress="examen"><i class="fas fa-pencil-alt"></i><h3>Examen Final</h3><p>30 preguntas, certificado descargable</p></div>
+        <div class="card" data-modal="modal-ejercicios" data-progress="ejercicios"><i class="fas fa-gamepad"></i><h3>Ejercicios Interactivos</h3><p>Verdadero/Falso, completar, flashcards</p></div>
+    </div>
+
+    <!-- Los modales se cargarán dinámicamente desde la carpeta modales/ -->
+    <div id="modales-container"></div>
+
+        <div class="references">
+        <h3>📚 Referencias bibliográficas</h3>
+        <ul>
+            <li>Pressman, R. (2020). <em>Ingeniería del Software: Un Enfoque Práctico</em>. 9ª ed. McGraw-Hill. ISBN: 9781456262598</li>
+            <li>Sommerville, I. (2019). <em>Software Engineering</em>. 10ª ed. Pearson. ISBN: 9781292374132</li>
+            <li>ISO/IEC 25010:2011/2023. <em>Systems and software engineering — Quality model</em></li>
+            <li>NASA (1999). <em>Mars Climate Orbiter Mishap Investigation Board Report</em></li>
+            <li>Leveson, N. (1995). <em>Medical Devices: The Therac-25</em>. University of Washington</li>
+            <li><strong>📖 En español:</strong></li>
+            <li>Piattini, M., & Calvo-Manzano, J. A. (2018). <em>Calidad de Sistemas de Información</em>. 4ª ed. RA-MA. ISBN: 9788499647610</li>
+            <li>Fernández, L. (2021). <em>Pruebas de Software: Técnicas y Herramientas</em>. Alfaomega. ISBN: 9786075386542</li>
+            <li>Gómez, A., & Martínez, R. (2019). <em>Gestión de la Calidad del Software</em>. Garceta. ISBN: 9788417289104</li>
+            <li>Rodríguez, M. (2020). <em>ISO 25010: Calidad de Producto y Calidad en Uso</em>. AENOR. ISBN: 9788481437890</li>
+            <li>López, J. (2022). <em>Metodologías Ágiles: Scrum, Kanban y XP</em>. Anaya Multimedia. ISBN: 9788441546235</li>
+            <li><strong>📄 Normas y estándares:</strong></li>
+            <li>ISO/IEC 25000 (SQuaRE) - Guía para requisitos y evaluación de calidad</li>
+            <li>IEEE 829-2008 - Estándar para documentación de pruebas</li>
+            <li>IEEE 830-1998 - Práctica recomendada para especificación de requisitos</li>
+            <li>CMMI for Development V2.0 - Modelo de madurez de procesos</li>
+            <li>ISO 9001:2015 - Sistemas de gestión de calidad</li>
+            <li>OWASP Top 10 - Principales riesgos de seguridad en aplicaciones web</li>
+        </ul>
+    </div>
+
+    <footer>
+        Universidad de Guadalajara - Centro Universitario de la Ciénega | Ingeniería Informática · Calidad de Software
+    </footer>
+</div>
+
+</body>
+</html>

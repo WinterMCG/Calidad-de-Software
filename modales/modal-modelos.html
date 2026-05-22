@@ -1,0 +1,280 @@
+<!-- ==================================================== -->
+<!-- ALAN ADRIÁN ALONSO VALENZUELA - MODAL MODELOS       -->
+<!-- ==================================================== -->
+<div id="modal-modelos" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-chart-line"></i> Modelos de Calidad de Software</h2>
+        
+        <!-- Tres videos compactos en fila -->
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+            <div class="video-compact" style="flex: 1; min-width: 200px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 ISO 25010 explicado</h4>
+                <iframe src="https://www.youtube.com/embed/syiwCk5dOfQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-compact" style="flex: 1; min-width: 200px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 CMMI: Del caos a la optimización</h4>
+                <iframe src="https://www.youtube.com/embed/iZKBMosrb1g" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-compact" style="flex: 1; min-width: 200px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Modelo de Calidad McCall</h4>
+                <iframe src="https://www.youtube.com/embed/biAlsmRBBVE" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab active" data-tab="m1">🏆 ISO 25010</button>
+            <button class="tab" data-tab="m2">📈 CMMI</button>
+            <button class="tab" data-tab="m3">📐 McCall</button>
+            <button class="tab" data-tab="m4">📊 Comparativa</button>
+            <button class="tab" data-tab="m5">📚 Contenido extenso</button>
+            <button class="tab" data-tab="m6">🎮 Juego de memoria</button>
+        </div>
+        
+        <!-- Pestaña 1: ISO 25010 -->
+        <div id="m1" class="tab-pane active">
+            <h3>ISO/IEC 25010: Modelo de Calidad de Producto (2023)</h3>
+            <p>ISO 25010 es el estándar internacional que define un modelo de calidad para productos de software. Reemplazó a ISO 9126 en 2011 y fue actualizado en 2023.</p>
+            
+            <div class="diagram-box">
+                <strong>🏆 8 Características de calidad con sus subcaracterísticas:</strong><br><br>
+                
+                <strong>1. Adecuación funcional</strong><br>
+                &nbsp;&nbsp;✓ Completitud funcional - ¿Cubre todas las funciones necesarias?<br>
+                &nbsp;&nbsp;✓ Corrección funcional - ¿Produce resultados correctos?<br>
+                &nbsp;&nbsp;✓ Pertinencia funcional - ¿Las funciones son apropiadas?<br><br>
+                
+                <strong>2. Confiabilidad</strong><br>
+                &nbsp;&nbsp;✓ Madurez - ¿Qué tan confiable es bajo uso normal?<br>
+                &nbsp;&nbsp;✓ Disponibilidad - ¿Está disponible cuando se necesita?<br>
+                &nbsp;&nbsp;✓ Tolerancia a fallos - ¿Puede operar a pesar de fallos?<br>
+                &nbsp;&nbsp;✓ Recuperabilidad - ¿Puede recuperarse tras un fallo?<br><br>
+                
+                <strong>3. Usabilidad</strong><br>
+                &nbsp;&nbsp;✓ Capacidad de aprendizaje - ¿Es fácil aprender a usarlo?<br>
+                &nbsp;&nbsp;✓ Operabilidad - ¿Es fácil de operar y controlar?<br>
+                &nbsp;&nbsp;✓ Protección contra errores de usuario - ¿Previene errores?<br>
+                &nbsp;&nbsp;✓ Estética de la interfaz - ¿La interfaz es agradable?<br>
+                &nbsp;&nbsp;✓ Accesibilidad - ¿Pueden usarlo personas con discapacidad?<br><br>
+                
+                <strong>4. Eficiencia de rendimiento</strong><br>
+                &nbsp;&nbsp;✓ Comportamiento temporal - ¿Responde rápidamente?<br>
+                &nbsp;&nbsp;✓ Utilización de recursos - ¿Usa recursos eficientemente?<br>
+                &nbsp;&nbsp;✓ Capacidad - ¿Maneja cargas de trabajo esperadas?<br><br>
+                
+                <strong>5. Seguridad</strong><br>
+                &nbsp;&nbsp;✓ Confidencialidad - ¿Protege datos sensibles?<br>
+                &nbsp;&nbsp;✓ Integridad - ¿Previene modificaciones no autorizadas?<br>
+                &nbsp;&nbsp;✓ No repudio - ¿Se puede probar una acción?<br>
+                &nbsp;&nbsp;✓ Responsabilidad - ¿Se pueden rastrear las acciones?<br>
+                &nbsp;&nbsp;✓ Autenticidad - ¿Verifica la identidad de los usuarios?<br><br>
+                
+                <strong>6. Compatibilidad</strong><br>
+                &nbsp;&nbsp;✓ Coexistencia - ¿Funciona con otros sistemas?<br>
+                &nbsp;&nbsp;✓ Interoperabilidad - ¿Intercambia información con otros?<br><br>
+                
+                <strong>7. Mantenibilidad</strong><br>
+                &nbsp;&nbsp;✓ Modularidad - ¿Está compuesto por módulos independientes?<br>
+                &nbsp;&nbsp;✓ Reusabilidad - ¿Pueden reutilizarse componentes?<br>
+                &nbsp;&nbsp;✓ Capacidad de análisis - ¿Es fácil diagnosticar problemas?<br>
+                &nbsp;&nbsp;✓ Modificabilidad - ¿Es fácil hacer cambios?<br>
+                &nbsp;&nbsp;✓ Capacidad de prueba - ¿Es fácil probar el sistema?<br><br>
+                
+                <strong>8. Portabilidad</strong><br>
+                &nbsp;&nbsp;✓ Adaptabilidad - ¿Se adapta a diferentes entornos?<br>
+                &nbsp;&nbsp;✓ Instalabilidad - ¿Es fácil de instalar?<br>
+                &nbsp;&nbsp;✓ Reemplazabilidad - ¿Puede reemplazar otro software?
+            </div>
+            
+            <h4>📊 Métricas para ISO 25010:</h4>
+            <table class="info-table">
+                <tr><th>Característica</th><th>Métrica sugerida</th><th>Fórmula</th><th>Valor objetivo</th><tr>
+                <tr><td class="tg-0lax">Adecuación funcional</th><td class="tg-0lax">% funciones implementadas</th><td class="tg-0lax">(Funciones correctas / Total) * 100</th><td class="tg-0lax">100%</th></tr>
+                <tr><td class="tg-0lax">Confiabilidad</th><td class="tg-0lax">MTBF (Mean Time Between Failures)</th><td class="tg-0lax">Tiempo total / Número de fallos</th><td class="tg-0lax">&gt; 1000 horas</th></tr>
+                <tr><td class="tg-0lax">Usabilidad</th><td class="tg-0lax">Tasa de éxito en tareas</th><td class="tg-0lax">Tareas completadas / Total tareas</th><td class="tg-0lax">&gt; 90%</th></tr>
+                <tr><td class="tg-0lax">Eficiencia</th><td class="tg-0lax">Tiempo de respuesta</th><td class="tg-0lax">Milisegundos por petición</th><td class="tg-0lax">&lt; 2 segundos</th></tr>
+            </table>
+        </div>
+        
+        <!-- Pestaña 2: CMMI -->
+        <div id="m2" class="tab-pane">
+            <h3>CMMI (Capability Maturity Model Integration) V2.0</h3>
+            <p>CMMI es un modelo de mejora de procesos desarrollado por el SEI (Software Engineering Institute) de Carnegie Mellon. Evalúa la madurez de los procesos de desarrollo de una organización.</p>
+            
+            <div class="diagram-box">
+                <strong>📈 Niveles de madurez CMMI:</strong><br><br>
+                
+                🟤 <strong>Nivel 1 - Inicial:</strong> Caótico, el éxito es accidental, no hay procesos definidos.<br>
+                &nbsp;&nbsp;→ Características: Procesos impredecibles, reactivos, éxito depende de héroes.<br><br>
+                
+                🟡 <strong>Nivel 2 - Gestionado:</strong> Se planifica a nivel proyecto, hay control de requisitos.<br>
+                &nbsp;&nbsp;→ Características: Procesos planificados, requisitos gestionados, seguimiento de proyectos.<br><br>
+                
+                🟢 <strong>Nivel 3 - Definido:</strong> Procesos estandarizados en toda la organización.<br>
+                &nbsp;&nbsp;→ Características: Procesos documentados, activos de proceso organizacionales, capacitación.<br><br>
+                
+                🔵 <strong>Nivel 4 - Cuantitativamente gestionado:</strong> Se miden métricas estadísticamente.<br>
+                &nbsp;&nbsp;→ Características: Medición cuantitativa, control estadístico de procesos.<br><br>
+                
+                🟣 <strong>Nivel 5 - Optimizado:</strong> Mejora continua basada en datos cuantitativos.<br>
+                &nbsp;&nbsp;→ Características: Mejora continua, análisis de causas raíz, innovación.
+            </div>
+            
+            <h4>📋 Áreas de proceso por nivel:</h4>
+            <table class="info-table">
+                <tr><th>Nivel</th><th>Áreas de proceso clave</th></tr>
+                <tr><td class="tg-0lax">Nivel 2</th><td class="tg-0lax">Gestión de requisitos, Planificación de proyectos, Monitoreo y control, Gestión de configuración, Aseguramiento de calidad</th></tr>
+                <tr><td class="tg-0lax">Nivel 3</th><td class="tg-0lax">Desarrollo de requisitos, Solución técnica, Integración de producto, Verificación, Validación, Gestión de riesgos</th></tr>
+                <tr><td class="tg-0lax">Nivel 4</th><td class="tg-0lax">Rendimiento de procesos organizacionales, Análisis y resolución cuantitativa</th></td>
+                <tr><td class="tg-0lax">Nivel 5</th><td class="tg-0lax">Gestión del rendimiento organizacional, Análisis de causas raíz y resolución</th></tr>
+            </table>
+            
+            <h4>📊 Beneficios comprobados de CMMI:</h4>
+            <ul>
+                <li>✅ Reducción del 40-50% en defectos entregados al cliente</li>
+                <li>✅ Incremento del 20-30% en productividad</li>
+                <li>✅ Reducción del 30-40% en tiempo de ciclo</li>
+                <li>✅ Mejora del 50-60% en satisfacción del cliente</li>
+                <li>✅ Reducción del 25-35% en costos de calidad</li>
+                <li>✅ Mejora en la previsibilidad de proyectos</li>
+                <li>✅ Mayor retorno de inversión (ROI) en mejora de procesos</li>
+            </ul>
+            
+            <p>Alcanzar el nivel 3 reduce defectos hasta en un 40% y aumenta la productividad significativamente. Las empresas que logran CMMI nivel 5 tienen una ventaja competitiva sustancial.</p>
+        </div>
+        
+        <!-- Pestaña 3: McCall -->
+        <div id="m3" class="tab-pane">
+            <h3>Modelo de McCall (1977) - Pionero en calidad de software</h3>
+            <p>Uno de los primeros modelos de calidad de software. Divide la calidad en tres perspectivas principales:</p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>🔧 Operación del producto</h4>
+                    <p>Atributos relacionados con el funcionamiento del software:</p>
+                    <ul>
+                        <li><strong>Corrección:</strong> ¿El software hace lo que debe?</li>
+                        <li><strong>Confiabilidad:</strong> ¿Funciona sin fallos?</li>
+                        <li><strong>Eficiencia:</strong> ¿Usa recursos adecuadamente?</li>
+                        <li><strong>Integridad:</strong> ¿Está seguro contra accesos no autorizados?</li>
+                        <li><strong>Usabilidad:</strong> ¿Es fácil de usar?</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>🔍 Revisión del producto</h4>
+                    <p>Atributos relacionados con el mantenimiento:</p>
+                    <ul>
+                        <li><strong>Mantenibilidad:</strong> ¿Es fácil de modificar?</li>
+                        <li><strong>Flexibilidad:</strong> ¿Es fácil de adaptar?</li>
+                        <li><strong>Capacidad de prueba:</strong> ¿Es fácil de probar?</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>🔄 Transición del producto</h4>
+                    <p>Atributos relacionados con la adaptación a nuevos entornos:</p>
+                    <ul>
+                        <li><strong>Portabilidad:</strong> ¿Funciona en diferentes entornos?</li>
+                        <li><strong>Reusabilidad:</strong> ¿Pueden reutilizarse componentes?</li>
+                        <li><strong>Interoperabilidad:</strong> ¿Se integra con otros sistemas?</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p>Fue pionero en proponer que la calidad debe medirse con métricas, no solo opiniones. Aunque tiene más de 40 años, muchos de sus conceptos siguen vigentes en modelos modernos como ISO 25010.</p>
+            <p>McCall también propuso una relación entre factores de calidad y métricas, permitiendo evaluar cuantitativamente cada factor a partir de mediciones directas del software.</p>
+        </div>
+        
+        <!-- Pestaña 4: Comparativa -->
+        <div id="m4" class="tab-pane">
+            <h3>Comparativa detallada de Modelos de Calidad</h3>
+            
+            <table class="info-table">
+                <tr><th>Modelo</th><th>Año</th><th>Enfoque</th><th>Características</th><th>Ventajas</th><th>Desventajas</th></tr>
+                <tr><td class="tg-0lax">McCall</th><td class="tg-0lax">1977</th><td class="tg-0lax">Factores de calidad</th><td class="tg-0lax">11 factores en 3 categorías</th><td class="tg-0lax">Pionero, fácil de entender</th><td class="tg-0lax">Anticuado para sistemas modernos</th></tr>
+                <tr><td class="tg-0lax">ISO 9126</th><td class="tg-0lax">1991</th><td class="tg-0lax">Características de calidad</th><td class="tg-0lax">6 características, 20 subcaracterísticas</th><td class="tg-0lax">Estándar internacional, muy usado</th><td class="tg-0lax">Reemplazado por ISO 25010</th></tr>
+                <tr><td class="tg-0lax">ISO 25010</th><td class="tg-0lax">2011/2023</th><td class="tg-0lax">Modelo actualizado</th><td class="tg-0lax">8 características + subcaracterísticas</th><td class="tg-0lax">Moderno, incluye seguridad y compatibilidad</th><td class="tg-0lax">Complejo de implementar completamente</th></tr>
+                <tr><td class="tg-0lax">CMMI</th><td class="tg-0lax">2006/V2.0</th><td class="tg-0lax">Madurez de procesos</th><td class="tg-0lax">5 niveles de madurez, áreas de proceso</th><td class="tg-0lax">Enfoque en mejora continua, muy respetado</th><td class="tg-0lax">Costoso de implementar, requiere auditoría</th></tr>
+            </table>
+            
+            <h4>📌 ¿Cuál modelo elegir?</h4>
+            <p>La elección depende del contexto y objetivos:</p>
+            <ul>
+                <li><strong>ISO 25010:</strong> Ideal para evaluar la calidad de un producto específico. Útil para comparar productos o certificar calidad.</li>
+                <li><strong>CMMI:</strong> Ideal para mejorar los procesos de desarrollo de una organización. Busca madurez organizacional.</li>
+                <li><strong>McCall:</strong> Útil con fines académicos o para sistemas heredados. Buen punto de partida para entender conceptos.</li>
+                <li><strong>Combinación:</strong> Muchas organizaciones usan CMMI para procesos e ISO 25010 para evaluación de producto.</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>📊 Relación entre modelos:</strong><br><br>
+                CMMI se enfoca en <strong>cómo</strong> se desarrolla el software (procesos)<br>
+                ISO 25010 se enfoca en <strong>qué</strong> características tiene el software (producto)<br>
+                McCall fue el <strong>precursor</strong> que inspiró a ambos
+            </div>
+        </div>
+        
+        <!-- Pestaña 5: Contenido extenso -->
+        <div id="m5" class="tab-pane">
+            <h3>📚 Profundización en Modelos de Calidad</h3>
+            
+            <h4>1. Evolución histórica de los modelos de calidad</h4>
+            <p>La calidad del software ha evolucionado significativamente desde los años 70:</p>
+            <ul>
+                <li><strong>1970s:</strong> Enfoque en pruebas al final del ciclo (QC)</li>
+                <li><strong>1977:</strong> McCall propone el primer modelo de factores de calidad</li>
+                <li><strong>1980s:</strong> Surge el concepto de aseguramiento de calidad (QA)</li>
+                <li><strong>1987:</strong> Watts Humphrey comienza el desarrollo de CMM en SEI</li>
+                <li><strong>1991:</strong> Publicación de ISO 9126</li>
+                <li><strong>2006:</strong> Lanzamiento de CMMI V1.2</li>
+                <li><strong>2011:</strong> ISO 25010 reemplaza a ISO 9126</li>
+                <li><strong>2023:</strong> Actualización de ISO 25010</li>
+            </ul>
+            
+            <h4>2. Modelo de calidad en uso (ISO 25010)</h4>
+            <p>Además del modelo de calidad de producto, ISO 25010 define un <strong>modelo de calidad en uso</strong> que evalúa el software desde la perspectiva del usuario final:</p>
+            <ul>
+                <li><strong>Efectividad:</strong> ¿El usuario logra sus objetivos?</li>
+                <li><strong>Eficiencia:</strong> ¿Cuánto esfuerzo requiere?</li>
+                <li><strong>Satisfacción:</strong> ¿El usuario está contento?</li>
+                <li><strong>Libre de riesgos:</strong> ¿Mitiga riesgos económicos, de salud o ambientales?</li>
+                <li><strong>Cobertura del contexto:</strong> ¿Funciona en todos los escenarios esperados?</li>
+                <li><strong>Flexibilidad:</strong> ¿Se adapta a diferentes contextos de uso?</li>
+            </ul>
+            
+            <h4>3. CMMI vs ISO 15504 (SPICE)</h4>
+            <p>Existen otros modelos de madurez como ISO 15504 (también conocido como SPICE - Software Process Improvement and Capability dEtermination):</p>
+            <table class="info-table">
+                <tr><th>Aspecto</th><th>CMMI</th><th>ISO 15504 (SPICE)</th></tr>
+                <tr><td class="tg-0lax">Origen</th><td class="tg-0lax">SEI Carnegie Mellon (EE.UU.)</th><td class="tg-0lax">ISO (Internacional)</th></tr>
+                <tr><td class="tg-0lax">Enfoque</th><td class="tg-0lax">Mejora de procesos</th><td class="tg-0lax">Evaluación de capacidad</th></tr>
+                <tr><td class="tg-0lax">Niveles</th><td class="tg-0lax">5 niveles de madurez</th><td class="tg-0lax">6 niveles de capacidad</th></tr>
+                <td><td class="tg-0lax">Estructura</th><td class="tg-0lax">Áreas de proceso</th><td class="tg-0lax">Procesos y atributos</th></tr>
+            </table>
+            
+            <h4>4. Ejercicio de reflexión</h4>
+            <p>Preguntas para pensar:</p>
+            <ol>
+                <li>¿Qué modelo usarías para evaluar una aplicación bancaria crítica? ¿Por qué?</li>
+                <li>¿Cómo medirías la usabilidad según ISO 25010?</li>
+                <li>¿Qué nivel de CMMI crees que tiene tu equipo de desarrollo?</li>
+                <li>¿Por qué es importante la mantenibilidad en software de larga duración?</li>
+            </ol>
+        </div>
+        
+        <!-- Pestaña 6: Juego de memoria -->
+        <div id="m6" class="tab-pane">
+            <div id="memoryGame">
+                <div class="game-container">
+                    <div class="game-title">🧠 Juego de Memoria: Relaciona modelo con característica</div>
+                    <div class="memory-grid">
+                        <!-- Las cartas se generarán dinámicamente desde script.js -->
+                        <div style="text-align:center; width:100%;">Cargando juego...</div>
+                    </div>
+                    <p id="memoryScore" style="text-align:center; margin-top:15px;">Parejas encontradas: 0 / 6</p>
+                    <button class="fill-btn" id="reiniciarMemoria">🔄 Reiniciar juego</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

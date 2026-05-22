@@ -1,0 +1,348 @@
+<!-- ==================================================== -->
+<!-- ALAN ADRIÁN ALONSO VALENZUELA - MODAL PRUEBAS CAJA  -->
+<!-- ==================================================== -->
+<div id="modal-pruebas-caja" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-cubes"></i> Pruebas de Caja: Negra, Blanca y Gris</h2>
+        
+        <!-- Video -->
+        <div class="video-compact">
+            <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas de Caja Negra, Blanca y Gris</h4>
+            <iframe src="https://www.youtube.com/embed/N-a5DEa_f0U" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Imagen comparativa -->
+        <img src="https://media.licdn.com/dms/image/v2/D4D22AQGgXq8HnlEpAg/feedshare-shrink_800/B4DZiYMgBnH8Ag-/0/1754900071235?e=2147483647&v=beta&t=ELFrYLpojz3R70CyHm_sFByiED18DbKKkz_DvfqU1FY" class="img-compact" alt="Comparativa pruebas de caja">
+        
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab active" data-tab="p1">⚫ Caja Negra</button>
+            <button class="tab" data-tab="p2">⚪ Caja Blanca</button>
+            <button class="tab" data-tab="p3">⚫⚪ Caja Gris</button>
+            <button class="tab" data-tab="p4">📊 Tabla comparativa</button>
+            <button class="tab" data-tab="p5">📚 Contenido extenso</button>
+            <button class="tab" data-tab="p6">🎮 Simulador interactivo</button>
+        </div>
+        
+        <!-- Pestaña 1: Caja Negra -->
+        <div id="p1" class="tab-pane active">
+            <h3>Pruebas de Caja Negra (Black Box Testing)</h3>
+            <p>Las pruebas de caja negra evalúan el software <strong>sin conocer su estructura interna</strong>. El tester solo conoce las entradas y las salidas esperadas, simulando el comportamiento de un usuario final.</p>
+            
+            <div class="diagram-box">
+                <strong>📊 Esquema de prueba de caja negra:</strong><br><br>
+                ┌─────────┐     ┌─────────────┐     ┌─────────┐<br>
+                │ Entrada │ ──▶ │   SISTEMA   │ ──▶ │ Salida  │<br>
+                │  (Input)│     │  (Caja Negra)│     │(Output) │<br>
+                └─────────┘     └─────────────┘     └─────────┘<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El tester NO ve lo que pasa aquí dentro
+            </div>
+            
+            <h4>🎯 Técnicas de prueba de caja negra:</h4>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>📊 Particiones de equivalencia</h4>
+                    <p>Divide los datos de entrada en grupos (particiones) donde se espera el mismo comportamiento. Se prueba un valor representativo de cada partición.</p>
+                    <p><strong>Ejemplo:</strong> Edad entre 1-120 años. Particiones: (≤0), (1-120), (≥121). Se prueba con valores como 0, 60, 121.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📏 Análisis de valores límite</h4>
+                    <p>Prueba los valores justo en los bordes de las particiones, donde suelen ocurrir más errores.</p>
+                    <p><strong>Ejemplo:</strong> Para el rango 1-120, se prueba con 0, 1, 2, 119, 120, 121.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📋 Tablas de decisión</h4>
+                    <p>Muestra combinaciones de condiciones y sus acciones resultantes. Útil para lógica compleja con múltiples condiciones.</p>
+                    <p><strong>Ejemplo:</strong> Si usuario es admin Y tiene permiso → mostrar botón eliminar.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🔀 Pruebas de transición de estados</h4>
+                    <p>Evalúa cómo el sistema responde a diferentes secuencias de eventos o cambios de estado.</p>
+                    <p><strong>Ejemplo:</strong> Estados de un pedido: "pendiente" → "pagado" → "enviado" → "entregado".</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🔗 Pruebas de casos de uso</h4>
+                    <p>Valida que el sistema se comporte como se especifica en los casos de uso desde la perspectiva del usuario.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📝 Pruebas de adivinación de errores</h4>
+                    <p>Basada en la experiencia del tester para intuir dónde pueden estar los errores más probables.</p>
+                </div>
+            </div>
+            
+            <h4>📌 Ejemplo concreto:</h4>
+            <p>Probar un formulario de login. Entradas: usuario y contraseña. Salidas: acceso concedido o denegado.</p>
+            <ul>
+                <li>Caso 1: Usuario correcto + Contraseña correcta → Acceso concedido</li>
+                <li>Caso 2: Usuario correcto + Contraseña incorrecta → Acceso denegado</li>
+                <li>Caso 3: Usuario inexistente + Contraseña cualquiera → Acceso denegado</li>
+                <li>Caso 4: Usuario vacío + Contraseña cualquiera → Mensaje de error</li>
+                <li>Caso 5: Usuario correcto + Contraseña vacía → Mensaje de error</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>✅ Ventajas de caja negra:</strong><br>
+                • No requiere conocimiento del código<br>
+                • El tester no necesita ser desarrollador<br>
+                • Simula al usuario real<br>
+                • Imparcial (no hay sesgo del programador)<br><br>
+                
+                <strong>❌ Desventajas de caja negra:</strong><br>
+                • No detecta problemas internos (bucles infinitos, variables no inicializadas)<br>
+                • Puede dejar caminos sin probar<br>
+                • Difícil de automatizar completamente<br>
+                • No ayuda a depurar errores
+            </div>
+        </div>
+        
+        <!-- Pestaña 2: Caja Blanca -->
+        <div id="p2" class="tab-pane">
+            <h3>Pruebas de Caja Blanca (White Box Testing)</h3>
+            <p>Las pruebas de caja blanca evalúan el software <strong>conociendo su estructura interna</strong>. El tester diseña pruebas específicas para recorrer todas las rutas, condiciones y ciclos del código.</p>
+            
+            <div class="diagram-box">
+                <strong>📊 Esquema de prueba de caja blanca:</strong><br><br>
+                ┌─────────────────────────────────────┐<br>
+                │              CÓDIGO FUENTE           │<br>
+                │  if (x > 0) {                       │<br>
+                │      resultado = x * 2;             │<br>
+                │  } else {                           │<br>
+                │      resultado = 0;                 │<br>
+                │  }                                  │<br>
+                │  return resultado;                  │<br>
+                └─────────────────────────────────────┘<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;El tester SÍ ve y analiza el código interno
+            </div>
+            
+            <h4>🎯 Técnicas de prueba de caja blanca:</h4>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>📏 Cobertura de líneas (Statement Coverage)</h4>
+                    <p>Ejecutar cada línea de código al menos una vez. Es el nivel mínimo de cobertura.</p>
+                    <p><strong>Objetivo:</strong> 100% de líneas ejecutadas.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🔀 Cobertura de ramas (Branch Coverage)</h4>
+                    <p>Ejecutar verdadero y falso de cada condición (if/else, switch, bucles).</p>
+                    <p><strong>Objetivo:</strong> 100% de ramas evaluadas.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🛣️ Cobertura de caminos (Path Coverage)</h4>
+                    <p>Recorrer todas las combinaciones posibles de ramas. Muy costoso para código complejo.</p>
+                    <p><strong>Objetivo:</strong> Máximo posible (práctico).</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📋 Cobertura de condiciones (Condition Coverage)</h4>
+                    <p>Evaluar cada condición booleana individual como verdadera y falsa.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🔗 Cobertura de condiciones múltiples</h4>
+                    <p>Probar todas las combinaciones de condiciones en una expresión booleana.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🔄 Pruebas de bucles (Loop Testing)</h4>
+                    <p>Probar bucles: 0 iteraciones, 1 iteración, iteraciones típicas, máximo de iteraciones.</p>
+                </div>
+            </div>
+            
+            <h4>📌 Ejemplo concreto:</h4>
+            <p>Una función que calcula descuento:</p>
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+function calcularDescuento(monto, clienteFrecuente) {
+    let descuento = 0;
+    if (monto > 1000 && clienteFrecuente) {
+        descuento = 0.10;  // 10% de descuento
+    } else if (monto > 500) {
+        descuento = 0.05;  // 5% de descuento
+    } else {
+        descuento = 0;     // sin descuento
+    }
+    return monto * (1 - descuento);
+}
+                </pre>
+            </div>
+            <p><strong>Pruebas necesarias para cobertura de ramas:</strong></p>
+            <ul>
+                <li>✅ Caso 1: monto = 1500, clienteFrecuente = true → entra primera rama</li>
+                <li>✅ Caso 2: monto = 1500, clienteFrecuente = false → no entra primera rama, entra segunda</li>
+                <li>✅ Caso 3: monto = 300, clienteFrecuente = false → entra tercera rama (else)</li>
+                <li>✅ Caso 4: monto = 300, clienteFrecuente = true → entra tercera rama (else)</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>✅ Ventajas de caja blanca:</strong><br>
+                • Detecta errores ocultos (variables no inicializadas, bucles infinitos)<br>
+                • Permite optimizar código<br>
+                • Identifica caminos no probados<br>
+                • Útil para pruebas unitarias<br><br>
+                
+                <strong>❌ Desventajas de caja blanca:</strong><br>
+                • Requiere acceso al código fuente<br>
+                • Necesita tester con conocimientos de programación<br>
+                • Costoso y lento<br>
+                • No verifica requisitos del usuario
+            </div>
+        </div>
+        
+        <!-- Pestaña 3: Caja Gris -->
+        <div id="p3" class="tab-pane">
+            <h3>Pruebas de Caja Gris (Gray Box Testing)</h3>
+            <p>Las pruebas de caja gris son un <strong>punto medio</strong> entre caja negra y caja blanca. El tester tiene <strong>conocimiento parcial</strong> del sistema: arquitectura, tablas de base de datos, interfaces entre módulos, pero no todo el código fuente.</p>
+            
+            <div class="diagram-box">
+                <strong>📊 Esquema de prueba de caja gris:</strong><br><br>
+                ┌─────────────────────────────────────────────────────────┐<br>
+                │  🧑 Tester conoce:                                     │<br>
+                │  • Arquitectura del sistema                             │<br>
+                │  • Estructura de base de datos                          │<br>
+                │  • Interfaces entre módulos                             │<br>
+                │  • API y endpoints                                      │<br>
+                │  ❌ NO conoce:                                          │<br>
+                │  • Código fuente completo                               │<br>
+                │  • Detalles de implementación internos                  │<br>
+                └─────────────────────────────────────────────────────────┘
+            </div>
+            
+            <h4>🎯 ¿Cuándo se usa caja gris?</h4>
+            <ul>
+                <li>🔗 <strong>Pruebas de integración</strong> entre componentes</li>
+                <li>🔒 <strong>Pruebas de seguridad</strong> (simula atacante con información privilegiada)</li>
+                <li>🌐 <strong>Sistemas con múltiples capas</strong> (web, base de datos, APIs)</li>
+                <li>📊 <strong>Pruebas de bases de datos</strong> (consultas SQL, procedimientos almacenados)</li>
+                <li>🔌 <strong>Pruebas de API</strong> (conociendo los endpoints pero no la implementación)</li>
+                <li>🔄 <strong>Pruebas de regresión</strong> en sistemas complejos</li>
+            </ul>
+            
+            <h4>📌 Ejemplo concreto:</h4>
+            <p>Probar un sitio web de compras conociendo la estructura de la base de datos (tablas de productos, carrito, usuarios) pero sin acceso al código fuente del backend.</p>
+            <ul>
+                <li>📦 Se sabe que la tabla "productos" tiene una columna "precio"</li>
+                <li>🛒 Se sabe que el carrito almacena items en la tabla "carrito_items"</li>
+                <li>🔍 Se pueden diseñar pruebas de inyección SQL más efectivas</li>
+                <li>✅ Se verifica que los datos se guarden correctamente</li>
+                <li>📊 Se validan consultas complejas y procedimientos almacenados</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>✅ Ventajas de caja gris:</strong><br>
+                • Combina lo mejor de ambos mundos<br>
+                • Más eficiente que caja negra pura<br>
+                • Menos invasivo que caja blanca<br>
+                • Ideal para pruebas de integración<br>
+                • Excelente para pruebas de seguridad (pentesting)<br><br>
+                
+                <strong>❌ Desventajas de caja gris:</strong><br>
+                • No es adecuada para todas las pruebas<br>
+                • Requiere cierto conocimiento técnico<br>
+                • Puede ser difícil de automatizar completamente<br>
+                • Depende de la calidad de la documentación
+            </div>
+        </div>
+        
+        <!-- Pestaña 4: Tabla comparativa -->
+        <div id="p4" class="tab-pane">
+            <h3>Tabla comparativa: Caja Negra vs Caja Blanca vs Caja Gris</h3>
+            
+            <table class="info-table">
+                <tr><th>Aspecto</th><th>Caja Negra</th><th>Caja Blanca</th><th>Caja Gris</th></tr>
+                <tr><td class="tg-0lax">Conocimiento del código</th><td class="tg-0lax">Ninguno</th><td class="tg-0lax">Completo</th><td class="tg-0lax">Parcial</th></tr>
+                <tr><td class="tg-0lax">Tipo de tester</th><td class="tg-0lax">Usuario/QA</th><td class="tg-0lax">Desarrollador</th><td class="tg-0lax">Tester técnico</th></tr>
+                <tr><td class="tg-0lax">Enfoque</th><td class="tg-0lax">Funcionalidad</th><td class="tg-0lax">Estructura</th><td class="tg-0lax">Integración</th></tr>
+                <tr><td class="tg-0lax">Cobertura</th><td class="tg-0lax">Requisitos</th><td class="tg-0lax">Código</th><td class="tg-0lax">Interfaces</th></td>
+                <tr><td class="tg-0lax">Automatización</th><td class="tg-0lax">Media</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Media-Alta</th></tr>
+                <tr><td class="tg-0lax">Habilidad requerida</th><td class="tg-0lax">Baja-Media</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Media-Alta</th></tr>
+                <tr><td class="tg-0lax">Detección de errores</th><td class="tg-0lax">Funcionales</th><td class="tg-0lax">Lógicos, estructurales</th><td class="tg-0lax">Integración, BD</th></tr>
+                <tr><td class="tg-0lax">Mejor para</th><td class="tg-0lax">Pruebas de sistema</th><td class="tg-0lax">Pruebas unitarias</th><td class="tg-0lax">Pruebas integración</th></tr>
+                <tr><td class="tg-0lax">Ejemplo típico</th><td class="tg-0lax">Formulario login</th><td class="tg-0lax">Algoritmo ordenamiento</th><td class="tg-0lax">API REST</th></tr>
+                </table>
+            
+            <h4>📊 Cuándo usar cada tipo:</h4>
+            <ul>
+                <li><strong>⚫ Caja Negra:</strong> Pruebas de aceptación, pruebas de sistema, pruebas de humo, pruebas de regresión</li>
+                <li><strong>⚪ Caja Blanca:</strong> Pruebas unitarias, pruebas de integración tempranas, pruebas de seguridad (SAST)</li>
+                <li><strong>⚫⚪ Caja Gris:</strong> Pruebas de integración, pruebas de API, pruebas de seguridad (DAST), pruebas de bases de datos</li>
+            </ul>
+        </div>
+        
+        <!-- Pestaña 5: Contenido extenso -->
+        <div id="p5" class="tab-pane">
+            <h3>📚 Profundización en Pruebas de Caja</h3>
+            
+            <h4>1. Matriz de decisión para pruebas de caja negra</h4>
+            <p>Ejemplo de tabla de decisión para un sistema de descuentos:</p>
+            <table class="info-table">
+                <tr><th>Condiciones</th><th>Caso 1</th><th>Caso 2</th><th>Caso 3</th><th>Caso 4</th></tr>
+                <tr><td class="tg-0lax">Monto > $1000</th><td class="tg-0lax">Sí</th><td class="tg-0lax">Sí</th><td class="tg-0lax">No</th><td class="tg-0lax">No</th></tr>
+                <tr><td class="tg-0lax">Cliente frecuente</th><td class="tg-0lax">Sí</th><td class="tg-0lax">No</th><td class="tg-0lax">Sí</th><td class="tg-0lax">No</th></tr>
+                <tr><td class="tg-0lax">Cupón válido</th><td class="tg-0lax">No</th><td class="tg-0lax">Sí</th><td class="tg-0lax">No</th><td class="tg-0lax">No</th></tr>
+                <tr><td class="tg-0lax"><strong>Acción: Descuento</strong></th><td class="tg-0lax">15%</th><td class="tg-0lax">10%</th><td class="tg-0lax">5%</th><td class="tg-0lax">0%</th></tr>
+            </table>
+            
+            <h4>2. Cálculo de complejidad ciclomática (Caja Blanca)</h4>
+            <p>La complejidad ciclomática mide el número de caminos linealmente independientes en un programa. Se calcula como:</p>
+            <div class="diagram-box">
+                <strong>📐 Fórmula de McCabe:</strong><br>
+                V(G) = E - N + 2<br>
+                donde:<br>
+                • E = número de aristas (ramas) en el grafo de flujo<br>
+                • N = número de nodos (sentencias/bloques)<br><br>
+                
+                <strong>Interpretación:</strong><br>
+                • V(G) = 1-10 → Programa simple, bajo riesgo<br>
+                • V(G) = 11-20 → Moderado, riesgo moderado<br>
+                • V(G) = 21-50 → Complejo, alto riesgo<br>
+                • V(G) &gt; 50 → Inmantenible, muy alto riesgo
+            </div>
+            
+            <h4>3. Herramientas para pruebas de caja</h4>
+            <table class="info-table">
+                <tr><th>Herramienta</th><th>Tipo de caja</th><th>Descripción</th></tr>
+                <tr><td class="tg-0lax">Selenium</th><td class="tg-0lax">Negra/Gris</th><td class="tg-0lax">Automatización de navegadores web</th></tr>
+                <tr><td class="tg-0lax">JUnit / PyTest</th><td class="tg-0lax">Blanca</th><td class="tg-0lax">Pruebas unitarias</th></tr>
+                <tr><td class="tg-0lax">Postman / SoapUI</th><td class="tg-0lax">Gris</th><td class="tg-0lax">Pruebas de API</th></tr>
+                <tr><td class="tg-0lax">JMeter</th><td class="tg-0lax">Negra/Gris</th><td class="tg-0lax">Pruebas de carga</th></tr>
+                <tr><td class="tg-0lax">OWASP ZAP</th><td class="tg-0lax">Gris</th><td class="tg-0lax">Pruebas de seguridad</th></tr>
+                <tr><td class="tg-0lax">SonarQube</th><td class="tg-0lax">Blanca</th><td class="tg-0lax">Análisis estático de código</th></tr>
+            </table>
+            
+            <h4>4. Ejercicios prácticos</h4>
+            <ol>
+                <li>Diseña casos de prueba de caja negra para un cajero automático (retirar dinero)</li>
+                <li>Calcula la complejidad ciclomática de una función con 3 ifs anidados</li>
+                <li>Identifica qué tipo de caja usarías para probar una API de pagos</li>
+                <li>Diseña una tabla de decisión para un sistema de aprobación de préstamos</li>
+            </ol>
+        </div>
+        
+        <!-- Pestaña 6: Simulador interactivo -->
+        <div id="p6" class="tab-pane">
+            <div class="game-container">
+                <div class="game-title">🎮 Simulador: ¿Qué técnica de prueba usarías?</div>
+                
+                <div id="simuladorPruebas" style="min-height: 300px;">
+                    <p style="margin-bottom: 20px;"><strong>Escenario:</strong> Estás probando un formulario de registro donde la contraseña debe tener entre 8 y 20 caracteres, al menos una mayúscula, una minúscula y un número.</p>
+                    <p><strong>Pregunta:</strong> ¿Qué técnica de caja negra usarías para probar la longitud de la contraseña?</p>
+                    
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false">Particiones de equivalencia</div>
+                        <div class="quiz-option" data-correct="true">Análisis de valores límite</div>
+                        <div class="quiz-option" data-correct="false">Tablas de decisión</div>
+                        <div class="quiz-option" data-correct="false">Pruebas de transición de estados</div>
+                    </div>
+                    
+                    <div id="simFeedback" style="margin-top: 15px;"></div>
+                    
+                    <button class="fill-btn" id="siguienteEscenario" style="margin-top: 20px;">➡️ Siguiente escenario</button>
+                    
+                    <div id="puntuacionSimulador" style="margin-top: 15px; text-align:center; padding: 10px; background:rgba(0,0,0,0.3); border-radius:12px;">
+                        <strong>Puntuación:</strong> <span id="puntosSim">0</span> / 5
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

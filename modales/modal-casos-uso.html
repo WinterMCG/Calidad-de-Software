@@ -1,0 +1,319 @@
+<!-- ==================================================== -->
+<!-- ALAN ADRIÁN ALONSO VALENZUELA - MODAL CASOS DE USO   -->
+<!-- ==================================================== -->
+<div id="modal-casos-uso" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-project-diagram"></i> Casos de Uso UML</h2>
+        
+        <!-- Video -->
+        <div class="video-compact">
+            <h4><i class="fab fa-youtube"></i> 🎬 Video: Diagramas de Casos de Uso</h4>
+            <iframe src="https://www.youtube.com/embed/fJa3cshrFWs" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Imagen de ejemplo -->
+        <img src="https://www.webyempresas.com/wp-content/uploads/2022/01/diagrama-casos-de-uso-ejemplo-2.jpg" class="img-compact" alt="Diagrama de casos de uso ejemplo">
+        
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab active" data-tab="uc1">📐 Conceptos básicos</button>
+            <button class="tab" data-tab="uc2">🔗 Include y Extend</button>
+            <button class="tab" data-tab="uc3">📝 Plantilla textual</button>
+            <button class="tab" data-tab="uc4">📊 Diagrama interactivo</button>
+            <button class="tab" data-tab="uc5">📚 Contenido extenso</button>
+            <button class="tab" data-tab="uc6">🎮 Relacionar conceptos</button>
+        </div>
+        
+        <!-- Pestaña 1: Conceptos básicos -->
+        <div id="uc1" class="tab-pane active">
+            <h3>¿Qué es un diagrama de casos de uso?</h3>
+            <p>Un diagrama de casos de uso es una representación gráfica de las interacciones entre los <strong>actores</strong> (usuarios o sistemas externos) y el <strong>sistema</strong>, mostrando las funcionalidades que ofrece.</p>
+            
+            <div class="diagram-box">
+                <strong>🏗️ Elementos principales de un diagrama de casos de uso:</strong><br><br>
+                
+                👤 <strong>Actor:</strong><br>
+                &nbsp;&nbsp;✓ Representa un rol que interactúa con el sistema<br>
+                &nbsp;&nbsp;✓ Puede ser una persona (ej: Secretaria, Dentista, Cliente)<br>
+                &nbsp;&nbsp;✓ Puede ser otro sistema (ej: Sistema de pagos, API externa)<br>
+                &nbsp;&nbsp;✓ Se dibuja como un "muñeco" o con el estereotipo &lt;&lt;actor&gt;&gt;<br><br>
+                
+                ⭕ <strong>Caso de uso:</strong><br>
+                &nbsp;&nbsp;✓ Representa una funcionalidad específica del sistema<br>
+                &nbsp;&nbsp;✓ Nombre en verbo + sustantivo (ej: "Registrar paciente", "Procesar pago")<br>
+                &nbsp;&nbsp;✓ Se dibuja como una elipse u óvalo<br>
+                &nbsp;&nbsp;✓ Describe una secuencia de acciones que produce un resultado valioso<br><br>
+                
+                📦 <strong>Límite del sistema:</strong><br>
+                &nbsp;&nbsp;✓ Rectángulo que delimita el alcance del sistema<br>
+                &nbsp;&nbsp;✓ Los casos de uso van dentro del rectángulo<br>
+                &nbsp;&nbsp;✓ Los actores van fuera del rectángulo<br><br>
+                
+                ➡️ <strong>Relaciones:</strong><br>
+                &nbsp;&nbsp;✓ Asociación: entre actor y caso de uso (línea sólida)<br>
+                &nbsp;&nbsp;✓ Include: relación obligatoria entre casos de uso (---&lt;&lt;include&gt;&gt;---)<br>
+                &nbsp;&nbsp;✓ Extend: relación opcional entre casos de uso (---&lt;&lt;extend&gt;&gt;---)<br>
+                &nbsp;&nbsp;✓ Generalización: herencia entre actores o casos de uso
+            </div>
+            
+            <h4>📌 Ejemplo práctico:</h4>
+            <p>En un sistema de clínica dental:</p>
+            <ul>
+                <li><strong>Actores:</strong> Secretaria, Dentista, Paciente, Administrador</li>
+                <li><strong>Casos de uso:</strong> "Registrar paciente", "Agendar cita", "Registrar tratamiento", "Generar factura", "Procesar pago"</li>
+            </ul>
+        </div>
+        
+        <!-- Pestaña 2: Include y Extend -->
+        <div id="uc2" class="tab-pane">
+            <h3>Relaciones entre casos de uso: «include» y «extend»</h3>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4><i class="fas fa-link"></i> Include (Incluye)</h4>
+                    <p><strong>Características:</strong></p>
+                    <ul>
+                        <li>✓ Relación <strong>obligatoria</strong> entre casos de uso</li>
+                        <li>✓ El caso base <strong>siempre</strong> ejecuta al caso incluido</li>
+                        <li>✓ Se usa para <strong>reutilizar</strong> comportamiento común</li>
+                        <li>✓ Ayuda a evitar duplicación de descripciones</li>
+                        <li>✓ Se representa con una flecha punteada con la palabra <strong>&lt;&lt;include&gt;&gt;</strong></li>
+                    </ul>
+                    <p><strong>📌 Ejemplo:</strong><br>
+                    "Hacer compra" <strong>&lt;&lt;include&gt;&gt;</strong> "Procesar pago"<br>
+                    → No puedes comprar sin pagar, es obligatorio.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4><i class="fas fa-code-branch"></i> Extend (Extiende)</h4>
+                    <p><strong>Características:</strong></p>
+                    <ul>
+                        <li>✓ Relación <strong>opcional</strong> entre casos de uso</li>
+                        <li>✓ El caso extendido se ejecuta <strong>solo bajo ciertas condiciones</strong></li>
+                        <li>✓ Se usa para <strong>comportamiento condicional o excepcional</strong></li>
+                        <li>✓ El caso base no depende del extendido</li>
+                        <li>✓ Se representa con una flecha punteada con la palabra <strong>&lt;&lt;extend&gt;&gt;</strong></li>
+                    </ul>
+                    <p><strong>📌 Ejemplo:</strong><br>
+                    "Aplicar descuento" <strong>&lt;&lt;extend&gt;&gt;</strong> "Hacer compra"<br>
+                    → Solo se aplica si el cliente tiene un cupón de descuento.</p>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📊 Diferencia clave:</strong><br><br>
+                Include: "Siempre ocurre" → Relación de uso obligatorio<br>
+                Extend: "A veces ocurre" → Relación de extensión condicional<br><br>
+                🎯 Include se usa para factorizar comportamiento común.<br>
+                🎯 Extend se usa para añadir comportamiento opcional.
+            </div>
+            
+            <h4>📌 Más ejemplos:</h4>
+            <ul>
+                <li><strong>Include:</strong> "Registrar usuario" &lt;&lt;include&gt;&gt; "Validar correo electrónico" (siempre se valida)</li>
+                <li><strong>Extend:</strong> "Enviar notificación" &lt;&lt;extend&gt;&gt; "Registrar cita" (solo si el paciente activó notificaciones)</li>
+                <li><strong>Include:</strong> "Iniciar sesión" &lt;&lt;include&gt;&gt; "Verificar credenciales" (siempre se verifica)</li>
+                <li><strong>Extend:</strong> "Mostrar publicidad" &lt;&lt;extend&gt;&gt; "Ver video" (solo si el usuario no es premium)</li>
+            </ul>
+        </div>
+        
+        <!-- Pestaña 3: Plantilla textual -->
+        <div id="uc3" class="tab-pane">
+            <h3>Plantilla textual para describir un caso de uso</h3>
+            <p>Un caso de uso debe documentarse de forma textual con todos los detalles necesarios para su implementación.</p>
+            
+            <div class="diagram-box">
+                <strong>📝 Plantilla estándar de caso de uso:</strong><br><br>
+                
+                <strong>Nombre:</strong> Registrar paciente en el sistema<br><br>
+                
+                <strong>Identificador:</strong> UC-001<br>
+                <strong>Versión:</strong> 1.0<br>
+                <strong>Autor:</strong> Equipo de desarrollo<br>
+                <strong>Fecha:</strong> [fecha actual]<br><br>
+                
+                <strong>Actor principal:</strong> Secretaria<br>
+                <strong>Actores secundarios:</strong> (ninguno)<br><br>
+                
+                <strong>Propósito:</strong> Almacenar la información de un nuevo paciente en la base de datos del consultorio.<br><br>
+                
+                <strong>Precondición:</strong> La secretaria ha iniciado sesión correctamente en el sistema.<br><br>
+                
+                <strong>Flujo normal de eventos (camino feliz):</strong><br>
+                1. La secretaria selecciona la opción "Nuevo paciente" desde el menú principal.<br>
+                2. El sistema muestra un formulario con los campos requeridos (nombre, teléfono, correo, dirección).<br>
+                3. La secretaria completa todos los campos obligatorios.<br>
+                4. La secretaria hace clic en el botón "Guardar".<br>
+                5. El sistema valida que todos los campos requeridos estén completos.<br>
+                6. El sistema verifica que el correo electrónico no exista previamente.<br>
+                7. El sistema guarda los datos del paciente en la base de datos.<br>
+                8. El sistema muestra un mensaje de éxito y asigna un ID único al paciente.<br>
+                9. El caso de uso termina.<br><br>
+                
+                <strong>Flujos alternativos (excepciones):</strong><br>
+                3a. La secretaria deja campos obligatorios vacíos:<br>
+                &nbsp;&nbsp;→ El sistema muestra un error indicando los campos faltantes y vuelve al paso 3.<br>
+                5a. El correo electrónico ya existe en el sistema:<br>
+                &nbsp;&nbsp;→ El sistema muestra un mensaje de error y solicita otro correo, vuelve al paso 3.<br>
+                6a. Error de conexión a la base de datos:<br>
+                &nbsp;&nbsp;→ El sistema muestra un mensaje de error técnico y vuelve al paso 2.<br><br>
+                
+                <strong>Postcondición (estado final):</strong><br>
+                El paciente queda registrado en el sistema con un ID único, listo para agendar citas o recibir tratamientos.<br><br>
+                
+                <strong>Requisitos no funcionales asociados:</strong><br>
+                - El formulario debe cargarse en menos de 2 segundos (rendimiento)<br>
+                - Los datos deben transmitirse encriptados (seguridad)<br>
+                - La interfaz debe ser responsive y accesible (usabilidad)
+            </div>
+            
+            <h4>📌 Elementos adicionales que puede incluir la plantilla:</h4>
+            <ul>
+                <li><strong>Frecuencia de uso:</strong> ¿Cuántas veces se espera que se ejecute?</li>
+                <li><strong>Prioridad:</strong> Alta, Media, Baja</li>
+                <li><strong>Riesgos asociados:</strong> Posibles problemas durante la ejecución</li>
+                <li><strong>Puntos de extensión:</strong> Lugares donde se pueden insertar comportamientos extendidos</li>
+                <li><strong>Requisitos especiales:</strong> Necesidades específicas (ej: hardware especial)</li>
+            </ul>
+        </div>
+        
+        <!-- Pestaña 4: Diagrama interactivo -->
+        <div id="uc4" class="tab-pane">
+            <h3>Diagrama de Casos de Uso - Ejemplo visual</h3>
+            
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; white-space: pre-wrap; background: transparent; color: var(--text);">
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          SISTEMA DENTAL                                     │
+│                                                                             │
+│    ┌─────────────┐                                                          │
+│    │  Secretaria │                                                          │
+│    └──────┬──────┘                                                          │
+│           │                                                                 │
+│           ├─────────────────────────────────────────┐                       │
+│           │                                         │                       │
+│           ▼                                         ▼                       │
+│    ┌──────────────┐                         ┌──────────────┐               │
+│    │  Registrar   │                         │   Agendar    │               │
+│    │   Paciente   │                         │    Cita      │               │
+│    └──────────────┘                         └──────┬───────┘               │
+│                                                     │                       │
+│    ┌─────────────┐                                  │                       │
+│    │  Dentista   │◄─────────────────────────────────┘                       │
+│    └──────┬──────┘                                                         │
+│           │                                                                │
+│           ▼                                                                │
+│    ┌──────────────┐                         ┌──────────────┐               │
+│    │  Registrar   │                         │  Procesar    │               │
+│    │  Tratamiento │                         │    Pago      │               │
+│    └──────────────┘                         └──────┬───────┘               │
+│                                                     │                       │
+│                                         ┌───────────┴───────────┐           │
+│                                         │   &lt;&lt;include&gt;&gt;    │           │
+│                                         ▼                       ▼           │
+│                                  ┌──────────────┐      ┌──────────────┐     │
+│                                  │  Validar     │      │  Generar     │     │
+│                                  │    Pago      │      │  Factura     │     │
+│                                  └──────────────┘      └──────────────┘     │
+│                                                                             │
+│    ┌─────────────┐                                                          │
+│    │  Paciente   │                                                          │
+│    └──────┬──────┘                                                          │
+│           │                                         ┌──────────────┐       │
+│           └────────────────────────────────────────▶│  Ver Historial│       │
+│                                                     │   Clínico     │       │
+│                                                     └──────────────┘       │
+│                                                     │                       │
+│                                                     │  &lt;&lt;extend&gt;&gt;        │
+│                                                     ▼                       │
+│                                              ┌──────────────┐               │
+│                                              │  Solicitar   │               │
+│                                              │  Cita Online │               │
+│                                              └──────────────┘               │
+└─────────────────────────────────────────────────────────────────────────────┘
+                </pre>
+            </div>
+            
+            <h4>📌 Explicación del diagrama:</h4>
+            <ul>
+                <li><strong>Secretaria</strong> puede: Registrar paciente, Agendar cita</li>
+                <li><strong>Dentista</strong> puede: Registrar tratamiento</li>
+                <li><strong>Procesar pago</strong> &lt;&lt;include&gt;&gt; Validar pago y Generar factura (obligatorio)</li>
+                <li><strong>Ver historial clínico</strong> puede &lt;&lt;extend&gt;&gt; Solicitar cita online (opcional, solo si el paciente lo solicita)</li>
+                <li><strong>Paciente</strong> puede: Ver historial clínico</li>
+            </ul>
+        </div>
+        
+        <!-- Pestaña 5: Contenido extenso -->
+        <div id="uc5" class="tab-pane">
+            <h3>📚 Profundización en Casos de Uso</h3>
+            
+            <h4>1. Niveles de casos de uso (Alistair Cockburn)</h4>
+            <p>Alistair Cockburn clasifica los casos de uso en diferentes niveles según su granularidad:</p>
+            <ul>
+                <li><strong>🌊 Nivel de mar (Sea level):</strong> Casos de uso que representan interacciones básicas del usuario con el sistema. Ej: "Registrar paciente"</li>
+                <li><strong>🐟 Nivel de pez (Fish level):</strong> Casos de uso que representan subfunciones reutilizables. Ej: "Validar correo"</li>
+                <li><strong>🦐 Nivel de camarón (Shrimp level):</strong> Casos de uso de muy bajo nivel técnico. Ej: "Conectar a base de datos"</li>
+                <li><strong>☁️ Nivel de nube (Cloud level):</strong> Casos de uso de alto nivel estratégico. Ej: "Gestionar consultorio dental"</li>
+                <li><strong>⭐ Nivel de estrella (Star level):</strong> Casos de uso que representan objetivos primarios del usuario</li>
+            </ul>
+            
+            <h4>2. Especificación de casos de uso en formato tabular</h4>
+            <table class="info-table">
+                <tr><th>Elemento</th><th>Descripción</th></tr>
+                <tr><td class="tg-0lax">ID</th><td class="tg-0lax">Identificador único (ej: UC-001)</th></tr>
+                <tr><td class="tg-0lax">Nombre</th><td class="tg-0lax">Verbo + sustantivo (ej: Registrar paciente)</th></tr>
+                <tr><td class="tg-0lax">Actor principal</th><td class="tg-0lax">Quien inicia el caso de uso</th></tr>
+                <tr><td class="tg-0lax">Actor secundario</th><td class="tg-0lax">Otros actores que participan</th></tr>
+                <tr><td class="tg-0lax">Precondiciones</th><td class="tg-0lax">Lo que debe ser verdad antes de comenzar</th></tr>
+                <tr><td class="tg-0lax">Postcondiciones</th><td class="tg-0lax">Lo que será verdad después de terminar</th></tr>
+                <tr><td class="tg-0lax">Flujo principal</th><td class="tg-0lax">Secuencia normal de pasos</th></tr>
+                <tr><td class="tg-0lax">Flujos alternativos</th><td class="tg-0lax">Variaciones y excepciones</th></tr>
+                <tr><td class="tg-0lax">Frecuencia</th><td class="tg-0lax">Qué tan seguido ocurre</th></tr>
+            </table>
+            
+            <h4>3. Buenas prácticas para escribir casos de uso</h4>
+            <ul>
+                <li>✅ Usar nombres en <strong>verbo + sustantivo</strong> (ej: "Registrar paciente", no "Paciente")</li>
+                <li>✅ Mantener el flujo principal <strong>simple y directo</strong> (camino feliz)</li>
+                <li>✅ Documentar <strong>todas las excepciones</strong> posibles</li>
+                <li>✅ Usar <strong>lenguaje claro y sin ambigüedades</strong></li>
+                <li>✅ Incluir <strong>criterios de aceptación</strong> verificables</li>
+                <li>✅ Mantener los casos de uso <strong>independientes</strong> cuando sea posible</li>
+                <li>✅ <strong>Validar con stakeholders</strong> antes de implementar</li>
+                <li>✅ Usar <strong>diagramas complementarios</strong> (actividades, secuencia)</li>
+            </ul>
+            
+            <h4>4. Errores comunes al documentar casos de uso</h4>
+            <ul>
+                <li>❌ <strong>Demasiada información técnica:</strong> Los casos de uso deben enfocarse en el "qué", no en el "cómo"</li>
+                <li>❌ <strong>Mezclar casos de uso:</strong> Un caso de uso debe ser una funcionalidad cohesiva</li>
+                <li>❌ <strong>Olvidar flujos alternativos:</strong> Las excepciones son tan importantes como el flujo principal</li>
+                <li>❌ <strong>Usuarios demasiado genéricos:</strong> "Usuario" no es un actor; identificar roles específicos</li>
+                <li>❌ <strong>Casos de uso demasiado grandes:</strong> Dividir funcionalidades complejas en casos más pequeños</li>
+            </ul>
+            
+            <h4>5. Ejercicio de reflexión</h4>
+            <p>Preguntas para practicar:</p>
+            <ol>
+                <li>Identifica 5 actores y 10 casos de uso para un sistema de biblioteca</li>
+                <li>¿Qué relación usarías (include o extend) entre "Prestar libro" y "Verificar disponibilidad"? ¿Por qué?</li>
+                <li>¿Cuándo usarías una relación de generalización entre actores?</li>
+                <li>Escribe un caso de uso completo para "Devolver libro" usando la plantilla</li>
+            </ol>
+        </div>
+        
+        <!-- Pestaña 6: Relacionar conceptos -->
+        <div id="uc6" class="tab-pane">
+            <div id="relacionCasosUso">
+                <div class="game-container">
+                    <div class="game-title">🎮 Relaciona cada concepto con su definición</div>
+                    <div id="juegoRelacion" style="min-height: 300px;">
+                        <!-- El juego se cargará desde script.js -->
+                        <p style="text-align:center;">Cargando juego...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

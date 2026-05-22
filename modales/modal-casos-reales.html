@@ -1,0 +1,436 @@
+<!-- ==================================================== -->
+<!-- ALAN ADRIÁN ALONSO VALENZUELA - MODAL CASOS REALES   -->
+<!-- ==================================================== -->
+<div id="modal-casos-reales" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-history"></i> Casos Reales: Errores que cambiaron la industria</h2>
+        
+        <!-- Tres videos compactos en fila -->
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+            <div class="video-compact" style="flex: 1; min-width: 200px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Los peores fallos de software en la historia</h4>
+                <iframe src="https://www.youtube.com/embed/usC6hCHJ_H8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-compact" style="flex: 1; min-width: 200px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Grandes errores de software</h4>
+                <iframe src="https://www.youtube.com/embed/C_hNFryiHJE" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-compact" style="flex: 1; min-width: 200px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Errores históricos en software</h4>
+                <iframe src="https://www.youtube.com/embed/IcbEAZTEjqs" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab active" data-tab="cr1">🚀 Patriot (1991)</button>
+            <button class="tab" data-tab="cr2">🪐 Mars Orbiter (1999)</button>
+            <button class="tab" data-tab="cr3">☢️ Therac-25 (1985)</button>
+            <button class="tab" data-tab="cr4">💸 Knight Capital (2012)</button>
+            <button class="tab" data-tab="cr5">📱 Ariane 5 (1996)</button>
+            <button class="tab" data-tab="cr6">🏦 Toyota (2009-2011)</button>
+            <button class="tab" data-tab="cr7">📊 Tabla comparativa</button>
+            <button class="tab" data-tab="cr8">📚 Lecciones aprendidas</button>
+            <button class="tab" data-tab="cr9">🎮 Juego de análisis</button>
+        </div>
+        
+        <!-- Pestaña 1: Patriot -->
+        <div id="cr1" class="tab-pane active">
+            <h3>🚀 Misil Patriot - Error de redondeo acumulado (1991)</h3>
+            
+            <div class="diagram-box">
+                <strong>📅 Fecha:</strong> 25 de febrero de 1991<br>
+                <strong>📍 Lugar:</strong> Dhahran, Arabia Saudita<br>
+                <strong>💀 Consecuencias:</strong> 28 soldados estadounidenses muertos<br>
+                <strong>💰 Pérdidas:</strong> Vidas humanas + daño a la reputación militar
+            </div>
+            
+            <h4>📋 ¿Qué pasó?</h4>
+            <p>Durante la Guerra del Golfo, un misil Scud iraquí impactó contra un cuartel militar. El sistema Patriot no lo interceptó porque su software tenía un <strong>error de redondeo acumulado</strong> que causó que el sistema calculara mal la trayectoria del misil.</p>
+            
+            <h4>🔬 Error técnico:</h4>
+            <p>El sistema medía el tiempo en décimas de segundo usando un <strong>registro de 24 bits</strong> (número binario). La fracción 1/10 tiene una representación binaria <strong>infinita y periódica</strong> (0.0001100110011...), por lo que se producía un error acumulado con cada décima de segundo.</p>
+            <div class="diagram-box">
+                <strong>📐 El problema matemático:</strong><br>
+                1/10 en binario = 0.00011001100110011... (infinito)<br>
+                El Patriot usaba solo 24 bits → truncaba el valor<br>
+                Error por décima de segundo: ~0.000000095 segundos<br>
+                Después de 100 horas → error acumulado de 0.34 segundos<br>
+                0.34 segundos × velocidad del Scud (1,676 m/s) = ~570 metros de error
+            </div>
+            
+            <h4>👥 Errores humanos y de proceso:</h4>
+            <ul>
+                <li>❌ No se probó el sistema en condiciones de larga duración (>100 horas)</li>
+                <li>❌ Los operadores no conocían el problema (falta de documentación)</li>
+                <li>❌ El error ya se había detectado en versiones anteriores, pero los parches no se aplicaron a todas las unidades</li>
+                <li>❌ El sistema no se reiniciaba periódicamente para resetear el error</li>
+                <li>❌ Falta de comunicación entre los equipos israelíes (que detectaron el error) y estadounidenses</li>
+            </ul>
+            
+            <h4>🛠️ Cómo se pudo evitar:</h4>
+            <ul>
+                <li>✅ Usar aritmética de punto flotante de doble precisión (64 bits)</li>
+                <li>✅ Realizar pruebas de endurance (larga duración) que simulen días de operación</li>
+                <li>✅ Implementar un sistema de actualización obligatoria de software</li>
+                <li>✅ Reiniciar periódicamente el sistema para resetear el error acumulado</li>
+                <li>✅ Mejorar los canales de comunicación entre equipos aliados</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>📚 Lección principal:</strong><br>
+                "Un pequeño error de redondeo que parece insignificante puede tener consecuencias fatales si no se prueba el sistema en escenarios realistas de uso prolongado."
+            </div>
+        </div>
+        
+        <!-- Pestaña 2: Mars Orbiter -->
+        <div id="cr2" class="tab-pane">
+            <h3>🪐 Mars Climate Orbiter - Confusión de unidades (1999)</h3>
+            
+            <div class="diagram-box">
+                <strong>📅 Fecha:</strong> 23 de septiembre de 1999<br>
+                <strong>📍 Lugar:</strong> Marte (a 170 km de la superficie)<br>
+                <strong>💀 Consecuencias:</strong> Sonda destruida, misión fallida<br>
+                <strong>💰 Pérdidas:</strong> $125 millones de dólares
+            </div>
+            
+            <h4>📋 ¿Qué pasó?</h4>
+            <p>La sonda espacial Mars Climate Orbiter se desintegró al entrar en la atmósfera de Marte, a una altitud 170 km más baja de lo planeado. La nave se acercó demasiado al planeta y se quemó por fricción atmosférica.</p>
+            
+            <h4>🔬 Error técnico:</h4>
+            <p>Un equipo (Lockheed Martin) enviaba datos de impulso en <strong>libras-fuerza · segundo (lbf·s)</strong>, mientras que el equipo de navegación de la NASA esperaba <strong>newtons · segundo (N·s)</strong>.</p>
+            <div class="diagram-box">
+                <strong>📐 El problema matemático:</strong><br>
+                1 libra-fuerza (lbf) = 4.44822 newtons (N)<br>
+                La sonda recibió órdenes 4.45 veces más débiles de lo necesario<br>
+                Correcciones de trayectoria insuficientes → órbita incorrecta<br>
+                Altitud real: 57 km en lugar de 227 km planificados
+            </div>
+            
+            <h4>👥 Errores humanos y de proceso:</h4>
+            <ul>
+                <li>❌ No había un estándar obligatorio de unidades en los contratos</li>
+                <li>❌ Los procedimientos de verificación cruzada fallaron</li>
+                <li>❌ El equipo de navegación estaba sobrecargado y no realizó una revisión independiente</li>
+                <li>❌ Se ignoraron informes previos que advertían sobre el problema</li>
+                <li>❌ Falta de comunicación entre equipos (Lockheed Martin vs NASA JPL)</li>
+                <li>❌ No se implementó una verificación automática de unidades en el software</li>
+            </ul>
+            
+            <h4>🛠️ Cómo se pudo evitar:</h4>
+            <ul>
+                <li>✅ Estandarizar las unidades de medida en todas las interfaces desde el inicio</li>
+                <li>✅ Implementar revisiones independientes de los datos entrantes</li>
+                <li>✅ Usar un sistema de verificación automática de unidades en el software</li>
+                <li>✅ Mejorar la comunicación entre equipos (reuniones regulares)</li>
+                <li>✅ Realizar simulaciones de misión completas antes del lanzamiento</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>📚 Lección principal:</strong><br>
+                "Los errores de integración entre componentes son tan peligrosos como los errores internos. La estandarización y la comunicación son clave en proyectos grandes."
+            </div>
+        </div>
+        
+        <!-- Pestaña 3: Therac-25 -->
+        <div id="cr3" class="tab-pane">
+            <h3>☢️ Therac-25 - Condición de carrera en software médico (1985-1987)</h3>
+            
+            <div class="diagram-box">
+                <strong>📅 Fechas:</strong> Entre 1985 y 1987<br>
+                <strong>📍 Lugar:</strong> Varias clínicas en EE.UU. y Canadá<br>
+                <strong>💀 Consecuencias:</strong> Al menos 5 pacientes muertos por sobredosis de radiación<br>
+                <strong>🏥 Daños:</strong> Quemaduras graves, muerte por radiación
+            </div>
+            
+            <h4>📋 ¿Qué pasó?</h4>
+            <p>Un acelerador lineal para radioterapia llamado Therac-25 administró <strong>sobredosis fatales de radiación</strong> a pacientes con cáncer. Algunos recibieron hasta <strong>100 veces la dosis prescrita</strong>, causando quemaduras graves y muerte.</p>
+            
+            <h4>🔬 Error técnico:</h4>
+            <p>El software tenía una <strong>condición de carrera (race condition)</strong>. El operador podía editar los parámetros del tratamiento (como la energía del haz) en una ventana mientras la máquina aplicaba radiación en modo de alta energía sin el dispersor físico. El sistema no verificaba que los parámetros fueran consistentes antes de disparar.</p>
+            <div class="diagram-box">
+                <strong>🔧 Secuencia del error:</strong><br>
+                1. Operador ingresa dosis normal (baja energía)<br>
+                2. Antes de confirmar, cambia a modo de alta energía<br>
+                3. Sistema aplica radiación de alta energía SIN el dispersor físico<br>
+                4. Haz ultra potente (25 MeV) golpea directamente al paciente<br>
+                5. Dosis letal en microsegundos
+            </div>
+            
+            <h4>👥 Errores humanos y de proceso:</h4>
+            <ul>
+                <li>❌ El software se reutilizó de modelos anteriores (Therac-6 y Therac-20) que tenían seguridades por hardware</li>
+                <li>❌ Al eliminar los dispositivos de seguridad hardware, se confió únicamente en el software</li>
+                <li>❌ No se realizó un análisis formal de riesgos (FMEA, HAZOP)</li>
+                <li>❌ La interfaz de usuario no advertía claramente sobre la gravedad de los errores</li>
+                <li>❌ Los informes de incidentes previos fueron ignorados o malinterpretados</li>
+                <li>❌ No se implementaron múltiples capas de seguridad independientes</li>
+            </ul>
+            
+            <h4>🛠️ Cómo se pudo evitar:</h4>
+            <ul>
+                <li>✅ Diseñar múltiples capas de seguridad independientes (defense in depth)</li>
+                <li>✅ Nunca confiar únicamente en software para sistemas críticos</li>
+                <li>✅ Realizar un análisis formal de modos de fallo (FMEA, HAZOP)</li>
+                <li>✅ Probar exhaustivamente las condiciones de concurrencia</li>
+                <li>✅ No reutilizar software de sistemas con arquitectura de seguridad diferente</li>
+                <li>✅ Implementar indicadores claros de estado en la interfaz de usuario</li>
+                <li>✅ Establecer un sistema obligatorio de reporte de incidentes</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>📚 Lección principal:</strong><br>
+                "El software nunca debe ser la única barrera en sistemas que pueden causar daño físico. La seguridad se construye con redundancia y múltiples mecanismos independientes."
+            </div>
+        </div>
+        
+        <!-- Pestaña 4: Knight Capital -->
+        <div id="cr4" class="tab-pane">
+            <h3>💸 Knight Capital - Error de despliegue financiero (2012)</h3>
+            
+            <div class="diagram-box">
+                <strong>📅 Fecha:</strong> 1 de agosto de 2012<br>
+                <strong>📍 Lugar:</strong> Bolsa de Nueva York (NYSE)<br>
+                <strong>💀 Consecuencias:</strong> Pérdida de $440 millones en 45 minutos<br>
+                <strong>💰 Pérdidas:</strong> Empresa al borde de la quiebra
+            </div>
+            
+            <h4>📋 ¿Qué pasó?</h4>
+            <p>Knight Capital Group, una de las mayores firmas de trading algorítmico, perdió <strong>$440 millones en solo 45 minutos</strong> debido a un error en el despliegue de software.</p>
+            
+            <h4>🔬 Error técnico:</h4>
+            <p>Un ingeniero olvidó copiar un nuevo flag de activación a uno de los 8 servidores. El software antiguo (desactivado) se reactivó y comenzó a ejecutar operaciones erróneas, comprando alto y vendiendo bajo a gran velocidad.</p>
+            <div class="diagram-box">
+                <strong>⚡ Secuencia del error:</strong><br>
+                1. Se desplegó nueva versión del software de trading<br>
+                2. Un servador de 8 no recibió el flag de desactivación del código antiguo<br>
+                3. El código antiguo seguía activo y comenzó a ejecutar órdenes erróneas<br>
+                4. Algoritmo generó millones de órdenes en segundos<br>
+                5. Pérdida de $10 millones por minuto durante 45 minutos
+            </div>
+            
+            <h4>👥 Errores humanos y de proceso:</h4>
+            <ul>
+                <li>❌ Proceso de despliegue manual (no automatizado)</li>
+                <li>❌ No había un script de verificación post-despliegue</li>
+                <li>❌ No se usaron pruebas canary (despliegue gradual)</li>
+                <li>❌ El sistema no tenía "circuit breakers" (límites automáticos)</li>
+                <li>❌ No se monitoreó en tiempo real la actividad anómala</li>
+            </ul>
+            
+            <h4>🛠️ Cómo se pudo evitar:</h4>
+            <ul>
+                <li>✅ Automatizar completamente el despliegue (CI/CD)</li>
+                <li>✅ Implementar despliegues canary (1 servidor primero)</li>
+                <li>✅ Agregar circuit breakers (límites de trading por minuto)</li>
+                <li>✅ Monitoreo en tiempo real con alertas automáticas</li>
+                <li>✅ Pruebas de integración completas pre-despliegue</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>📚 Lección principal:</strong><br>
+                "Los procesos manuales de despliegue son peligrosos. La automatización y los límites de seguridad son esenciales en sistemas financieros."
+            </div>
+        </div>
+        
+        <!-- Pestaña 5: Ariane 5 -->
+        <div id="cr5" class="tab-pane">
+            <h3>📱 Ariane 5 - Desbordamiento de entero (1996)</h3>
+            
+            <div class="diagram-box">
+                <strong>📅 Fecha:</strong> 4 de junio de 1996<br>
+                <strong>📍 Lugar:</strong> Kourou, Guayana Francesa<br>
+                <strong>💀 Consecuencias:</strong> Cohete destruido 37 segundos después del despegue<br>
+                <strong>💰 Pérdidas:</strong> $370 millones de dólares
+            </div>
+            
+            <h4>📋 ¿Qué pasó?</h4>
+            <p>El cohete Ariane 5 se desintegró 37 segundos después del despegue debido a un <strong>desbordamiento de entero (integer overflow)</strong> en el software de navegación.</p>
+            
+            <h4>🔬 Error técnico:</h4>
+            <p>Se reutilizó código del Ariane 4 (cohete más lento) sin modificar. Una variable que almacenaba la velocidad horizontal (BH) se declaró como entero de 16 bits, pero el Ariane 5 era mucho más rápido, generando un número que excedía el límite de 16 bits (32,767).</p>
+            <div class="diagram-box">
+                <strong>📐 El problema técnico:</strong><br>
+                Variable BH (Bias Horizontal): entero de 16 bits (rango: -32,768 a 32,767)<br>
+                Ariane 5 velocidad → valor BH esperado: ~50,000<br>
+                Desbordamiento → el bit de signo se invirtió<br>
+                El software interpretó un valor negativo enorme como una corrección<br>
+                Los propulsores se desviaron violentamente → el cohete se autodestruyó
+            </div>
+            
+            <h4>👥 Errores humanos y de proceso:</h4>
+            <ul>
+                <li>❌ Se reutilizó código sin probarlo en las nuevas condiciones</li>
+                <li>❌ El módulo problemático era de navegación, activo después del despegue (no era necesario)</li>
+                <li>❌ No se realizaron pruebas de integración con datos reales de Ariane 5</li>
+                <li>❌ No se usaron tipos de datos más grandes o con protección contra overflow</li>
+                <li>❌ Culto de "no tocar lo que funciona" sin considerar cambios de contexto</li>
+            </ul>
+            
+            <h4>🛠️ Cómo se pudo evitar:</h4>
+            <ul>
+                <li>✅ Validar que el código reutilizado sea adecuado para el nuevo sistema</li>
+                <li>✅ Usar tipos de datos con mayor capacidad (32 o 64 bits)</li>
+                <li>✅ Implementar protecciones contra desbordamiento (range checking)</li>
+                <li>✅ Apagar módulos no necesarios después del despegue</li>
+                <li>✅ Realizar pruebas exhaustivas con datos reales del nuevo cohete</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>📚 Lección principal:</strong><br>
+                "La reutilización de código es peligrosa si no se validan los supuestos originales. Las pruebas deben realizarse en el contexto real de uso."
+            </div>
+        </div>
+        
+        <!-- Pestaña 6: Toyota -->
+        <div id="cr6" class="tab-pane">
+            <h3>🏦 Toyota - Aceleración involuntaria (2009-2011)</h3>
+            
+            <div class="diagram-box">
+                <strong>📅 Fechas:</strong> 2009-2011<br>
+                <strong>📍 Lugar:</strong> Mundial (principalmente EE.UU.)<br>
+                <strong>💀 Consecuencias:</strong> 89 muertos reportados<br>
+                <strong>💰 Pérdidas:</strong> $1,200 millones en multas + recall de 14 millones de vehículos
+            </div>
+            
+            <h4>📋 ¿Qué pasó?</h4>
+            <p>Miles de vehículos Toyota experimentaron <strong>aceleración involuntaria</strong> sin que el conductor presionara el acelerador. Toyota culpó inicialmente a los conductores (error de pedales), pero investigaciones posteriores revelaron <strong>errores en el software</strong> del sistema de control electrónico del acelerador.</p>
+            
+            <h4>🔬 Error técnico:</h4>
+            <p>El software de control del acelerador tenía <strong>condiciones de carrera, desbordamiento de tareas y falta de protecciones anticorrupción de memoria</strong>. En ciertas condiciones, el sistema podía entrar en un estado erróneo donde ignoraba la entrada del pedal de freno.</p>
+            <div class="diagram-box">
+                <strong>🚗 El problema técnico detectado:</strong><br>
+                • Desbordamiento de tareas en el sistema operativo de tiempo real<br>
+                • Memoria compartida sin protección adecuada (race conditions)<br>
+                • Falta de comprobación de integridad de datos (checksums)<br>
+                • El sistema podía "colgarse" en un estado de aceleración máxima<br>
+                • El freno no tenía prioridad sobre el acelerador en ciertos escenarios
+            </div>
+            
+            <h4>👥 Errores humanos y de proceso:</h4>
+            <ul>
+                <li>❌ Software de 10,000 funciones sin control de versiones adecuado</li>
+                <li>❌ No se siguieron estándares de seguridad para sistemas críticos (ISO 26262)</li>
+                <li>❌ Falta de redundancia en los sistemas de seguridad</li>
+                <li>❌ Toyota destruyó/retuvo evidencia de los fallos de software</li>
+                <li>❌ Negación inicial del problema por parte de la empresa</li>
+            </ul>
+            
+            <h4>🛠️ Cómo se pudo evitar:</h4>
+            <ul>
+                <li>✅ Aplicar estándares de seguridad automotriz (ISO 26262 - ASIL)</li>
+                <li>✅ Implementar arquitectura de "drive-by-wire" redundante</li>
+                <li>✅ Priorizar la señal del freno sobre el acelerador (hardware)</li>
+                <li>✅ Realizar pruebas exhaustivas de condiciones extremas</li>
+                <li>✅ Transparencia y recall temprano ante reportes de problemas</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>📚 Lección principal:</strong><br>
+                "Los sistemas críticos para la vida (automotriz, médico, aeroespacial) requieren estándares rigurosos, redundancia y transparencia. Ocultar problemas empeora las consecuencias."
+            </div>
+        </div>
+        
+        <!-- Pestaña 7: Tabla comparativa -->
+        <div id="cr7" class="tab-pane">
+            <h3>📊 Tabla comparativa de todos los casos reales</h3>
+            
+            <table class="info-table">
+                <tr><th>Caso</th><th>Año</th><th>Tipo de error</th><th>Causa raíz</th><th>Consecuencias</th><th>Lección principal</th></td>
+                <tr><td class="tg-0lax">Patriot</th><td class="tg-0lax">1991</th><td class="tg-0lax">Redondeo</th><td class="tg-0lax">Aritmética de punto fijo, falta de pruebas de larga duración</th><td class="tg-0lax">28 muertos</th><td class="tg-0lax">Probar sistemas en condiciones realistas de largo funcionamiento</th></tr>
+                <tr><td class="tg-0lax">Mars Orbiter</th><td class="tg-0lax">1999</th><td class="tg-0lax">Unidades</th><td class="tg-0lax">Falta de estandarización, mala comunicación</th><td class="tg-0lax">$125M perdidos</th><td class="tg-0lax">Estandarizar unidades y mejorar comunicación</th></tr>
+                <tr><td class="tg-0lax">Therac-25</th><td class="tg-0lax">1985-87</th><td class="tg-0lax">Race condition</th><td class="tg-0lax">Falta de redundancia en software médico</th><td class="tg-0lax">5+ muertos</th><td class="tg-0lax">Múltiples capas de seguridad, nunca solo software</th></tr>
+                <tr><td class="tg-0lax">Knight Capital</th><td class="tg-0lax">2012</th><td class="tg-0lax">Despliegue</th><td class="tg-0lax">Proceso manual, falta de automatización</th><td class="tg-0lax">$440M</th><td class="tg-0lax">Automatizar despliegues, circuit breakers</th></td>
+                <td><td class="tg-0lax">Ariane 5</th><td class="tg-0lax">1996</th><td class="tg-0lax">Overflow</th><td class="tg-0lax">Reutilización sin validación</th><td class="tg-0lax">$370M</th><td class="tg-0lax">Validar supuestos al reutilizar código</th></tr>
+                <tr><td class="tg-0lax">Toyota</th><td class="tg-0lax">2009-11</th><td class="tg-0lax">Race condition</th><td class="tg-0lax">Falta de estándares automotrices</th><td class="tg-0lax">89 muertos, $1.2B</th><td class="tg-0lax">Estándares rigurosos para sistemas críticos</th></tr>
+            </table>
+        </div>
+        
+        <!-- Pestaña 8: Lecciones aprendidas -->
+        <div id="cr8" class="tab-pane">
+            <h3>📚 Lecciones aprendidas y mejores prácticas</h3>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>🔬 Para pruebas</h4>
+                    <ul>
+                        <li>Probar en condiciones de larga duración (endurance testing)</li>
+                        <li>Incluir pruebas de concurrencia y race conditions</li>
+                        <li>Probar con valores límite y desbordamiento</li>
+                        <li>Simular entornos reales, no solo ideales</li>
+                        <li>Pruebas de integración entre componentes de diferentes equipos</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>🛡️ Para procesos</h4>
+                    <ul>
+                        <li>Estandarizar unidades y formatos en todas las interfaces</li>
+                        <li>Implementar revisiones independientes de datos críticos</li>
+                        <li>Automatizar despliegues (CI/CD) con verificaciones</li>
+                        <li>Establecer circuit breakers y límites automáticos</li>
+                        <li>Mantener una matriz de trazabilidad de requisitos</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>👥 Para equipos</h4>
+                    <ul>
+                        <li>Mejorar la comunicación entre equipos (reuniones regulares)</li>
+                        <li>Documentar y compartir lecciones aprendidas</li>
+                        <li>Capacitar en estándares de seguridad específicos del dominio</li>
+                        <li>Fomentar una cultura de reporte de incidentes sin culpa</li>
+                        <li>Realizar autopsias post-mortem constructivas</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>🏗️ Para arquitectura</h4>
+                    <ul>
+                        <li>Múltiples capas de seguridad independientes (defense in depth)</li>
+                        <li>Redundancia en sistemas críticos (N-version programming)</li>
+                        <li>Validación de entrada en todas las interfaces</li>
+                        <li>Uso de tipos de datos con protección contra overflow</li>
+                        <li>Implementar watchdog timers y health checks</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h4>📌 Checklist de prevención para tu proyecto:</h4>
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+___  ¿Se realizaron pruebas de larga duración (endurance)?
+___  ¿Se probaron valores límite y casos de desbordamiento?
+___  ¿Se probaron condiciones de concurrencia (race conditions)?
+___  ¿Se estandarizaron las unidades en todas las interfaces?
+___  ¿Se automatizó el despliegue con verificaciones?
+___  ¿Se implementaron circuit breakers para evitar fallos catastróficos?
+___  ¿Se realizaron análisis de riesgos (FMEA, HAZOP)?
+___  ¿Se documentaron y compartieron lecciones aprendidas?
+___  ¿Se realizaron revisiones independientes de datos críticos?
+___  ¿Se implementaron múltiples capas de seguridad redundantes?
+                </pre>
+            </div>
+        </div>
+        
+        <!-- Pestaña 9: Juego de análisis -->
+        <div id="cr9" class="tab-pane">
+            <div class="game-container">
+                <div class="game-title">🎮 Juego: Análisis de casos reales</div>
+                <div id="juegoCasos" style="min-height: 300px;">
+                    <div id="preguntaCaso" style="margin-bottom: 20px;">
+                        <p><strong>Caso 1/6:</strong> Un sistema de defensa falla porque después de 100 horas de operación acumula un error de 0.34 segundos en el cálculo de tiempo. ¿Qué caso es?</p>
+                    </div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-caso="patriot">Misil Patriot</div>
+                        <div class="quiz-option" data-caso="mars">Mars Orbiter</div>
+                        <div class="quiz-option" data-caso="therac">Therac-25</div>
+                        <div class="quiz-option" data-caso="knight">Knight Capital</div>
+                    </div>
+                    <div id="feedbackCasos" style="margin-top: 15px;"></div>
+                    <div style="margin-top: 20px;">
+                        <p><strong>Puntuación:</strong> <span id="puntosCasos">0</span> / 6</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

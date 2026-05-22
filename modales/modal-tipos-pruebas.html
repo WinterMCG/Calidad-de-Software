@@ -1,0 +1,831 @@
+<!-- ==================================================== -->
+<!-- MANUEL CERVANTES GONZÁLEZ - MODAL TIPOS DE PRUEBAS  -->
+<!-- =================== MUCHO ÉNFASIS ================= -->
+<!-- ==================================================== -->
+<div id="modal-tipos-pruebas" class="modal">
+    <div class="modal-content">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> Volver</button>
+        <h2><i class="fas fa-vial"></i> Tipos de Pruebas de Software</h2>
+        
+        <!-- Dos videos juntos (original + nuevo) -->
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 15px;">
+            <div class="video-compact" style="flex: 1; min-width: 250px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Tipos y Niveles de Pruebas de Software</h4>
+                <iframe src="https://www.youtube.com/embed/hSxXuRxA9mo" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-compact" style="flex: 1; min-width: 250px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas de Software - Estrategias y Ejemplos</h4>
+                <iframe src="https://www.youtube.com/embed/Y_vnW12-35U" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Resumen breve -->
+        <div class="diagram-box" style="margin-top: 0; margin-bottom: 20px;">
+            <p>📌 <strong>Resumen:</strong> Las pruebas de software se clasifican en múltiples tipos según su objetivo (unitarias, integración, sistema, regresión, etc.) y su enfoque (caja negra, caja blanca, carga, seguridad, usabilidad). Aplicar la combinación adecuada garantiza la fiabilidad, el rendimiento y la satisfacción del usuario final.</p>
+        </div>
+        
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab active" data-tab="tp1">🏔️ Pirámide de pruebas</button>
+            <button class="tab" data-tab="tp2">🧪 Pruebas unitarias</button>
+            <button class="tab" data-tab="tp3">🔗 Pruebas de integración</button>
+            <button class="tab" data-tab="tp4">🌐 Pruebas de sistema</button>
+            <button class="tab" data-tab="tp5">✅ Pruebas de aceptación</button>
+            <button class="tab" data-tab="tp6">🔄 Pruebas de regresión</button>
+            <button class="tab" data-tab="tp7">💨 Pruebas de humo</button>
+            <button class="tab" data-tab="tp8">⚡ Pruebas de carga/estrés</button>
+            <button class="tab" data-tab="tp9">🔒 Pruebas de seguridad</button>
+            <button class="tab" data-tab="tp10">🎨 Pruebas de usabilidad</button>
+            <button class="tab" data-tab="tp11">📊 Tabla comparativa</button>
+            <button class="tab" data-tab="tp12">🎮 Quiz interactivo</button>
+            <!-- NUEVAS PESTAÑAS -->
+            <button class="tab" data-tab="tp13">🧩 Pruebas funcionales</button>
+            <button class="tab" data-tab="tp14">🔌 Pruebas de compatibilidad</button>
+            <button class="tab" data-tab="tp15">💿 Pruebas de instalación</button>
+            <button class="tab" data-tab="tp16">🔁 Pruebas de recuperación</button>
+            <button class="tab" data-tab="tp17">📄 Pruebas de documentación</button>
+        </div>
+        
+        <!-- Pestaña 1: Pirámide de pruebas -->
+        <div id="tp1" class="tab-pane active">
+            <h3>🏔️ La Pirámide de pruebas (Mike Cohn)</h3>
+            <p>La pirámide de pruebas es un concepto fundamental en ingeniería de software que recomienda la distribución óptima de los diferentes tipos de pruebas. Fue popularizada por <strong>Mike Cohn</strong> en su libro "Succeeding with Agile".</p>
+            
+            <!-- Imagen más pequeña -->
+            <div style="text-align: center; margin: 20px 0;">
+                <img src="https://cl.abstracta.us/wp-content/uploads/2019/12/piramide-automatizacion-pruebas-funcionales-mike-cohn-1024x559.png" 
+                     alt="Pirámide de automatización de pruebas funcionales de Mike Cohn" 
+                     style="max-width: 380px; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border);">
+            </div>
+
+            <!-- Explicación de la pirámide -->
+            <div class="diagram-box">
+                <strong>📌 ¿Qué nos enseña esta pirámide?</strong><br><br>
+                La pirámide de Mike Cohn es una guía para diseñar una estrategia de pruebas eficiente. Su forma indica dónde debemos poner el mayor esfuerzo de automatización:
+                <ul>
+                    <li><strong>🔹 Base (Pruebas Unitarias):</strong> Deben ser la capa más grande. Son pruebas rápidas, aisladas y económicas que verifican funciones o métodos individuales. Una buena práctica es que constituyan alrededor del <strong>70%</strong> del total de pruebas.</li>
+                    <li><strong>🔹 Capa Media (Pruebas de Integración / API):</strong> Un número moderado. Verifican que los componentes interactúen correctamente entre sí y con servicios externos (bases de datos, APIs). Lo ideal es que representen cerca del <strong>20%</strong>.</li>
+                    <li><strong>🔹 Cúspide (Pruebas End-to-End / UI):</strong> Es la capa más pequeña. Simulan flujos completos de usuario a través de la interfaz gráfica. Son las más lentas, costosas y frágiles de mantener, por lo que se recomienda que sean solo un <strong>5-10%</strong> del total.</li>
+                </ul>
+                <strong>🎯 Objetivo final:</strong> Invertir el esfuerzo donde más rendimiento obtenemos: muchas pruebas rápidas y baratas en la base, y pocas pruebas lentas y costosas en la cima. Esto acelera la retroalimentación al equipo y reduce drásticamente los costos de corrección.
+            </div>
+
+            <!-- Explicación de la pirámide invertida -->
+            <div class="diagram-box" style="margin-top: 20px;">
+                <strong>⚠️ Antipatrón: La pirámide invertida (ice cream cone)</strong><br><br>
+                Cuando el equipo invierte excesivamente en pruebas End-to-End (UI) y descuida las pruebas unitarias, la distribución se invierte: muchas pruebas lentas y frágiles arriba y pocas pruebas rápidas abajo. Esto genera:
+                <ul>
+                    <li>❌ Ejecuciones de prueba muy lentas (minutos u horas).</li>
+                    <li>❌ Alta fragilidad: pequeños cambios en la interfaz rompen muchas pruebas.</li>
+                    <li>❌ Retroalimentación tardía para los desarrolladores.</li>
+                    <li>❌ Costos de mantenimiento elevados.</li>
+                </ul>
+                <strong>✅ Solución:</strong> Seguir la pirámide clásica: priorizar pruebas unitarias, luego integración, y solo unas pocas pruebas UI para validar flujos críticos.
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>📊 Distribución recomendada:</h4>
+                    <ul>
+                        <li>70-80% Pruebas unitarias</li>
+                        <li>15-20% Pruebas de integración</li>
+                        <li>5-10% Pruebas E2E / Aceptación</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>💰 Costo relativo:</h4>
+                    <ul>
+                        <li>Unitarias: 1x</li>
+                        <li>Integración: 5x</li>
+                        <li>E2E / Aceptación: 20x</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>⚡ Velocidad de ejecución:</h4>
+                    <ul>
+                        <li>Unitarias: milisegundos</li>
+                        <li>Integración: segundos</li>
+                        <li>E2E / Aceptación: minutos</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 Principios de la pirámide:</strong><br>
+                ✅ <strong>Más pruebas abajo:</strong> Invertir en pruebas unitarias rápidas y baratas<br>
+                ✅ <strong>Menos pruebas arriba:</strong> Limitar pruebas end-to-end lentas y costosas<br>
+                ✅ <strong>Test early, test often:</strong> Probar temprano y frecuentemente<br>
+                ✅ <strong>Automatizar siempre que sea posible:</strong> Especialmente unitarias e integración<br>
+                ✅ <strong>Mantener la pirámide:</strong> Evitar la "pirámide invertida"
+            </div>
+        </div>
+        
+        <!-- Pestaña 2: Pruebas unitarias -->
+        <div id="tp2" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas unitarias</h4>
+                <iframe src="https://www.youtube.com/embed/VdsH43bcGVQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>🧪 Pruebas Unitarias (Unit Testing)</h3>
+            <p>Las pruebas unitarias verifican el correcto funcionamiento de <strong>componentes individuales</strong> del software (funciones, métodos, clases) de forma aislada.</p>
+            
+            <div class="diagram-box">
+                <strong>📌 Características de las pruebas unitarias:</strong><br><br>
+                ✅ <strong>Alcance:</strong> Una función o método a la vez<br>
+                ✅ <strong>Responsable:</strong> Desarrollador<br>
+                ✅ <strong>Velocidad:</strong> Milisegundos<br>
+                ✅ <strong>Aislamiento:</strong> Sin dependencias externas (BD, API, red)<br>
+                ✅ <strong>Automatización:</strong> Fácil de automatizar<br>
+                ✅ <strong>Frecuencia:</strong> Cada vez que se compila/cambia el código
+            </div>
+            
+            <h4>📝 Ejemplo de prueba unitaria (Python):</h4>
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+# Código a probar
+def calcular_descuento(precio, porcentaje):
+    if precio <= 0 or porcentaje < 0:
+        return 0
+    return precio * (porcentaje / 100)
+
+# Prueba unitaria con pytest
+def test_calcular_descuento():
+    assert calcular_descuento(100, 10) == 10
+    assert calcular_descuento(200, 25) == 50
+    assert calcular_descuento(0, 10) == 0
+    assert calcular_descuento(100, -5) == 0
+    assert calcular_descuento(-50, 10) == 0
+                </pre>
+            </div>
+            
+            <h4>🔧 Frameworks populares para pruebas unitarias:</h4>
+            <table class="info-table">
+                <tr><th>Lenguaje</th><th>Framework</th><th>Descripción</th></tr>
+                <tr><td class="tg-0lax">Java</th><td class="tg-0lax">JUnit, TestNG</th><td class="tg-0lax">El estándar en el ecosistema Java</th></tr>
+                <tr><td class="tg-0lax">Python</th><td class="tg-0lax">pytest, unittest, nose2</th><td class="tg-0lax">pytest es el más popular</th></tr>
+                <tr><td class="tg-0lax">JavaScript</th><td class="tg-0lax">Jest, Mocha, Jasmine</th><td class="tg-0lax">Jest es el estándar en React</th></tr>
+                <tr><td class="tg-0lax">C# / .NET</th><td class="tg-0lax">xUnit, NUnit, MSTest</th><td class="tg-0lax">xUnit es el más moderno</th></table>
+                <tr><td class="tg-0lax">PHP</th><td class="tg-0lax">PHPUnit</th><td class="tg-0lax">El estándar en PHP</th></tr>
+                <tr><td class="tg-0lax">Ruby</th><td class="tg-0lax">RSpec, Minitest</th><td class="tg-0lax">RSpec es muy expresivo</th></tr>
+                <tr><td class="tg-0lax">Go</th><td class="tg-0lax">testing package</th><td class="tg-0lax">Integrado en la biblioteca estándar</th></tr>
+                <tr><td class="tg-0lax">Rust</th><td class="tg-0lax">cargo test</th><td class="tg-0lax">Integrado en el ecosistema</th></tr>
+            </table>
+            
+            <div class="diagram-box">
+                <strong>✅ Beneficios de las pruebas unitarias:</strong><br>
+                • Detectan errores temprano en el desarrollo<br>
+                • Facilitan el refactorización (cambiar código con confianza)<br>
+                • Sirven como documentación viva del código<br>
+                • Reducen el tiempo de debugging<br>
+                • Mejoran el diseño del código (forzan a escribir código testeable)<br><br>
+                
+                <strong>❌ Limitaciones:</strong><br>
+                • No detectan errores de integración entre módulos<br>
+                • No verifican el sistema completo<br>
+                • Pueden ser frágiles si el código cambia mucho<br>
+                • No reemplazan las pruebas de sistema
+            </div>
+        </div>
+        
+        <!-- Pestaña 3: Pruebas de integración -->
+        <div id="tp3" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas de integración</h4>
+                <iframe src="https://www.youtube.com/embed/3h5PpvnssQc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>🔗 Pruebas de Integración (Integration Testing)</h3>
+            <p>Las pruebas de integración verifican que los diferentes <strong>módulos o componentes</strong> del sistema funcionen correctamente <strong>cuando se combinan</strong>.</p>
+            
+            <div class="diagram-box">
+                <strong>📌 Tipos de integración:</strong><br><br>
+                🔹 <strong>Integración ascendente (Bottom-Up):</strong><br>
+                &nbsp;&nbsp;✓ Se prueban primero los módulos de bajo nivel<br>
+                &nbsp;&nbsp;✓ Luego se integran con módulos de alto nivel<br>
+                &nbsp;&nbsp;✓ Ejemplo: Probar primero el acceso a datos, luego la lógica de negocio<br><br>
+                
+                🔹 <strong>Integración descendente (Top-Down):</strong><br>
+                &nbsp;&nbsp;✓ Se prueban primero los módulos de alto nivel<br>
+                &nbsp;&nbsp;✓ Se usan "stubs" para simular módulos de bajo nivel<br>
+                &nbsp;&nbsp;✓ Ejemplo: Probar la interfaz de usuario simulando el backend<br><br>
+                
+                🔹 <strong>Integración big bang:</strong><br>
+                &nbsp;&nbsp;✓ Se integran todos los módulos a la vez<br>
+                &nbsp;&nbsp;✓ Alto riesgo, difícil de depurar<br>
+                &nbsp;&nbsp;✓ ❌ No recomendada para sistemas grandes<br><br>
+                
+                🔹 <strong>Integración incremental:</strong><br>
+                &nbsp;&nbsp;✓ Se integran módulos de uno en uno o en pequeños grupos<br>
+                &nbsp;&nbsp;✓ Más fácil de localizar errores<br>
+                &nbsp;&nbsp;✓ ✅ Recomendada
+            </div>
+            
+            <h4>📝 Ejemplo de prueba de integración (API):</h4>
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+// Prueba de integración de API con Supertest (Node.js)
+const request = require('supertest');
+const app = require('../app');
+
+describe('POST /api/usuarios', () => {
+    test('debe crear un usuario válido', async () => {
+        const nuevoUsuario = {
+            nombre: 'Juan Pérez',
+            email: 'juan@ejemplo.com',
+            password: '123456'
+        };
+        
+        const response = await request(app)
+            .post('/api/usuarios')
+            .send(nuevoUsuario);
+            
+        expect(response.statusCode).toBe(201);
+        expect(response.body).toHaveProperty('id');
+        expect(response.body.email).toBe('juan@ejemplo.com');
+    });
+});
+                </pre>
+            </div>
+            
+            <h4>🎯 Enfoques para pruebas de integración:</h4>
+            <table class="info-table">
+                <tr><th>Enfoque</th><th>Descripción</th><th>Ventajas</th><th>Desventajas</th></tr>
+                <tr><td class="tg-0lax">Big Bang</th><td class="tg-0lax">Integrar todo a la vez</th><td class="tg-0lax">Simple de planificar</th><td class="tg-0lax">Difícil de depurar, riesgoso</th></tr>
+                <tr><td class="tg-0lax">Top-Down</th><td class="tg-0lax">De arriba hacia abajo</th><td class="tg-0lax">Prueba lógica principal temprano</th><td class="tg-0lax">Requiere stubs</th></tr>
+                <td><td class="tg-0lax">Bottom-Up</th><td class="tg-0lax">De abajo hacia arriba</th><td class="tg-0lax">Prueba componentes base primero</th><td class="tg-0lax">Requiere drivers</th></tr>
+                <tr><td class="tg-0lax">Sándwich</th><td class="tg-0lax">Combinación Top-Down + Bottom-Up</th><td class="tg-0lax">Balanceado</th><td class="tg-0lax">Más complejo de coordinar</th></td>
+            </table>
+            
+            <div class="diagram-box">
+                <strong>✅ Beneficios de las pruebas de integración:</strong><br>
+                • Detectan errores en las interfaces entre módulos<br>
+                • Verifican el flujo de datos entre componentes<br>
+                • Prueban la comunicación con sistemas externos (BD, APIs)<br>
+                • Aumentan la confianza en el sistema completo<br><br>
+                
+                <strong>❌ Desafíos:</strong><br>
+                • Configuración más compleja (bases de datos reales, servicios)<br>
+                • Pueden ser lentas (segundos, no milisegundos)<br>
+                • Dependencias externas pueden fallar (no culpa del código)
+            </div>
+        </div>         
+        <!-- Pestaña 4: Pruebas de sistema -->
+        <div id="tp4" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas de sistema</h4>
+                <iframe src="https://www.youtube.com/embed/j_tpNOhq2F4" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>🌐 Pruebas de Sistema (System Testing)</h3>
+            <p>Las pruebas de sistema evalúan el <strong>software completo</strong> e integrado en un entorno similar al de producción. Verifican que el sistema cumpla con todos los requisitos especificados.</p>
+            
+            <div class="diagram-box">
+                <strong>📌 Tipos de pruebas de sistema:</strong><br><br>
+                🧪 <strong>Pruebas funcionales:</strong> Verifican que todas las funcionalidades cumplan los requisitos<br>
+                ⚡ <strong>Pruebas de rendimiento:</strong> Evalúan tiempos de respuesta, consumo de recursos<br>
+                🔒 <strong>Pruebas de seguridad:</strong> Verifican la protección contra amenazas<br>
+                🎨 <strong>Pruebas de usabilidad:</strong> Evalúan la facilidad de uso<br>
+                🔄 <strong>Pruebas de compatibilidad:</strong> Verifican funcionamiento en diferentes entornos<br>
+                🔧 <strong>Pruebas de recuperación:</strong> Evalúan la capacidad de recuperarse de fallos<br>
+                🌍 <strong>Pruebas de localización:</strong> Verifican adaptación a diferentes idiomas/regiones<br>
+                📱 <strong>Pruebas multiplataforma:</strong> Verifican funcionamiento en diferentes dispositivos
+            </div>
+            
+            <h4>📊 Comparativa: Sistema vs Integración vs Unitarias</h4>
+            <table class="info-table">
+                <tr><th>Aspecto</th><th>Unitarias</th><th>Integración</th><th>Sistema</th></tr>
+                <tr><td class="tg-0lax">Alcance</th><td class="tg-0lax">Componente</th><td class="tg-0lax">Grupo de componentes</th><td class="tg-0lax">Sistema completo</th></tr>
+                <tr><td class="tg-0lax">Entorno</th><td class="tg-0lax">Aislado</th><td class="tg-0lax">Simulado</th><td class="tg-0lax">Producción-like</th></tr>
+                <tr><td class="tg-0lax">Velocidad</th><td class="tg-0lax">Muy rápida</th><td class="tg-0lax">Media</th><td class="tg-0lax">Lenta</th></tr>
+                <tr><td class="tg-0lax">Responsable</th><td class="tg-0lax">Desarrollador</th><td class="tg-0lax">Tester/Dev</th><td class="tg-0lax">Tester</th></tr>
+                <tr><td class="tg-0lax">Cantidad</th><td class="tg-0lax">Muchas</th><td class="tg-0lax">Algunas</th><td class="tg-0lax">Pocas</th></tr>
+                <tr><td class="tg-0lax">Automatización</th><td class="tg-0lax">Fácil</th><td class="tg-0lax">Media</th><td class="tg-0lax">Difícil</th></tr>
+            </table>
+            
+            <div class="diagram-box">
+                <strong>✅ Beneficios de las pruebas de sistema:</strong><br>
+                • Verifican que el sistema cumpla con todos los requisitos<br>
+                • Detectan problemas de integración final<br>
+                • Simulan el uso real del sistema<br>
+                • Son la última línea de defensa antes del despliegue<br><br>
+                
+                <strong>❌ Limitaciones:</strong><br>
+                • Costosas y lentas de ejecutar<br>
+                • Requieren un entorno de prueba completo<br>
+                • Difíciles de automatizar completamente<br>
+                • Los errores son más costosos de corregir en esta fase
+            </div>
+        </div>
+        
+        <!-- Pestaña 5: Pruebas de aceptación -->
+        <div id="tp5" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas de aceptación</h4>
+                <iframe src="https://www.youtube.com/embed/WhVDCTY6VbQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>✅ Pruebas de Aceptación (Acceptance Testing)</h3>
+            <p>Las pruebas de aceptación son realizadas por el <strong>cliente o usuario final</strong> para determinar si el software está listo para ser entregado y cumple con sus necesidades.</p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>🧪 Pruebas alfa (Alpha Testing)</h4>
+                    <p>Realizadas internamente por el equipo de prueba en el entorno de desarrollo, antes de liberar al cliente.</p>
+                    <p><strong>Características:</strong> Entorno controlado, equipo interno, detecta bugs obvios.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🌍 Pruebas beta (Beta Testing)</h4>
+                    <p>Realizadas por un grupo selecto de usuarios reales en sus propios entornos, antes del lanzamiento oficial.</p>
+                    <p><strong>Características:</strong> Entorno real, feedback de usuarios, detecta problemas de usabilidad.</p>
+                </div>
+            </div>
+            
+            <h4>📝 Ejemplo de criterios de aceptación (Gherkin - BDD):</h4>
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+Característica: Inicio de sesión de usuario
+  Como usuario registrado
+  Quiero poder iniciar sesión en el sistema
+  Para acceder a mis datos personales
+
+  Escenario: Inicio de sesión exitoso
+    Dado que soy un usuario registrado con correo "juan@ejemplo.com" y contraseña "123456"
+    Cuando ingreso mi correo y contraseña correctos
+    Y hago clic en "Iniciar sesión"
+    Entonces debería ver mi panel de control
+    Y debería ver un mensaje "Bienvenido Juan"
+
+  Escenario: Inicio de sesión con contraseña incorrecta
+    Dado que soy un usuario registrado
+    Cuando ingreso mi correo correcto y una contraseña incorrecta
+    Y hago clic en "Iniciar sesión"
+    Entonces debería ver un mensaje "Correo o contraseña incorrectos"
+    Y debería permanecer en la página de inicio de sesión
+                </pre>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>✅ Criterios de aceptación (características SMART):</strong><br>
+                • <strong>S</strong>pecific (Específico): Sin ambigüedades<br>
+                • <strong>M</strong>easurable (Medible): Se puede verificar<br>
+                • <strong>A</strong>chievable (Alcanzable): Realista técnicamente<br>
+                • <strong>R</strong>elevant (Relevante): Aporta valor<br>
+                • <strong>T</strong>ime-bound (Con plazo): Tiene fecha límite (si aplica)
+            </div>
+        </div>
+        
+        <!-- Pestaña 6: Pruebas de regresión -->
+        <div id="tp6" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas de regresión</h4>
+                <iframe src="https://www.youtube.com/embed/kc2YD6Gh1JU" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>🔄 Pruebas de Regresión (Regression Testing)</h3>
+            <p>Las pruebas de regresión verifican que los <strong>cambios recientes</strong> (nuevas funcionalidades, correcciones de bugs) <strong>no hayan roto</strong> las funcionalidades existentes.</p>
+            
+            <div class="diagram-box">
+                <strong>📌 Cuándo ejecutar pruebas de regresión:</strong><br><br>
+                🔄 Después de cada cambio en el código (idealmente en CI/CD)<br>
+                🔄 Antes de cada lanzamiento o despliegue<br>
+                🔄 Cuando se corrigen bugs (verificar que la corrección no rompa algo más)<br>
+                🔄 Al agregar nuevas funcionalidades<br>
+                🔄 Al refactorizar código<br>
+                🔄 Al actualizar dependencias o librerías
+            </div>
+            
+            <h4>📊 Estrategias para pruebas de regresión:</h4>
+            <table class="info-table">
+                <tr><th>Estrategia</th><th>Descripción</th><th>Ventajas</th><th>Desventajas</th></tr>
+                <tr><td class="tg-0lax">Regresión completa</th><td class="tg-0lax">Ejecutar todas las pruebas</th><td class="tg-0lax">Máxima cobertura, seguro</th><td class="tg-0lax">Muy lento, costoso</th></td>
+                <tr><td class="tg-0lax">Regresión selectiva</th><td class="tg-0lax">Ejecutar solo pruebas relacionadas</th><td class="tg-0lax">Rápido, eficiente</th><td class="tg-0lax">Riesgo de omitir áreas afectadas</th></tr>
+                <tr><td class="tg-0lax">Regresión priorizada</th><td class="tg-0lax">Ejecutar pruebas por prioridad</th><td class="tg-0lax">Equilibrio entre tiempo y cobertura</th><td class="tg-0lax">Requiere definir prioridades</th></tr>
+                <tr><td class="tg-0lax">Regresión híbrida</th><td class="tg-0lax">Combinación de estrategias</th><td class="tg-0lax">Flexible, adaptable</th><td class="tg-0lax">Más compleja de gestionar</th></tr>
+            </table>
+            
+            <div class="diagram-box">
+                <strong>✅ Mejores prácticas para regresión:</strong><br>
+                • 🤖 Automatizar las pruebas de regresión tanto como sea posible<br>
+                • 📦 Mantener un conjunto de pruebas "humo" rápidas para ejecutar siempre<br>
+                • 🎯 Identificar y priorizar las pruebas más críticas<br>
+                • 🔧 Usar herramientas de CI/CD (Jenkins, GitHub Actions, GitLab CI)<br>
+                • 📊 Monitorear el tiempo de ejecución y optimizar<br>
+                • 🔄 Ejecutar regresión en cada commit (al menos el conjunto rápido)<br>
+                • 📝 Documentar los resultados y tendencias
+            </div>
+        </div>
+        
+        <!-- Pestaña 7: Pruebas de humo -->
+        <div id="tp7" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas de humo</h4>
+                <iframe src="https://www.youtube.com/embed/teAIUF_7eNM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>💨 Pruebas de Humo (Smoke Testing)</h3>
+            <p>Las pruebas de humo son un conjunto de <strong>pruebas rápidas y superficiales</strong> que verifican que las <strong>funcionalidades más críticas</strong> del sistema funcionan antes de realizar pruebas más profundas.</p>
+            
+            <div class="diagram-box">
+                <strong>📌 Origen del nombre:</strong><br>
+                Proviene del hardware: cuando se encendía un dispositivo electrónico, si salía humo significaba que había un problema grave. Si no salía humo, se podía proceder a probar más a fondo.
+            </div>
+            
+            <h4>🎯 ¿Qué probar en pruebas de humo?</h4>
+            <ul>
+                <li>🚀 El sistema inicia correctamente</li>
+                <li>🔐 Las páginas principales cargan (login, dashboard)</li>
+                <li>🔄 Los flujos críticos funcionan (registro, compra, pago)</li>
+                <li>🔌 Las conexiones a servicios externos funcionan (BD, APIs)</li>
+                <li>📱 Las pantallas principales en dispositivos móviles cargan</li>
+                <li>⚡ La respuesta no es extremadamente lenta</li>
+            </ul>
+            
+            <div class="diagram-box">
+                <strong>✅ Ventajas:</strong><br>
+                • Rápidas (minutos, no horas)<br>
+                • Detectan problemas críticos temprano<br>
+                • Ahorran tiempo (no se prueban builds rotas en profundidad)<br>
+                • Fáciles de automatizar<br>
+                • Mejoran la confianza en el build
+            </div>
+            
+            <div class="diagram-box">
+                <strong>❌ Limitaciones:</strong><br>
+                • No detectan errores sutiles o específicos<br>
+                • No reemplazan las pruebas funcionales completas<br>
+                • Solo verifican lo más básico
+            </div>
+            
+            <h4>📝 Ejemplo de suite de pruebas de humo:</h4>
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+✅ Página de login carga (status 200)
+✅ Usuario puede iniciar sesión con credenciales válidas
+✅ Dashboard carga después del login
+✅ Listado de productos carga
+✅ Se puede agregar un producto al carrito
+✅ Carrito muestra el producto agregado
+✅ Página de checkout carga
+✅ Usuario puede cerrar sesión
+⚠️  Todas las pruebas de humo PASARON → Se puede proceder a pruebas completas
+                </pre>
+            </div>
+        </div>
+        
+        <!-- Pestaña 8: Pruebas de carga/estrés -->
+        <div id="tp8" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas de carga y estrés</h4>
+                <iframe src="https://www.youtube.com/embed/EIOk0MJ7OvA" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>⚡ Pruebas de Carga y Estrés</h3>
+            <p>Evalúan el comportamiento del sistema bajo <strong>condiciones normales y extremas de uso</strong> (muchos usuarios concurrentes, grandes volúmenes de datos).</p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>📊 Pruebas de carga (Load Testing)</h4>
+                    <p>Simulan <strong>cargas esperadas</strong> de usuarios o transacciones para verificar que el sistema responde dentro de los límites aceptables.</p>
+                    <p><strong>Objetivos:</strong> Tiempo de respuesta, throughput, uso de CPU/memoria, estabilidad bajo carga normal.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>💥 Pruebas de estrés (Stress Testing)</h4>
+                    <p>Llevan el sistema <strong>más allá de sus límites</strong> para ver cómo falla y si se recupera adecuadamente.</p>
+                    <p><strong>Objetivos:</strong> Punto de quiebre, comportamiento durante fallos, capacidad de recuperación.</p>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+📊 Gráfico de rendimiento ideal:
+
+Respuesta
+   │
+8s ┤                              ╭─── Punto de quiebre
+6s ┤                          ╭───╯
+4s ┤                      ╭───╯
+2s ┤──────────────────╭───╯
+0s ┼───────╯
+   └──────────────────────────────────▶ Usuarios
+        100    500    1000   2000   5000
+              ↑
+        Umbral aceptable (ej: 2 segundos)
+                </pre>
+            </div>
+            
+            <h4>🔧 Herramientas para pruebas de carga:</h4>
+            <table class="info-table">
+                <tr><th>Herramienta</th><th>Lenguaje</th><th>Características</th><th>Precio</th></tr>
+                <tr><td class="tg-0lax">Apache JMeter</th><td class="tg-0lax">Java</th><td class="tg-0lax">UI gráfica, plugins, múltiples protocolos</th><td class="tg-0lax">Gratis</th></tr>
+                <tr><td class="tg-0lax">Gatling</th><td class="tg-0lax">Scala</th><td class="tg-0lax">Alto rendimiento, DSL expresivo</th><td class="tg-0lax">Gratis (OSS)</th></tr>
+                <tr><td class="tg-0lax">k6</th><td class="tg-0lax">Go/JS</th><td class="tg-0lax">Moderno, CI/CD nativo</th><td class="tg-0lax">Gratis (OSS)</th></tr>
+                <tr><td class="tg-0lax">Locust</th><td class="tg-0lax">Python</th><td class="tg-0lax">Fácil de escribir, distribuido</th><td class="tg-0lax">Gratis</th></tr>
+                <tr><td class="tg-0lax">Artillery.io</th><td class="tg-0lax">Node.js</th><td class="tg-0lax">Simple, basado en YAML/JSON</th><td class="tg-0lax">Gratis</th></tr>
+                <tr><td class="tg-0lax">LoadRunner</th><td class="tg-0lax">Múltiple</th><td class="tg-0lax">Empresarial, muchas funcionalidades</th><td class="tg-0lax">💰💰💰</th></tr>
+            <tr>
+            
+            <div class="diagram-box">
+                <strong>📌 Ejemplo de script JMeter (concepto):</strong><br>
+                <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
+Thread Group (100 usuarios, 10 seg ramp-up, 5 minutos)
+├── HTTP Request (GET /api/productos)
+├── HTTP Request (POST /api/login)
+├── HTTP Request (GET /api/carrito)
+├── Assertions (validar respuestas)
+└── Listeners (Results Tree, Summary Report)
+                </pre>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>✅ Métricas clave en pruebas de carga:</strong><br>
+                • ⏱️ Tiempo de respuesta promedio, p90, p95, p99<br>
+                • 📊 Throughput (peticiones por segundo)<br>
+                • 💾 Uso de CPU, memoria, disco, red<br>
+                • ❌ Tasa de errores (timeouts, 500, etc.)<br>
+                • 👥 Número máximo de usuarios concurrentes soportados<br>
+                • 🔄 Tiempo de recuperación tras sobrecarga
+            </div>
+        </div>
+        
+        <!-- Pestaña 9: Pruebas de seguridad -->
+        <div id="tp9" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas de seguridad</h4>
+                <iframe src="https://www.youtube.com/embed/NqEcQCEtFK0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>🔒 Pruebas de Seguridad (Security Testing)</h3>
+            <p>Las pruebas de seguridad identifican <strong>vulnerabilidades</strong> en el software que podrían ser explotadas por atacantes.</p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>🛡️ Análisis SAST</h4>
+                    <p><strong>Static Application Security Testing</strong> - Análisis del código fuente sin ejecutarlo.</p>
+                    <p><strong>Detección:</strong> Inyección SQL, XSS, buffer overflows, malas prácticas.</p>
+                    <p><strong>Herramientas:</strong> SonarQube, Checkmarx, Fortify.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>⚔️ Análisis DAST</h4>
+                    <p><strong>Dynamic Application Security Testing</strong> - Pruebas de la aplicación en ejecución.</p>
+                    <p><strong>Detección:</strong> Vulnerabilidades en APIs, autenticación, autorización.</p>
+                    <p><strong>Herramientas:</strong> OWASP ZAP, Burp Suite, Acunetix.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>🔐 Pruebas de penetración</h4>
+                    <p>Simulación controlada de ataques reales por expertos en seguridad.</p>
+                    <p><strong>Enfoque:</strong> Manual y automatizado, busca explotar vulnerabilidades.</p>
+                    <p><strong>Realizadas por:</strong> Ethical hackers, equipos de Red Team.</p>
+                </div>
+                <div class="comparison-item">
+                    <h4>📦 Análisis SCA</h4>
+                    <p><strong>Software Composition Analysis</strong> - Análisis de dependencias y librerías de terceros.</p>
+                    <p><strong>Detección:</strong> Vulnerabilidades conocidas en paquetes, licencias.</p>
+                    <p><strong>Herramientas:</strong> OWASP Dependency-Check, Snyk.</p>
+                </div>
+            </div>
+            
+            <h4>📊 OWASP Top 10 (vulnerabilidades más comunes - 2021):</h4>
+            <table class="info-table">
+                <tr><th>#</th><th>Vulnerabilidad</th><th>Descripción</th></tr>
+                <tr><td class="tg-0lax">1</th><td class="tg-0lax">Control de acceso roto</th><td class="tg-0lax">Usuarios acceden a recursos que no deberían</th></td>
+                <tr><td class="tg-0lax">2</th><td class="tg-0lax">Fallos criptográficos</th><td class="tg-0lax">Datos sensibles no protegidos adecuadamente</th></tr>
+                <tr><td class="tg-0lax">3</th><td class="tg-0lax">Inyección</th><td class="tg-0lax">SQL, NoSQL, OS, LDAP injection</th></td>
+                <tr><td class="tg-0lax">4</th><td class="tg-0lax">Diseño inseguro</th><td class="tg-0lax">Fallos en el diseño de seguridad</th></tr>
+                <tr><td class="tg-0lax">5</th><td class="tg-0lax">Configuración incorrecta</th><td class="tg-0lax">Seguridad por defecto débil, configuraciones inseguras</th></tr>
+                <tr><td class="tg-0lax">6</th><td class="tg-0lax">Componentes vulnerables</th><td class="tg-0lax">Librerías con vulnerabilidades conocidas</th></td>
+                <tr><td class="tg-0lax">7</th><td class="tg-0lax">Fallos de identificación</th><td class="tg-0lax">Autenticación débil, gestión de sesiones insegura</th></tr>
+                <tr><td class="tg-0lax">8</th><td class="tg-0lax">Fallos de software/hardware</th><td class="tg-0lax">Protección insuficiente de datos</th></td>
+                <tr><td class="tg-0lax">9</th><td class="tg-0lax">Monitoreo de seguridad deficiente</th><td class="tg-0lax">Falta de detección de incidentes</th></td>
+                <tr><td class="tg-0lax">10</th><td class="tg-0lax">Falsificación de solicitudes</th><td class="tg-0lax">SSRF (Server-Side Request Forgery)</th></td>
+            </table>
+            
+            <div class="diagram-box">
+                <strong>✅ Buenas prácticas de seguridad en pruebas:</strong><br>
+                • 🔐 Incluir pruebas de seguridad en CI/CD<br>
+                • 📊 Realizar análisis SAST/DAST regularmente<br>
+                • 🎯 Priorizar vulnerabilidades según riesgo<br>
+                • 🔒 Usar autenticación multifactor en sistemas críticos<br>
+                • 📝 Mantener dependencias actualizadas<br>
+                • 🧪 Hacer pruebas de penetración periódicas<br>
+                • 📚 Capacitar al equipo en seguridad
+            </div>
+        </div>
+        
+        <!-- Pestaña 10: Pruebas de usabilidad -->
+        <div id="tp10" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas de usabilidad</h4>
+                <iframe src="https://www.youtube.com/embed/gy78yUR1WgY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>🎨 Pruebas de Usabilidad (Usability Testing)</h3>
+            <p>Las pruebas de usabilidad evalúan qué tan <strong>fácil, eficiente y satisfactorio</strong> es para los usuarios utilizar el software.</p>
+            
+            <div class="diagram-box">
+                <strong>📌 ¿Qué se evalúa en usabilidad?</strong><br><br>
+                🎯 <strong>Efectividad:</strong> ¿Los usuarios pueden completar sus tareas?<br>
+                ⚡ <strong>Eficiencia:</strong> ¿Cuánto tiempo y esfuerzo requieren?<br>
+                😊 <strong>Satisfacción:</strong> ¿Qué tan contentos están con la experiencia?<br>
+                📚 <strong>Aprendizaje:</strong> ¿Qué tan fácil es aprender a usar el sistema?<br>
+                🔄 <strong>Memorabilidad:</strong> ¿Pueden recordar cómo usarlo después de un tiempo?<br>
+                ❌ <strong>Tasa de error:</strong> ¿Cuántos errores cometen los usuarios?
+            </div>
+            
+            <h4>📊 Escala SUS (System Usability Scale):</h4>
+            <div class="diagram-box">
+                <strong>📝 Puntuación SUS (0-100):</strong><br><br>
+                • 90-100: 🌟 Excelente, mejor que el 99% de los sistemas<br>
+                • 80-89: 👍 Bueno, mejor que el 90% de los sistemas<br>
+                • 70-79: 📊 Aceptable, promedio<br>
+                • 60-69: ⚠️ Por debajo del promedio, necesita mejorar<br>
+                • &lt; 60: ❌ Malo, requiere rediseño urgente<br><br>
+                
+                <strong>Fórmula SUS:</strong><br>
+                Para 10 preguntas (alternando positivas y negativas):<br>
+                Puntuación = (suma de (respuestas_pares - 1) + (5 - respuestas_impares)) * 2.5
+            </div>
+            
+            <h4>🎯 Métodos comunes de pruebas de usabilidad:</h4>
+            <table class="info-table">
+                <tr><th>Método</th><th>Descripción</th><th>Cuándo usarlo</th></tr>
+                <tr><td class="tg-0lax">Moderado en persona</th><td class="tg-0lax">Un moderador observa al usuario en persona</th><td class="tg-0lax">Cuando se necesita feedback detallado</th></tr>
+                <tr><td class="tg-0lax">Remoto no moderado</th><td class="tg-0lax">Usuarios completan tareas por su cuenta</th><td class="tg-0lax">Cuando se necesitan muchas respuestas</th></tr>
+                <tr><td class="tg-0lax">Pruebas A/B</th><td class="tg-0lax">Comparar dos versiones del diseño</th><td class="tg-0lax">Para decidir entre alternativas</th></tr>
+                <td><td class="tg-0lax">Análisis de eye-tracking</th><td class="tg-0lax">Mide dónde miran los usuarios</th><td class="tg-0lax">Para optimizar layout visual</th></tr>
+                <tr><td class="tg-0lax">Encuestas (SUS, UMUX)</th><td class="tg-0lax">Cuestionarios estandarizados</th><td class="tg-0lax">Para mediciones cuantitativas</th></td>
+            </table>
+            
+            <div class="diagram-box">
+                <strong>✅ Herramientas para pruebas de usabilidad:</strong><br>
+                • <strong>Hotjar / FullStory:</strong> Mapas de calor, grabaciones de sesiones<br>
+                • <strong>UserTesting / Maze:</strong> Pruebas remotas con usuarios reales<br>
+                • <strong>Lighthouse / PageSpeed:</strong> Análisis de experiencia de usuario web<br>
+                • <strong>Google Analytics:</strong> Métricas de comportamiento (tasa de rebote, tiempo en página)<br>
+                • <strong>Crazy Egg:</strong> Mapas de calor y seguimiento de clics
+            </div>
+        </div>
+        
+        <!-- Pestaña 11: Tabla comparativa -->
+        <div id="tp11" class="tab-pane">
+            <h3>📊 Tabla comparativa de todos los tipos de pruebas</h3>
+            
+            <table class="info-table">
+                <tr><th>Tipo de prueba</th><th>Alcance</th><th>Responsable</th><th>Automatizable</th><th>Velocidad</th><th>Costo</th></tr>
+                <tr><td class="tg-0lax">Unitarias</th><td class="tg-0lax">Función/método</th><td class="tg-0lax">Desarrollador</th><td class="tg-0lax">✅ Alta</th><td class="tg-0lax">Muy rápida</th><td class="tg-0lax">Bajo</th></tr>
+                <tr><td class="tg-0lax">Integración</th><td class="tg-0lax">Múltiples componentes</th><td class="tg-0lax">Tester/Dev</th><td class="tg-0lax">✅ Media-Alta</th><td class="tg-0lax">Rápida</th><td class="tg-0lax">Medio</th></tr>
+                <tr><td class="tg-0lax">Sistema</th><td class="tg-0lax">Sistema completo</th><td class="tg-0lax">Tester</th><td class="tg-0lax">⚠️ Media</th><td class="tg-0lax">Lenta</th><td class="tg-0lax">Medio-Alto</th></tr>
+                <tr><td class="tg-0lax">Aceptación</th><td class="tg-0lax">Requisitos del cliente</th><td class="tg-0lax">Cliente/QA</th><td class="tg-0lax">⚠️ Baja-Media</th><td class="tg-0lax">Lenta</th><td class="tg-0lax">Alto</th></td>
+                <tr><td class="tg-0lax">Regresión</th><td class="tg-0lax">Funcionalidad existente</th><td class="tg-0lax">Tester/Automatización</th><td class="tg-0lax">✅ Alta</th><td class="tg-0lax">Variable</th><td class="tg-0lax">Bajo-Medio</th></tr>
+                <tr><td class="tg-0lax">Humo</th><td class="tg-0lax">Funciones críticas</th><td class="tg-0lax">Tester/Automatización</th><td class="tg-0lax">✅ Alta</th><td class="tg-0lax">Muy rápida</th><td class="tg-0lax">Bajo</th></tr>
+                <tr><td class="tg-0lax">Carga</th><td class="tg-0lax">Rendimiento</th><td class="tg-0lax">Especialista</th><td class="tg-0lax">✅ Alta</th><td class="tg-0lax">Media-Lenta</th><td class="tg-0lax">Medio</th></tr>
+                </td><td class="tg-0lax">Seguridad</th><td class="tg-0lax">Vulnerabilidades</th><td class="tg-0lax">Especialista</th><td class="tg-0lax">⚠️ Media</th><td class="tg-0lax">Lenta</th><td class="tg-0lax">Alto</th></td>
+                <tr><td class="tg-0lax">Usabilidad</th><td class="tg-0lax">Experiencia de usuario</th><td class="tg-0lax">UX/Tester</th><td class="tg-0lax">❌ Baja</th><td class="tg-0lax">Lenta</th><td class="tg-0lax">Medio-Alto</th></tr>
+            </table>
+            
+            <h4>📌 Recomendación de cobertura por tipo de proyecto:</h4>
+            <div class="diagram-box">
+                <strong>🏢 Proyecto empresarial (web/escritorio):</strong><br>
+                Unitarias +++ | Integración ++ | Sistema ++ | Regresión ++ | Humo +<br><br>
+                
+                <strong>📱 Aplicación móvil:</strong><br>
+                Unitarias +++ | Integración ++ | Sistema +++ | Usabilidad +++ | Carga +<br><br>
+                
+                <strong>🔒 Sistema bancario/financiero:</strong><br>
+                Unitarias +++ | Integración +++ | Sistema +++ | Seguridad +++ | Regresión +++<br><br>
+                
+                <strong>🚀 Startup/Producto nuevo:</strong><br>
+                Unitarias ++ | Integración + | Humo +++ | Usabilidad ++ | Aceptación ++
+            </div>
+        </div>
+        
+        <!-- Pestaña 12: Quiz interactivo -->
+        <div id="tp12" class="tab-pane">
+            <div class="game-container">
+                <div class="game-title">🎮 Quiz: ¿Qué tipo de prueba usarías?</div>
+                <div id="quizTiposPruebas" style="min-height: 300px;">
+                    <div id="preguntaQuiz" style="margin-bottom: 20px;">
+                        <p><strong>Escenario 1/5:</strong> Acabas de corregir un bug en el módulo de pagos. Antes de desplegar, quieres asegurarte de que no rompiste otras partes del sistema. ¿Qué prueba realizarías?</p>
+                    </div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false">Pruebas unitarias</div>
+                        <div class="quiz-option" data-correct="true">Pruebas de regresión</div>
+                        <div class="quiz-option" data-correct="false">Pruebas de carga</div>
+                        <div class="quiz-option" data-correct="false">Pruebas de humo</div>
+                    </div>
+                    <div id="quizFeedbackPruebas" style="margin-top: 15px;"></div>
+                    <div style="margin-top: 20px;">
+                        <p><strong>Puntuación:</strong> <span id="puntosQuizPruebas">0</span> / 5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        <!-- ==================== NUEVAS PESTAÑAS ==================== -->
+        
+        <!-- Pestaña 13: Pruebas funcionales -->
+        <div id="tp13" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas funcionales</h4>
+                <iframe src="https://www.youtube.com/embed/8EuGaDjVbjA" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>🧩 Pruebas Funcionales</h3>
+            <p>Verifican que cada <strong>función del software</strong> cumpla con los requisitos especificados. Se basan en las entradas y salidas esperadas, sin preocuparse por la estructura interna del código.</p>
+            <div class="diagram-box">
+                <strong>📌 Características:</strong><br>
+                • Se enfocan en el comportamiento observable.<br>
+                • Utilizan técnicas de caja negra (particiones de equivalencia, valores límite, tablas de decisión).<br>
+                • Son esenciales para validar que el software hace lo que debe hacer.<br>
+                • Se basan en casos de prueba derivados de los requisitos funcionales.
+            </div>
+            <div class="diagram-box">
+                <strong>✅ Ejemplo práctico:</strong> Probar que un formulario de login valida correctamente el correo y la contraseña, mostrando el mensaje de error apropiado cuando son incorrectos.
+            </div>
+        </div>
+        
+        <!-- Pestaña 14: Pruebas de compatibilidad -->
+        <div id="tp14" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas de compatibilidad</h4>
+                <iframe src="https://www.youtube.com/embed/YUi6ZIrGqXs" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>🔌 Pruebas de Compatibilidad</h3>
+            <p>Verifican que el software funcione correctamente en diferentes <strong>entornos, navegadores, dispositivos y sistemas operativos</strong>.</p>
+            <div class="diagram-box">
+                <strong>📌 Tipos de compatibilidad:</strong><br>
+                • Navegadores (Chrome, Firefox, Safari, Edge)<br>
+                • Sistemas operativos (Windows, macOS, Linux, iOS, Android)<br>
+                • Versiones anteriores (backward compatibility)<br>
+                • Resoluciones de pantalla y dispositivos móviles<br>
+                • Integración con otros sistemas y APIs
+            </div>
+            <div class="diagram-box">
+                <strong>✅ Herramientas comunes:</strong> BrowserStack, Sauce Labs, LambdaTest.
+            </div>
+        </div>
+        
+        <!-- Pestaña 15: Pruebas de instalación -->
+        <div id="tp15" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Pruebas de instalación</h4>
+                <iframe src="https://www.youtube.com/embed/-6yFjWfdd7E" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>💿 Pruebas de Instalación</h3>
+            <p>Verifican que el proceso de <strong>instalación, actualización y desinstalación</strong> del software se realice correctamente en los entornos destino.</p>
+            <div class="diagram-box">
+                <strong>📌 Aspectos a probar:</strong><br>
+                • Instalación limpia (primera vez)<br>
+                • Actualización desde versiones anteriores<br>
+                • Desinstalación completa (sin archivos residuales)<br>
+                • Instalación silenciosa / no interactiva<br>
+                • Comportamiento en diferentes configuraciones de hardware y SO<br>
+                • Permisos y privilegios necesarios
+            </div>
+            <div class="diagram-box">
+                <strong>✅ Importancia:</strong> Una mala instalación puede impedir que el usuario utilice el software, incluso si el código es perfecto.
+            </div>
+        </div>
+        
+        <!-- Pestaña 16: Pruebas de recuperación -->
+        <div id="tp16" class="tab-pane">
+            <div style="text-align: center; margin: 20px 0;">
+                <img src="https://sarreplec.caib.es/pluginfile.php/10041/mod_resource/content/1/DI08_CONT_R19_recuperacion.png" 
+                     alt="Esquema de prueba de recuperación" 
+                     style="max-width: 380px; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border);">
+            </div>
+            <h3>🔁 Pruebas de Recuperación</h3>
+            <p>Evalúan la capacidad del sistema para <strong>recuperarse tras un fallo</strong> (caída, corte de energía, error inesperado) y continuar funcionando correctamente.</p>
+            <div class="diagram-box">
+                <strong>📌 Metodología:</strong><br>
+                1. Se fuerza un fallo controlado (sistema, red, base de datos).<br>
+                2. Se verifica si el sistema puede recuperarse.<br>
+                3. Se comprueba si la recuperación es automática o requiere intervención manual.<br>
+                4. Se valida que los datos no se hayan perdido ni corrompido.
+            </div>
+            <div class="diagram-box">
+                <strong>✅ ¿Por qué son importantes?</strong> En sistemas críticos (banca, salud, aeroespacial), una mala recuperación puede tener consecuencias catastróficas.
+            </div>
+        </div>
+        
+        <!-- Pestaña 17: Pruebas de documentación -->
+        <div id="tp17" class="tab-pane">
+            <div class="video-compact" style="margin-bottom: 15px;">
+                <h4><i class="fab fa-youtube"></i> 🎬 Video: Documentación en proyectos de software</h4>
+                <iframe src="https://www.youtube.com/embed/_Yzs7jFd_FM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>📄 Pruebas de Documentación</h3>
+            <p>Verifican que la <strong>documentación del software</strong> (manuales de usuario, guías de instalación, ayuda en línea) sea clara, completa y precisa.</p>
+            <div class="diagram-box">
+                <strong>📌 Aspectos a evaluar:</strong><br>
+                • Exactitud: los pasos descritos realmente funcionan.<br>
+                • Completitud: no faltan secciones ni instrucciones.<br>
+                • Claridad: el lenguaje es comprensible para el público objetivo.<br>
+                • Consistencia: no hay contradicciones entre diferentes documentos.<br>
+                • Utilidad: realmente ayuda al usuario a resolver sus tareas.
+            </div>
+            <div class="diagram-box">
+                <strong>✅ Ejemplo práctico:</strong> Probar que el manual de instalación describe correctamente todos los pasos y que un usuario nuevo puede seguir la guía sin problemas.
+            </div>
+        </div>
+        
+        <!-- ==================== RECURSOS FINALES ==================== -->
+        <div style="margin-top: 45px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 12px; font-size: 0.7rem; color: var(--text-muted); text-align: center;">
+            <strong>📚 Recursos recomendados para ampliar información:</strong><br>
+            • <strong>Libros:</strong> "El arte de probar software" (Glenford Myers), "Pruebas de software: técnicas y casos prácticos" (Robert V. Binder), "ISTQB Foundation Level" (Rex Black), "Software Testing" (Ron Patton).<br>
+            • <strong>Sitios web:</strong> ISTQB (esquema de certificación), Ministerio de Calidad de Software (España), Asociación Española de Calidad (AEC), Comunidad de Testing, Blog de Nadia Cavalleri, Portal de Recursos SENA, Abstracta Academy, Software Testing Help.<br>
+            • <strong>Normas y estándares:</strong> ISO/IEC 25010, IEEE 829, CMMI, OWASP Top 10, ISTQB Syllabus.
+        </div>
+        
+    </div>
+</div>
