@@ -8,6 +8,18 @@
         
         <p>La elección de la metodología adecuada es fundamental para el éxito de un proyecto. A continuación se presentan las principales metodologías, sus ventajas, desventajas y cuándo aplicarlas.</p>
         
+        <!-- ========== VIDEOS INTRODUCTORIOS (2 VIDEOS ARRIBA DE LAS PESTAÑAS) ========== -->
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 25px;">
+            <div style="width: 280px; max-width: 100%;">
+                <iframe src="https://www.youtube.com/embed/VmkE1Frimwo" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Introducción: ¿Qué son las metodologías de software?</div>
+            </div>
+            <div style="width: 280px; max-width: 100%;">
+                <iframe src="https://www.youtube.com/embed/uhZgYsUI2A8" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Modelos y metodologías de desarrollo (completo)</div>
+            </div>
+        </div>
+        
         <!-- Pestañas -->
         <div class="tabs">
             <button class="tab active" data-tab="met0">📊 Guía rápida de selección</button>
@@ -16,11 +28,18 @@
             <button class="tab" data-tab="met3">📋 Kanban</button>
             <button class="tab" data-tab="met4">⚡ XP (Extreme Programming)</button>
             <button class="tab" data-tab="met5">📐 Modelo en V</button>
+            <button class="tab" data-tab="met8">🌀 Espiral</button>
+            <button class="tab" data-tab="met9">🧩 RUP</button>
+            <button class="tab" data-tab="met10">📦 Lean</button>
+            <button class="tab" data-tab="met11">🔧 Prototipos</button>
+            <button class="tab" data-tab="met12">📈 Incremental</button>
             <button class="tab" data-tab="met6">📊 Tabla comparativa</button>
             <button class="tab" data-tab="met7">🎮 Casos prácticos</button>
         </div>
         
-        <!-- Pestaña 0: Guía rápida -->
+        <!-- ==================================================== -->
+        <!-- PESTAÑA 0: GUÍA RÁPIDA DE SELECCIÓN (COMPLETA) -->
+        <!-- ==================================================== -->
         <div id="met0" class="tab-pane active">
             <h3>📊 ¿Cómo elegir la metodología adecuada?</h3>
             
@@ -28,11 +47,11 @@
                 <strong>📌 Responde estas preguntas para tomar la decisión:</strong><br><br>
                 
                 ❓ <strong>¿Los requisitos están 100% claros y no van a cambiar?</strong><br>
-                &nbsp;&nbsp;✅ Sí → Cascada o Modelo en V<br>
-                &nbsp;&nbsp;❌ No → Scrum o XP<br><br>
+                &nbsp;&nbsp;✅ Sí → Cascada, Modelo en V o Incremental<br>
+                &nbsp;&nbsp;❌ No → Scrum, XP o Espiral<br><br>
                 
                 ❓ <strong>¿El cliente quiere ver resultados rápido?</strong><br>
-                &nbsp;&nbsp;✅ Sí → Scrum (sprints cortos)<br>
+                &nbsp;&nbsp;✅ Sí → Scrum (sprints cortos) o Prototipos<br>
                 &nbsp;&nbsp;❌ No → Cascada<br><br>
                 
                 ❓ <strong>¿El equipo recibe muchas solicitudes urgentes e impredecibles?</strong><br>
@@ -44,11 +63,15 @@
                 &nbsp;&nbsp;❌ No → Scrum<br><br>
                 
                 ❓ <strong>¿Es un sistema crítico que requiere mucha documentación y trazabilidad?</strong><br>
-                &nbsp;&nbsp;✅ Sí → Cascada o Modelo en V<br>
+                &nbsp;&nbsp;✅ Sí → Cascada, Modelo en V o Espiral<br>
                 &nbsp;&nbsp;❌ No → Scrum<br><br>
                 
                 ❓ <strong>¿La calidad del código es la máxima prioridad?</strong><br>
                 &nbsp;&nbsp;✅ Sí → XP (pair programming, TDD)<br>
+                &nbsp;&nbsp;❌ No → Scrum o Cascada<br><br>
+                
+                ❓ <strong>¿Es un proyecto empresarial grande con equipos distribuidos?</strong><br>
+                &nbsp;&nbsp;✅ Sí → RUP<br>
                 &nbsp;&nbsp;❌ No → Scrum o Cascada
             </div>
             
@@ -64,28 +87,37 @@
                     ▼             ▼
                 [Cascada]     ¿Cliente quiere ver
                 [Modelo V]    resultados rápido?
-                                   │
+                [Incremental]       │
                             ┌──────┴──────┐
                             │             │
                             Sí            No
                             │             │
                             ▼             ▼
-                          [Scrum]      ¿Muchas solicitudes
-                          [XP]         urgentes?
+                      [Scrum]       ¿Muchas solicitudes
+                      [Prototipos]   urgentes?
                                            │
                                     ┌──────┴──────┐
                                     │             │
                                     Sí            No
                                     │             │
                                     ▼             ▼
-                                  [Kanban]     [Scrum]
+                                  [Kanban]    [XP o Espiral]
                 </pre>
             </div>
         </div>
         
-        <!-- Pestaña 1: Cascada -->
+        <!-- ==================================================== -->
+        <!-- PESTAÑA 1: CASCADA (COMPLETA) -->
+        <!-- ==================================================== -->
         <div id="met1" class="tab-pane">
             <h3>💧 Cascada (Waterfall) - Metodología Tradicional</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <div style="width: 280px; max-width: 100%;">
+                    <iframe src="https://www.youtube.com/embed/gM66N5pwvrA" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Explicación del modelo en cascada</div>
+                </div>
+            </div>
             
             <div class="diagram-box">
                 <strong>📊 Fases del modelo en cascada:</strong><br><br>
@@ -150,9 +182,18 @@
             </div>
         </div>
         
-        <!-- Pestaña 2: Scrum -->
+        <!-- ==================================================== -->
+        <!-- PESTAÑA 2: SCRUM (COMPLETA) -->
+        <!-- ==================================================== -->
         <div id="met2" class="tab-pane">
             <h3>🔄 Scrum - Metodología Ágil</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <div style="width: 280px; max-width: 100%;">
+                    <iframe src="https://www.youtube.com/embed/HhC75IonpOU" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Scrum explicado en 6 minutos</div>
+                </div>
+            </div>
             
             <div class="diagram-box">
                 <strong>📊 Estructura de Scrum:</strong><br><br>
@@ -231,9 +272,18 @@
             </div>
         </div>
         
-        <!-- Pestaña 3: Kanban -->
+        <!-- ==================================================== -->
+        <!-- PESTAÑA 3: KANBAN (COMPLETA) -->
+        <!-- ==================================================== -->
         <div id="met3" class="tab-pane">
             <h3>📋 Kanban - Flujo Continuo</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <div style="width: 280px; max-width: 100%;">
+                    <iframe src="https://www.youtube.com/embed/w-st9fGVM3c" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Metodología Kanban explicada</div>
+                </div>
+            </div>
             
             <div class="diagram-box">
                 <strong>📊 Tablero Kanban básico:</strong><br><br>
@@ -282,10 +332,18 @@
                 • Equipos que ya tienen un proceso pero quieren visualizarlo
             </div>
         </div>
-        
-        <!-- Pestaña 4: XP -->
+                <!-- ==================================================== -->
+        <!-- PESTAÑA 4: XP (COMPLETA) -->
+        <!-- ==================================================== -->
         <div id="met4" class="tab-pane">
             <h3>⚡ XP (Extreme Programming)</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <div style="width: 280px; max-width: 100%;">
+                    <iframe src="https://www.youtube.com/embed/tCl33R9jHBk" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Programación Extrema (XP): prácticas y ciclo de vida</div>
+                </div>
+            </div>
             
             <div class="diagram-box">
                 <strong>📊 Prácticas clave de XP:</strong><br><br>
@@ -332,9 +390,18 @@
             </div>
         </div>
         
-        <!-- Pestaña 5: Modelo en V -->
+        <!-- ==================================================== -->
+        <!-- PESTAÑA 5: MODELO EN V (COMPLETO) -->
+        <!-- ==================================================== -->
         <div id="met5" class="tab-pane">
             <h3>📐 Modelo en V (V-Model)</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <div style="width: 280px; max-width: 100%;">
+                    <iframe src="https://www.youtube.com/embed/XZFk6iZTumI" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Modelo en V (V-Model)</div>
+                </div>
+            </div>
             
             <div class="diagram-box">
                 <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
@@ -383,50 +450,356 @@
             </div>
         </div>
         
-        <!-- Pestaña 6: Tabla comparativa -->
+        <!-- ==================================================== -->
+        <!-- PESTAÑA 8: ESPIRAL (COMPLETA CON 2 VIDEOS) -->
+        <!-- ==================================================== -->
+        <div id="met8" class="tab-pane">
+            <h3>🌀 Espiral (Spiral Model) - Basado en Riesgos</h3>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 15px;">
+                <div style="width: 280px; max-width: 100%;">
+                    <iframe src="https://www.youtube.com/embed/-1wt037qqOg" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Modelo Espiral - Ingeniería de Software</div>
+                </div>
+                <div style="width: 280px; max-width: 100%;">
+                    <iframe src="https://www.youtube.com/embed/c5SEWSFXjMU" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Metodología tradicional - Modelo espiral</div>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📊 Estructura del modelo espiral:</strong><br><br>
+                El modelo espiral combina desarrollo iterativo con gestión de riesgos. Cada vuelta (espiral) tiene 4 cuadrantes:<br><br>
+                🎯 <strong>1. Determinar objetivos:</strong> Establecer metas, alternativas y restricciones<br>
+                ⚠️ <strong>2. Evaluar riesgos:</strong> Identificar y mitigar riesgos técnicos y de gestión<br>
+                🛠️ <strong>3. Desarrollar y probar:</strong> Construir el producto o prototipo<br>
+                📋 <strong>4. Planificar siguiente iteración:</strong> Revisar y planificar el siguiente ciclo<br><br>
+                Cada iteración produce una versión más completa del software.
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>✅ Ventajas</h4>
+                    <ul>
+                        <li>Gestión explícita de riesgos en cada iteración</li>
+                        <li>Alta flexibilidad para requisitos cambiantes</li>
+                        <li>Permite prototipos evolutivos</li>
+                        <li>Bueno para proyectos grandes y complejos</li>
+                        <li>El cliente ve versiones tempranas</li>
+                        <li>Escalable a proyectos de cualquier tamaño</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>❌ Desventajas</h4>
+                    <ul>
+                        <li>Requiere experiencia en análisis de riesgos</li>
+                        <li>Puede ser costoso (muchas iteraciones)</li>
+                        <li>No es adecuado para proyectos pequeños</li>
+                        <li>Depende de buenos evaluadores de riesgo</li>
+                        <li>Más complejo que cascada o ágil puro</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 ¿Cuándo usar Espiral?</strong><br>
+                • Proyectos de alto riesgo (nuevas tecnologías, requisitos inciertos)<br>
+                • Sistemas a gran escala y complejos<br>
+                • Proyectos donde los costos de fallo son muy altos<br>
+                • Cuando se necesita combinar ventajas de cascada y prototipado<br>
+                • Clientes que quieren ver evoluciones pero con gestión formal
+            </div>
+        </div>
+        
+        <!-- ==================================================== -->
+        <!-- PESTAÑA 9: RUP (COMPLETA CON 2 VIDEOS) -->
+        <!-- ==================================================== -->
+        <div id="met9" class="tab-pane">
+            <h3>🧩 RUP (Rational Unified Process)</h3>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 15px;">
+                <div style="width: 280px; max-width: 100%;">
+                    <iframe src="https://www.youtube.com/embed/_PAVVU4T74I" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Metodología RUP Rational Unified Process</div>
+                </div>
+                <div style="width: 280px; max-width: 100%;">
+                    <iframe src="https://www.youtube.com/embed/Xf7Op6BNrYU" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 VIDEO 12 METODOLOGIA RUP</div>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📊 Fases de RUP:</strong><br><br>
+                ┌─────────────────────────────────────────────────────────────────────┐<br>
+                │  INICIO → ELABORACIÓN → CONSTRUCCIÓN → TRANSICIÓN                   │<br>
+                └─────────────────────────────────────────────────────────────────────┘<br><br>
+                🚀 <strong>Inicio:</strong> Definir alcance, caso de negocio, análisis preliminar<br>
+                📐 <strong>Elaboración:</strong> Arquitectura base, plan detallado, mitigación de riesgos<br>
+                🔨 <strong>Construcción:</strong> Desarrollo incremental, pruebas, integración continua<br>
+                📦 <strong>Transición:</strong> Despliegue, capacitación, liberación al cliente
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>✅ Ventajas</h4>
+                    <ul>
+                        <li>Muy documentado y estandarizado</li>
+                        <li>Escalable a proyectos grandes y equipos distribuidos</li>
+                        <li>Iterativo e incremental (como ágil pero con estructura formal)</li>
+                        <li>Uso de UML para modelado visual</li>
+                        <li>Gestión clara de artefactos y entregables</li>
+                        <li>Adaptable a diferentes tipos de proyectos</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>❌ Desventajas</h4>
+                    <ul>
+                        <li>Puede ser burocrático y pesado para proyectos pequeños</li>
+                        <li>Requiere mucha documentación</li>
+                        <li>Curva de aprendizaje alta</li>
+                        <li>Menos popular que Scrum en startups</li>
+                        <li>Necesita herramientas específicas (Rational Rose, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 ¿Cuándo usar RUP?</strong><br>
+                • Proyectos empresariales grandes (bancos, seguros, gobierno)<br>
+                • Equipos grandes y distribuidos geográficamente<br>
+                • Proyectos que requieren trazabilidad completa y auditoría<br>
+                • Cuando el cliente exige documentación formal pero quiere iteraciones<br>
+                • Organizaciones que ya usan UML y herramientas IBM/Rational
+            </div>
+        </div>
+        
+        <!-- ==================================================== -->
+        <!-- PESTAÑA 10: LEAN (COMPLETA) -->
+        <!-- ==================================================== -->
+        <div id="met10" class="tab-pane">
+            <h3>📦 Lean Software Development</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <div style="width: 280px; max-width: 100%;">
+                    <iframe src="https://www.youtube.com/embed/_BCx5tHVEds" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Qué es la metodología Lean</div>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📊 7 principios de Lean Software Development:</strong><br><br>
+                1️⃣ <strong>Eliminar desperdicios:</strong> Código innecesario, esperas, defectos, cambios de prioridad<br>
+                2️⃣ <strong>Ampliar aprendizaje:</strong> Iteraciones cortas, feedback continuo, documentación justa<br>
+                3️⃣ <strong>Entregar rápido:</strong> Ciclos cortos, releases frecuentes, valor temprano<br>
+                4️⃣ <strong>Decidir lo más tarde posible:</strong> Postergar compromisos hasta tener más información<br>
+                5️⃣ <strong>Entregar rápido:</strong> Responder a cambios del mercado ágilmente<br>
+                6️⃣ <strong>Respetar al equipo:</strong> Autoorganización, sin micromanagement<br>
+                7️⃣ <strong>Optimizar el todo:</strong> Ver el sistema completo, no partes aisladas
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>✅ Ventajas</h4>
+                    <ul>
+                        <li>Reduce drásticamente tiempos de entrega</li>
+                        <li>Mínimo desperdicio (código muerto, reuniones innecesarias)</li>
+                        <li>Alta eficiencia y productividad</li>
+                        <li>Empodera al equipo técnico</li>
+                        <li>Combina bien con Kanban y DevOps</li>
+                        <li>Excelente para entornos de alta competencia</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>❌ Desventajas</h4>
+                    <ul>
+                        <li>Requiere disciplina y madurez del equipo</li>
+                        <li>Puede ser difícil de implementar en culturas tradicionales</li>
+                        <li>Menor documentación (puede afectar a equipos grandes)</li>
+                        <li>Depende de buena comunicación interna</li>
+                        <li>No es adecuado para sistemas críticos con regulaciones estrictas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 ¿Cuándo usar Lean?</strong><br>
+                • Equipos que buscan máxima eficiencia y rapidez<br>
+                • Entornos con alta competencia donde el time-to-market es crítico<br>
+                • Proyectos donde el desperdicio es visible (largas esperas, mucho código no usado)<br>
+                • Organizaciones que ya tienen experiencia ágil y quieren optimizar<br>
+                • Startup o producto digital con iteraciones muy rápidas
+            </div>
+        </div>
+                <!-- ==================================================== -->
+        <!-- PESTAÑA 11: PROTOTIPOS (COMPLETA) -->
+        <!-- ==================================================== -->
+        <div id="met11" class="tab-pane">
+            <h3>🔧 Metodología de Prototipos (Prototyping)</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <div style="width: 280px; max-width: 100%;">
+                    <iframe src="https://www.youtube.com/embed/v6EPz1f3JQg" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Metodología Del Prototipado</div>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📊 Proceso de prototipado:</strong><br><br>
+                ┌─────────────────────────────────────────────────────────────────────┐<br>
+                │  1. REQUISITOS     2. CONSTRUIR      3. CLIENTE     4. REFINAR     │<br>
+                │     BÁSICOS      →   PROTOTIPO     →   PRUEBA      →  PROTOTIPO    │<br>
+                └─────────────────────────────────────────────────────────────────────┘<br>
+                                                              │<br>
+                                                              ▼<br>
+                ┌─────────────────────────────────────────────────────────────────────┐<br>
+                │                    5. DESARROLLO FINAL                              │<br>
+                └─────────────────────────────────────────────────────────────────────┘<br>
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>✅ Ventajas</h4>
+                    <ul>
+                        <li>Reduce ambigüedad de requisitos</li>
+                        <li>Cliente ve resultados desde el inicio</li>
+                        <li>Detecta errores temprano</li>
+                        <li>Mejora la comunicación cliente-equipo</li>
+                        <li>Ideal para interfaces de usuario complejas</li>
+                        <li>Flexibilidad para cambios</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>❌ Desventajas</h4>
+                    <ul>
+                        <li>El cliente puede confundir prototipo con producto final</li>
+                        <li>Puede generar expectativas poco realistas</li>
+                        <li>Potencial de "scope creep" (más funcionalidades de las necesarias)</li>
+                        <li>Requiere tiempo adicional para construir prototipos</li>
+                        <li>No es adecuado para sistemas críticos sin requisitos claros</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 ¿Cuándo usar Prototipos?</strong><br>
+                • Requisitos poco claros o ambiguos<br>
+                • Cliente quiere ver resultados rápidamente<br>
+                • Proyectos con interfaces de usuario complejas (UX/UI crítico)<br>
+                • Productos innovadores donde no hay referencia previa<br>
+                • Cuando se necesita validar ideas antes de invertir en desarrollo completo
+            </div>
+        </div>
+        
+        <!-- ==================================================== -->
+        <!-- PESTAÑA 12: INCREMENTAL (COMPLETA) -->
+        <!-- ==================================================== -->
+        <div id="met12" class="tab-pane">
+            <h3>📈 Modelo Incremental</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <div style="width: 280px; max-width: 100%;">
+                    <iframe src="https://www.youtube.com/embed/Qsxlz64wvYw" style="width: 100%; height: 158px; border-radius: 8px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div style="font-size: 0.75rem; color: #555; margin-top: 4px;">🎬 Modelo Incremental | Desarrollo de Software</div>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📊 Estructura incremental:</strong><br><br>
+                ┌─────────────────────────────────────────────────────────────────────┐<br>
+                │  Incremento 1     Incremento 2     Incremento 3     Incremento n   │<br>
+                │  (funcionalidad   (añade más      (añade más      (producto        │<br>
+                │   base)           funciones)       funciones)       completo)       │<br>
+                └─────────────────────────────────────────────────────────────────────┘<br>
+                Cada incremento entrega una versión funcional que añade valor al cliente.
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>✅ Ventajas</h4>
+                    <ul>
+                        <li>Entregas parciales de valor temprano</li>
+                        <li>El cliente puede usar funcionalidades mientras se desarrolla el resto</li>
+                        <li>Reduce riesgo de proyecto (fallo temprano = menos pérdida)</li>
+                        <li>Flexibilidad para ajustar prioridades entre incrementos</li>
+                        <li>Buena para proyectos grandes que se pueden dividir</li>
+                        <li>Feedback temprano del usuario</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>❌ Desventajas</h4>
+                    <ul>
+                        <li>Requiere buena planificación de incrementos</li>
+                        <li>La arquitectura debe soportar adiciones progresivas</li>
+                        <li>Puede derivar en "parcheo" si no se planifica bien</li>
+                        <li>No todos los proyectos son divisibles en incrementos independientes</li>
+                        <li>Puede haber refactorización costosa entre incrementos</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-box">
+                <strong>📌 ¿Cuándo usar Incremental?</strong><br>
+                • Proyectos grandes que se pueden dividir en partes funcionales<br>
+                • Necesidad de entregar valor rápidamente al negocio<br>
+                • Recursos limitados (se puede priorizar por valor)<br>
+                • Proyectos donde los requisitos cambian pero se pueden congelar por incremento<br>
+                • Cuando el cliente quiere ver avances sin tener que usar metodología ágil completa
+            </div>
+        </div>
+        
+        <!-- ==================================================== -->
+        <!-- PESTAÑA 6: TABLA COMPARATIVA (COMPLETA CON MATRIZ) -->
+        <!-- ==================================================== -->
         <div id="met6" class="tab-pane">
             <h3>📊 Tabla comparativa de metodologías</h3>
             
             <table class="info-table">
-                <tr><th>Característica</th><th>Cascada</th><th>Scrum</th><th>Kanban</th><th>XP</th><th>Modelo V</th></tr>
-                <tr><td class="tg-0lax">Tipo</th><td class="tg-0lax">Tradicional</th><td class="tg-0lax">Ágil</th><td class="tg-0lax">Ágil</th><td class="tg-0lax">Ágil</th><td class="tg-0lax">Tradicional</th></tr>
-                <tr><td class="tg-0lax">Iteraciones</th><td class="tg-0lax">No</th><td class="tg-0lax">Sí (sprints)</th><td class="tg-0lax">Flujo continuo</th><td class="tg-0lax">Sí (iteraciones)</th><td class="tg-0lax">No</th></tr>
-                <tr><td class="tg-0lax">Documentación</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Media</th><td class="tg-0lax">Baja-Media</th><td class="tg-0lax">Baja</th><td class="tg-0lax">Muy alta</th></tr>
-                <tr><td class="tg-0lax">Flexibilidad a cambios</th><td class="tg-0lax">Muy baja</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Muy alta</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Baja</th></td>
-                <tr><td class="tg-0lax">Involucración del cliente</th><td class="tg-0lax">Baja</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Media</th><td class="tg-0lax">Muy alta</th><td class="tg-0lax">Baja</th></tr>
-                <tr><td class="tg-0lax">Tamaño de equipo</th><td class="tg-0lax">Cualquiera</th><td class="tg-0lax">3-9</th><td class="tg-0lax">Cualquiera</th><td class="tg-0lax">2-10</th><td class="tg-0lax">Cualquiera</th></tr>
-                <tr><td class="tg-0lax">Entrega de valor temprana</th><td class="tg-0lax">No</th><td class="tg-0lax">Sí</th><td class="tg-0lax">Sí</th><td class="tg-0lax">Sí</th><td class="tg-0lax">No</th></tr>
-                <tr><td class="tg-0lax">Calidad del código</th><td class="tg-0lax">Media</th><td class="tg-0lax">Media-Alta</th><td class="tg-0lax">Media</th><td class="tg-0lax">Muy alta</th><td class="tg-0lax">Media-Alta</th></tr>
-                <tr><td class="tg-0lax">Curva de aprendizaje</th><td class="tg-0lax">Baja</th><td class="tg-0lax">Media</th><td class="tg-0lax">Baja</th><td class="tg-0lax">Alta</th><td class="tg-0lax">Media</th></tr>
-                <tr><td class="tg-0lax">Caso de uso típico</th><td class="tg-0lax">Proyectos estables</th><td class="tg-0lax">Productos innovadores</th><td class="tg-0lax">Soporte/mantenimiento</th><td class="tg-0lax">Alta calidad</th><td class="tg-0lax">Sistemas críticos</th></tr>
-            <tr>
+                <tr><th>Característica</th><th>Cascada</th><th>Scrum</th><th>Kanban</th><th>XP</th><th>Modelo V</th><th>Espiral</th><th>RUP</th><th>Lean</th><th>Prototipos</th><th>Incremental</th></tr>
+                <tr><td>Tipo</td><td>Tradicional</td><td>Ágil</td><td>Ágil</td><td>Ágil</td><td>Tradicional</td><td>Basado en riesgos</td><td>Iterativo</td><td>Ágil</td><td>Iterativo</td><td>Iterativo</td></tr>
+                <tr><td>Iteraciones</td><td>No</td><td>Sí (sprints)</td><td>Flujo continuo</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Flujo continuo</td><td>Sí</td><td>Sí</td></tr>
+                <tr><td>Documentación</td><td>Alta</td><td>Media</td><td>Baja-Media</td><td>Baja</td><td>Muy alta</td><td>Media</td><td>Alta</td><td>Baja</td><td>Baja</td><td>Media</td></tr>
+                <tr><td>Flexibilidad</td><td>Muy baja</td><td>Alta</td><td>Muy alta</td><td>Alta</td><td>Baja</td><td>Media-Alta</td><td>Media</td><td>Alta</td><td>Alta</td><td>Media</td></tr>
+                <tr><td>Involucración del cliente</td><td>Baja</td><td>Alta</td><td>Media</td><td>Muy alta</td><td>Baja</td><td>Media</td><td>Media</td><td>Media</td><td>Alta</td><td>Media-Alta</td></tr>
+                <tr><td>Tamaño de equipo</td><td>Cualquiera</td><td>3-9</td><td>Cualquiera</td><td>2-10</td><td>Cualquiera</td><td>Cualquiera</td><td>Grande</td><td>Pequeño-Mediano</td><td>Pequeño</td><td>Cualquiera</td></tr>
+                <tr><td>Entrega temprana</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+                <tr><td>Calidad de código</td><td>Media</td><td>Media-Alta</td><td>Media</td><td>Muy alta</td><td>Media-Alta</td><td>Media</td><td>Media-Alta</td><td>Alta</td><td>Media</td><td>Media</td></tr>
+                <tr><td>Gestión de riesgos</td><td>Baja</td><td>Media</td><td>Baja</td><td>Media</td><td>Media</td><td>Muy alta</td><td>Alta</td><td>Media</td><td>Media</td><td>Media</td></tr>
+                <tr><td>Caso típico</td><td>Proyectos estables</td><td>Productos innovadores</td><td>Soporte/mantenimiento</td><td>Alta calidad</td><td>Sistemas críticos</td><td>Alto riesgo</td><td>Empresas grandes</td><td>Eficiencia máxima</td><td>Requisitos poco claros</td><td>Entregas parciales</td></tr>
+            </table>
             
             <h4>📊 Matriz de selección rápida:</h4>
             <div class="diagram-box">
                 <pre style="font-family:'Roboto Mono', monospace; background: transparent;">
-┌──────────────────────┬────────────────────────┬────────────────────────┐
-│   Si necesitas...    │   Usa...               │   Evita...             │
-├──────────────────────┼────────────────────────┼────────────────────────┤
-│ Documentación formal │ Cascada o Modelo V     │ XP, Kanban             │
-│ Adaptabilidad a      │ Scrum, XP, Kanban      │ Cascada, Modelo V      │
-│ cambios              │                        │                        │
-│ Calidad de código    │ XP (TDD, pair prog)    │ Cascada (sin pruebas)  │
-│ máxima               │                        │                        │
-│ Entregas rápidas     │ Scrum (sprints)        │ Cascada                │
-│ al cliente           │                        │                        │
-│ Gestionar solicitudes│ Kanban                 │ Scrum (sprints fijos)  │
-│ urgentes             │                        │                        │
-│ Trazabilidad total   │ Modelo V, Cascada      │ XP                     │
-│ Proyecto pequeño     │ Cascada, Scrum         │ Modelo V (mucha        │
-│                      │                        │ documentación)         │
-│ Equipo distribuido   │ Cascada, Modelo V      │ XP (pair prog requiere │
-│                      │ (documentación)        │ cercanía)              │
-└──────────────────────┴────────────────────────┴────────────────────────┘
+┌──────────────────────┬────────────────────────────┬────────────────────────┐
+│   Si necesitas...    │   Usa...                   │   Evita...             │
+├──────────────────────┼────────────────────────────┼────────────────────────┤
+│ Documentación formal │ Cascada, Modelo V, RUP     │ XP, Kanban, Lean       │
+│ Adaptabilidad a      │ Scrum, XP, Kanban, Espiral │ Cascada, Modelo V      │
+│ cambios              │                            │                        │
+│ Calidad de código    │ XP (TDD, pair prog)        │ Cascada (sin pruebas)  │
+│ máxima               │                            │                        │
+│ Entregas rápidas     │ Scrum, Prototipos, Lean    │ Cascada, Modelo V      │
+│ al cliente           │                            │                        │
+│ Gestionar solicitudes│ Kanban, Lean               │ Scrum (sprints fijos)  │
+│ urgentes             │                            │                        │
+│ Trazabilidad total   │ Modelo V, RUP, Cascada     │ XP, Kanban, Lean       │
+│ Gestión de riesgos   │ Espiral, RUP               │ Cascada, Kanban        │
+│ Cliente con ideas    │ Prototipos, Incremental    │ Cascada, Modelo V      │
+│ poco claras          │                            │                        │
+│ Proyecto pequeño     │ Cascada, Scrum, XP         │ RUP, Espiral (mucha    │
+│                      │                            │ documentación)         │
+│ Equipo distribuido   │ RUP, Cascada, Modelo V     │ XP (pair prog requiere │
+│                      │                            │ cercanía)              │
+│ Eficiencia máxima    │ Lean, Kanban               │ RUP, Cascada (mucho    │
+│                      │                            │ desperdicio potencial) │
+└──────────────────────┴────────────────────────────┴────────────────────────┘
                 </pre>
             </div>
         </div>
         
-        <!-- Pestaña 7: Casos prácticos -->
+        <!-- ==================================================== -->
+        <!-- PESTAÑA 7: CASOS PRÁCTICOS (COMPLETO) -->
+        <!-- ==================================================== -->
         <div id="met7" class="tab-pane">
             <div class="game-container">
                 <div class="game-title">🎮 Casos prácticos: ¿Qué metodología elegirías?</div>

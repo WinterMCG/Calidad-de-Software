@@ -15,7 +15,7 @@
             <button class="tab" data-tab="ej3">🃏 Flashcards</button>
             <button class="tab" data-tab="ej4">🔗 Relacionar conceptos</button>
             <button class="tab" data-tab="ej5">🔍 Sopa de letras</button>
-            <button class="tab" data-tab="ej6">📊 Crucigrama</button>
+            <button class="tab" data-tab="ej6">📊 Seleccion Multiple</button>
         </div>
         
         <!-- Pestaña 1: Verdadero o Falso -->
@@ -77,56 +77,24 @@
         </div>
         
         <!-- Pestaña 5: Sopa de letras -->
-        <div id="ej5" class="tab-pane">
-            <div class="game-container">
-                <div class="game-title">🔍 Sopa de letras - Encuentra los términos de calidad</div>
-                <div id="sopaLetrasContainer" style="min-height: 400px; text-align: center;">
-                    <p>Busca las siguientes palabras en la sopa de letras:</p>
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 15px 0;">
-                        <span class="badge" style="background: var(--secondary);">CALIDAD</span>
-                        <span class="badge" style="background: var(--secondary);">PRUEBAS</span>
-                        <span class="badge" style="background: var(--secondary);">ISO</span>
-                        <span class="badge" style="background: var(--secondary);">CMMI</span>
-                        <span class="badge" style="background: var(--secondary);">SCRUM</span>
-                        <span class="badge" style="background: var(--secondary);">QA</span>
-                        <span class="badge" style="background: var(--secondary);">QC</span>
-                        <span class="badge" style="background: var(--secondary);">ERROR</span>
-                        <span class="badge" style="background: var(--secondary);">BOEHM</span>
-                    </div>
-                    <div id="sopaGrid" style="display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; max-width: 500px; margin: 20px auto; background: var(--card-bg); padding: 15px; border-radius: 12px;">
-                        <!-- Grid generado dinámicamente -->
-                    </div>
-                    <div id="palabrasEncontradas" style="margin-top: 15px;">
-                        <p>Palabras encontradas: <span id="encontradasCont">0</span> / <span id="totalPalabras">9</span></p>
-                    </div>
-                    <button class="fill-btn" id="reiniciarSopa">🔄 Reiniciar sopa de letras</button>
-                </div>
-            </div>
-        </div>
+        <!-- Pestaña 5: Ordenar letras (reemplazo de sopa de letras) -->
+<div id="ej5" class="tab-pane">
+    <div class="game-container">
+        <div class="game-title">🔤 Ordena las letras para formar la palabra correcta</div>
+        <p>Arrastra mentalmente las letras en el orden correcto o escríbelas:</p>
         
-        <!-- Pestaña 6: Crucigrama -->
-        <div id="ej6" class="tab-pane">
-            <div class="game-container">
-                <div class="game-title">📊 Crucigrama de Calidad de Software</div>
-                <div id="crucigramaContainer" style="min-height: 400px; text-align: center;">
-                    <p>Resuelve el crucigrama con los términos aprendidos:</p>
-                    <div id="crucigramaGrid" style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 2px; max-width: 500px; margin: 20px auto; background: var(--card-bg); padding: 10px; border-radius: 12px;">
-                        <!-- Grid generado dinámicamente -->
-                    </div>
-                    <div id="pistasCrucigrama" style="margin-top: 20px; text-align: left; max-width: 500px; margin: 20px auto;">
-                        <p><strong>Horizontales:</strong></p>
-                        <p>1. Modelo de calidad con 5 niveles de madurez (4 letras) → CMMI</p>
-                        <p>3. Metodología ágil con sprints (5 letras) → SCRUM</p>
-                        <p>5. Estándar de calidad de producto (3 letras + 4 números) → ISO25010</p>
-                        <p><strong>Verticales:</strong></p>
-                        <p>2. Pruebas que verifican que cambios no rompan (9 letras) → REGRESION</p>
-                        <p>4. Técnica de prueba que conoce el código interno (8 letras) → BLANCA</p>
-                        <p>6. Acrónimo de la escala de usabilidad (3 letras) → SUS</p>
-                    </div>
-                    <button class="fill-btn" id="verificarCrucigrama">✅ Verificar respuestas</button>
-                    <div id="crucigramaResultado" style="margin-top: 15px;"></div>
-                </div>
-            </div>
+        <div id="ordenarLetrasContainer" style="min-height: 300px;">
+            <!-- El juego se generará dinámicamente -->
+        </div>
+    </div>
+</div>
+        
+       <!-- Pestaña 6: Selección múltiple (reemplazo de crucigrama) -->
+<div id="ej6" class="tab-pane">
+    <div class="game-container">
+        <div class="game-title">📝 Selección múltiple - Pon a prueba tus conocimientos</div>
+        <div id="seleccionMultipleContainer" style="min-height: 300px;">
+            <!-- El juego se generará dinámicamente -->
         </div>
     </div>
 </div>

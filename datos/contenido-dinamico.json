@@ -161,8 +161,8 @@
         "https://patriciaemiguel.com/assets/2021-06-07-unit-tests.png",
         "https://saberpunto.com/wp-content/uploads/pruebas-de-software-estrategias-y-ejemplos.png"
       ],
-      "ejercicios": ["quiz_tipos_pruebas", "crucigrama_pruebas"],
-      "minijuego": "crucigrama",
+      "ejercicios": ["quiz_tipos_pruebas", "Seleccion_pruebas"],
+      "minijuego": "Seleccion Multiple",
       "enfasis": "MUCHO_ÉNFASIS"
     },
     {

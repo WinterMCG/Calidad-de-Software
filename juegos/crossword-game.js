@@ -1,7 +1,7 @@
 // ====================================================
-// MANUEL CERVANTES GONZÁLEZ - JUEGO DE CRUCIGRAMA
+// MANUEL CERVANTES GONZÁLEZ - JUEGO DE Seleccion 
 // ====================================================
-// LOLSITO - Crossword Game para Calidad de Software
+// ya me cansé de hacer esta madre ayuda
 
 class CrosswordGame {
     constructor(containerId, onCompleteCallback) {

@@ -138,6 +138,7 @@ function inicializarModalCargado(modalId) {
     if (modalId === 'modal-costos') inicializarCalculadoraCostos(modal);
     if (modalId === 'modal-examen') inicializarExamen(modal);
     if (modalId === 'modal-uiux') inicializarChecklistUsabilidad(modal);
+    if (modalId === 'modal-ejercicios') inicializarJuegosEjercicios(modal);
 }
 
 // ====================================================
@@ -1036,6 +1037,582 @@ function inicializarChecklistUsabilidad(modal) {
             resultadoDiv.innerHTML = `<strong>Puntuación: ${total}/10 (${porcentaje}%)</strong><br>${mensaje}`;
         }
     });
+}
+// ====================================================
+// EJERCICIOS INTERACTIVOS (para modal-ejercicios)
+// ====================================================
+function inicializarJuegosEjercicios(modal) {
+    cargarVFEjercicios(modal);
+    cargarFillEjercicios(modal);
+    inicializarFlashcards(modal);
+    inicializarRelacionarConceptos(modal);
+    inicializarOrdenarLetras(modal);      // Nueva pestaña ej5
+    inicializarSeleccionMultiple(modal);  // Nueva pestaña ej6
+}
+
+function cargarVFEjercicios(modal) {
+    const container = modal.querySelector('#vfGameContainer');
+    if (!container) return;
+    
+    const preguntas = [
+        { texto: "QC significa Control de Calidad y se enfoca en prevenir defectos.", respuesta: false, explicacion: "QC se enfoca en ENCONTRAR defectos. QA es preventivo." },
+        { texto: "La Ley de Boehm dice que corregir un error en producción cuesta 100 veces más que en requisitos.", respuesta: true, explicacion: "¡Correcto! Por eso es crucial pruebas tempranas." },
+        { texto: "ISO 25010 tiene 10 características de calidad.", respuesta: false, explicacion: "Tiene 8 características." },
+        { texto: "CMMI nivel 5 es el nivel 'Optimizado'.", respuesta: true, explicacion: "¡Correcto! El nivel 5 es el más alto." },
+        { texto: "En UML, la relación «incluye» es opcional.", respuesta: false, explicacion: "«Incluye» es OBLIGATORIO." },
+        { texto: "Las pruebas de caja negra requieren conocer el código fuente.", respuesta: false, explicacion: "Caja negra NO requiere conocer el código interno." },
+        { texto: "El modelo de McCall fue creado en 1977.", respuesta: true, explicacion: "Correcto, es uno de los primeros modelos de calidad." },
+        { texto: "Las pruebas de regresión verifican que cambios no rompan funcionalidades existentes.", respuesta: true, explicacion: "¡Exacto! Por eso son tan importantes en CI/CD." },
+        { texto: "El estándar IEEE 829 se usa para documentación de requisitos.", respuesta: false, explicacion: "IEEE 829 es para documentación de pruebas. IEEE 830 es para requisitos." },
+        { texto: "SUS significa System Usability Scale.", respuesta: true, explicacion: "Correcto, mide la usabilidad percibida del sistema." }
+    ];
+    
+    let idx = 0;
+    let aciertos = 0;
+    
+    function mostrar() {
+        if (idx >= preguntas.length) {
+            container.innerHTML = `<div class="game-container"><h3>🎉 Resultado: ${aciertos}/${preguntas.length}</h3><button class="fill-btn" onclick="location.reload()">🔄 Jugar de nuevo</button></div>`;
+            return;
+        }
+        const p = preguntas[idx];
+        container.innerHTML = `
+            <div class="game-container">
+                <p style="font-size:1.1rem; margin-bottom:20px;">${p.texto}</p>
+                <div style="display:flex; gap:15px; justify-content:center;">
+                    <button class="fill-btn vf-v-ej" data-resp="true" style="background:#22c55e;">✅ Verdadero</button>
+                    <button class="fill-btn vf-f-ej" data-resp="false" style="background:#ef4444;">❌ Falso</button>
+                </div>
+                <div id="vfFeedbackEj" style="margin-top:15px;"></div>
+                <p style="margin-top:15px;">Progreso: ${idx + 1}/${preguntas.length} | ✅ Aciertos: ${aciertos}</p>
+            </div>
+        `;
+        
+        container.querySelector('.vf-v-ej').onclick = () => responder(p, true);
+        container.querySelector('.vf-f-ej').onclick = () => responder(p, false);
+    }
+    
+    function responder(p, resp) {
+        const feedback = container.querySelector('#vfFeedbackEj');
+        if (resp === p.respuesta) {
+            aciertos++;
+            feedback.innerHTML = `<span style="color:#22c55e">✅ Correcto. ${p.explicacion}</span>`;
+        } else {
+            feedback.innerHTML = `<span style="color:#ef4444">❌ Incorrecto. ${p.explicacion}</span>`;
+        }
+        idx++;
+        setTimeout(mostrar, 1500);
+    }
+    mostrar();
+}
+
+function cargarFillEjercicios(modal) {
+    const container = modal.querySelector('#fillGameContainer');
+    if (!container) return;
+    
+    container.innerHTML = `
+        <div class="game-container">
+            <h3 class="game-title">✏️ Completa los espacios</h3>
+            <p>1. El estándar de calidad de producto es ISO/IEC <input type="text" id="fill1" placeholder="_____" style="background:var(--primary); border:1px solid var(--border); padding:8px; border-radius:8px; color:white; width:120px;"></p>
+            <p>2. CMMI tiene <input type="text" id="fill2" placeholder="_____" style="background:var(--primary); border:1px solid var(--border); padding:8px; border-radius:8px; color:white; width:80px;"> niveles de madurez.</p>
+            <p>3. La Ley de <input type="text" id="fill3" placeholder="_____" style="background:var(--primary); border:1px solid var(--border); padding:8px; border-radius:8px; color:white; width:120px;"> habla del costo de errores.</p>
+            <p>4. Las pruebas de <input type="text" id="fill4" placeholder="_____" style="background:var(--primary); border:1px solid var(--border); padding:8px; border-radius:8px; color:white; width:120px;"> evalúan sin conocer código interno.</p>
+            <p>5. La relación <input type="text" id="fill5" placeholder="_____" style="background:var(--primary); border:1px solid var(--border); padding:8px; border-radius:8px; color:white; width:100px;"> en UML es obligatoria.</p>
+            <button class="fill-btn" id="checkFillEj">✅ Verificar respuestas</button>
+            <div id="fillResultadoEj" style="margin-top:15px;"></div>
+        </div>
+    `;
+    
+    const checkBtn = modal.querySelector('#checkFillEj');
+    if (checkBtn) {
+        checkBtn.onclick = () => {
+            let correctas = 0;
+            if (modal.querySelector('#fill1')?.value.trim().toUpperCase() === '25010') correctas++;
+            if (modal.querySelector('#fill2')?.value.trim() === '5') correctas++;
+            if (modal.querySelector('#fill3')?.value.trim().toLowerCase() === 'boehm') correctas++;
+            if (modal.querySelector('#fill4')?.value.trim().toLowerCase() === 'caja negra') correctas++;
+            if (modal.querySelector('#fill5')?.value.trim().toLowerCase() === 'include') correctas++;
+            const resultado = modal.querySelector('#fillResultadoEj');
+            if (resultado) resultado.innerHTML = `<strong>Resultado: ${correctas}/5 correctas</strong>${correctas === 5 ? ' 🎉 ¡Excelente!' : ' 📚 Sigue practicando.'}`;
+        };
+    }
+}
+
+function inicializarFlashcards(modal) {
+    const container = modal.querySelector('#flashcardContainer');
+    if (!container) return;
+    
+    const flashcards = [
+        { termino: "Calidad de Software", definicion: "Grado en que un sistema cumple requisitos y expectativas del cliente (IEEE)." },
+        { termino: "QC (Quality Control)", definicion: "Control de Calidad - Actividades para encontrar defectos." },
+        { termino: "QA (Quality Assurance)", definicion: "Aseguramiento de Calidad - Actividades para prevenir defectos." },
+        { termino: "Ley de Boehm", definicion: "Corregir un error en producción cuesta 100x más que en requisitos." },
+        { termino: "ISO 25010", definicion: "8 características de calidad de producto." },
+        { termino: "CMMI", definicion: "5 niveles de madurez de procesos." },
+        { termino: "Pruebas Unitarias", definicion: "Prueban funciones/métodos individuales. Responsables: desarrolladores." },
+        { termino: "Pruebas de Regresión", definicion: "Verifican que cambios recientes no rompan funcionalidades existentes." },
+        { termino: "Caja Negra", definicion: "Prueba sin conocer el código interno, basada en entradas y salidas." },
+        { termino: "Caja Blanca", definicion: "Prueba conociendo el código fuente, buscando cobertura." }
+    ];
+    
+    let index = 0;
+    let isFlipped = false;
+    
+    container.innerHTML = `
+        <div id="flashcardCard" style="background: var(--secondary); width: 100%; max-width: 400px; min-height: 200px; border-radius: 16px; display: flex; align-items: center; justify-content: center; cursor: pointer; text-align: center; padding: 20px; font-size: 1.1rem; margin: 0 auto;">
+            ${flashcards[0].termino}
+        </div>
+        <div style="display: flex; gap: 15px; margin-top: 20px; justify-content: center;">
+            <button class="fill-btn" id="flashcardPrevEj">◀ Anterior</button>
+            <button class="fill-btn" id="flashcardNextEj">Siguiente ▶</button>
+        </div>
+        <p style="margin-top: 15px; text-align:center;">💡 Haz clic en la tarjeta para voltear</p>
+        <p style="text-align:center;"><span id="flashcardCounterEj">1</span> / <span id="flashcardTotalEj">${flashcards.length}</span></p>
+    `;
+    
+    const cardDiv = modal.querySelector('#flashcardCard');
+    const prevBtn = modal.querySelector('#flashcardPrevEj');
+    const nextBtn = modal.querySelector('#flashcardNextEj');
+    const counterSpan = modal.querySelector('#flashcardCounterEj');
+    
+    if (cardDiv) {
+        cardDiv.onclick = () => {
+            isFlipped = !isFlipped;
+            if (!isFlipped) {
+                cardDiv.innerHTML = flashcards[index].termino;
+                cardDiv.style.background = 'var(--secondary)';
+            } else {
+                cardDiv.innerHTML = flashcards[index].definicion;
+                cardDiv.style.background = 'var(--accent)';
+            }
+        };
+    }
+    if (prevBtn) {
+        prevBtn.onclick = () => {
+            if (index > 0) {
+                index--;
+                isFlipped = false;
+                cardDiv.innerHTML = flashcards[index].termino;
+                cardDiv.style.background = 'var(--secondary)';
+                if (counterSpan) counterSpan.textContent = index + 1;
+            }
+        };
+    }
+    if (nextBtn) {
+        nextBtn.onclick = () => {
+            if (index < flashcards.length - 1) {
+                index++;
+                isFlipped = false;
+                cardDiv.innerHTML = flashcards[index].termino;
+                cardDiv.style.background = 'var(--secondary)';
+                if (counterSpan) counterSpan.textContent = index + 1;
+            }
+        };
+    }
+}
+
+function inicializarRelacionarConceptos(modal) {
+    const container = modal.querySelector('#relacionarContainer');
+    if (!container) return;
+    
+    const pares = [
+        { termino: "ISO 25010", definicion: "8 características de calidad de producto" },
+        { termino: "CMMI", definicion: "5 niveles de madurez de procesos" },
+        { termino: "Pruebas de Regresión", definicion: "Verifica que cambios no rompan lo existente" },
+        { termino: "Caja Negra", definicion: "Prueba sin conocer código interno" },
+        { termino: "Caja Blanca", definicion: "Prueba conociendo el código fuente" },
+        { termino: "Scrum", definicion: "Metodología ágil con sprints de 1-4 semanas" },
+        { termino: "Kanban", definicion: "Metodología de flujo continuo con límites WIP" }
+    ];
+    
+    let terminosBarajados = [...pares].sort(() => Math.random() - 0.5);
+    let definicionesBarajadas = [...pares].sort(() => Math.random() - 0.5);
+    let respuestas = {};
+    
+    function renderizar() {
+        let html = `
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <div style="flex:1; background: var(--card-bg); border-radius: 12px; padding: 15px;">
+                    <h4 style="text-align:center;">📌 Términos</h4>
+                    <div id="listaTerminosRel">
+        `;
+        terminosBarajados.forEach(p => {
+            const yaEmparejado = respuestas[p.termino];
+            html += `<div class="termino-rel-item" data-termino="${p.termino}" style="background: ${yaEmparejado ? 'var(--success)' : 'var(--secondary)'}; padding: 10px; margin: 8px; border-radius: 8px; cursor: pointer; text-align: center; ${yaEmparejado ? 'opacity:0.6; pointer-events:none;' : ''}">
+                        ${p.termino} ${yaEmparejado ? '✓' : ''}
+                    </div>`;
+        });
+        html += `</div></div><div style="flex:1; background: var(--card-bg); border-radius: 12px; padding: 15px;"><h4 style="text-align:center;">📝 Definiciones</h4><div id="listaDefinicionesRel">`;
+        definicionesBarajadas.forEach(p => {
+            const yaUsada = Object.values(respuestas).includes(p.definicion);
+            html += `<div class="definicion-rel-item" data-definicion="${p.definicion}" style="background: ${yaUsada ? 'var(--primary-dark)' : 'rgba(0,0,0,0.3)'}; padding: 10px; margin: 8px; border-radius: 8px; cursor: pointer; ${yaUsada ? 'opacity:0.5; pointer-events:none;' : ''}">
+                        ${p.definicion}
+                    </div>`;
+        });
+        html += `</div></div></div><div style="text-align:center; margin-top:20px;"><button class="fill-btn" id="verificarRelacionEj">✅ Verificar respuestas</button></div><div id="resultadoRelacionEj" style="margin-top:15px; text-align:center;"></div>`;
+        container.innerHTML = html;
+        
+        let terminoSeleccionado = null;
+        document.querySelectorAll('.termino-rel-item').forEach(el => {
+            el.onclick = () => {
+                if (el.style.pointerEvents === 'none') return;
+                document.querySelectorAll('.termino-rel-item').forEach(t => t.style.border = 'none');
+                el.style.border = '2px solid var(--accent-glow)';
+                terminoSeleccionado = el.dataset.termino;
+            };
+        });
+        
+        document.querySelectorAll('.definicion-rel-item').forEach(el => {
+            el.onclick = () => {
+                if (!terminoSeleccionado) {
+                    alert('Primero selecciona un término');
+                    return;
+                }
+                const definicion = el.dataset.definicion;
+                const correcto = pares.find(p => p.termino === terminoSeleccionado && p.definicion === definicion);
+                if (correcto && !respuestas[terminoSeleccionado]) {
+                    respuestas[terminoSeleccionado] = definicion;
+                    renderizar();
+                    terminoSeleccionado = null;
+                } else if (respuestas[terminoSeleccionado]) {
+                    alert('Este término ya fue emparejado');
+                } else {
+                    alert('Emparejamiento incorrecto');
+                    terminoSeleccionado = null;
+                }
+            };
+        });
+        
+        const verificarBtn = document.getElementById('verificarRelacionEj');
+        if (verificarBtn) {
+            verificarBtn.onclick = () => {
+                const correctas = Object.keys(respuestas).length;
+                const resultadoDiv = document.getElementById('resultadoRelacionEj');
+                resultadoDiv.innerHTML = `<strong>Has emparejado ${correctas} de ${pares.length} conceptos.</strong>${correctas === pares.length ? ' 🎉 ¡Perfecto!' : ' Sigue practicando.'}`;
+            };
+        }
+    }
+    renderizar();
+}
+
+function inicializarSopaLetras(modal) {
+    const container = modal.querySelector('#sopaLetrasContainer');
+    if (!container) return;
+    
+    const palabras = ["CALIDAD", "PRUEBAS", "ISO", "CMMI", "SCRUM", "QA", "QC", "ERROR", "BOEHM"];
+    const tamaño = 12;
+    let grid = Array(tamaño).fill().map(() => Array(tamaño).fill(''));
+    
+    palabras.forEach(palabra => {
+        let colocada = false;
+        while (!colocada) {
+            const fila = Math.floor(Math.random() * tamaño);
+            const col = Math.floor(Math.random() * (tamaño - palabra.length + 1));
+            const direccion = Math.random() < 0.5 ? 'H' : 'V';
+            let valido = true;
+            if (direccion === 'H') {
+                for (let i = 0; i < palabra.length; i++) {
+                    if (grid[fila][col + i] !== '' && grid[fila][col + i] !== palabra[i]) valido = false;
+                }
+                if (valido) {
+                    for (let i = 0; i < palabra.length; i++) grid[fila][col + i] = palabra[i];
+                    colocada = true;
+                }
+            } else {
+                if (fila + palabra.length <= tamaño) {
+                    for (let i = 0; i < palabra.length; i++) {
+                        if (grid[fila + i][col] !== '' && grid[fila + i][col] !== palabra[i]) valido = false;
+                    }
+                    if (valido) {
+                        for (let i = 0; i < palabra.length; i++) grid[fila + i][col] = palabra[i];
+                        colocada = true;
+                    }
+                }
+            }
+        }
+    });
+    for (let i = 0; i < tamaño; i++) {
+        for (let j = 0; j < tamaño; j++) {
+            if (grid[i][j] === '') grid[i][j] = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+        }
+    }
+    
+    let encontradas = [];
+    
+    function renderizarSopa() {
+        let html = `<div style="display:grid; grid-template-columns: repeat(${tamaño}, 35px); gap: 2px; justify-content: center;">`;
+        for (let i = 0; i < tamaño; i++) {
+            for (let j = 0; j < tamaño; j++) {
+                const encontrada = encontradas.some(e => e.fila === i && e.col === j);
+                html += `<div data-fila="${i}" data-col="${j}" data-letra="${grid[i][j]}" style="width:35px; height:35px; background: ${encontrada ? 'var(--success)' : 'var(--primary-light)'}; border-radius: 6px; display:flex; align-items:center; justify-content:center; font-weight:bold; cursor:pointer; border: 1px solid var(--border);">${grid[i][j]}</div>`;
+            }
+        }
+        html += `</div><div style="margin-top: 15px;">Palabras encontradas: ${encontradas.length / palabras[0].length}/${palabras.length}</div>`;
+        container.innerHTML = html;
+        
+        document.querySelectorAll('#sopaLetrasContainer [data-fila]').forEach(celda => {
+            celda.onclick = () => {
+                const fila = parseInt(celda.dataset.fila);
+                const col = parseInt(celda.dataset.col);
+                const letra = celda.dataset.letra;
+                // Lógica simplificada para encontrar palabras
+                alert(`Letra seleccionada: ${letra}. Esta es una versión simplificada de la sopa de letras. Encuentra todas las palabras: ${palabras.join(", ")}`);
+            };
+        });
+    }
+    renderizarSopa();
+}
+
+function inicializarCompletarPalabras() {
+    setTimeout(() => {
+        const btn = document.getElementById('verificarPalabrasBtn');
+        if (!btn) return;
+        
+        const respuestas = {
+            palabra1: "CMMI",
+            palabra2: "SCRUM",
+            palabra3: "ISO25010",
+            palabra4: "REGRESION",
+            palabra5: "BLANCA",
+            palabra6: "SUS"
+        };
+        
+        const verificar = () => {
+            let correctas = 0;
+            let total = 0;
+            
+            for (let i = 1; i <= 6; i++) {
+                const input = document.getElementById(`palabra${i}`);
+                const checkSpan = document.getElementById(`check${i}`);
+                if (input && checkSpan) {
+                    total++;
+                    const valorUsuario = input.value.trim().toUpperCase();
+                    const respuestaCorrecta = respuestas[`palabra${i}`];
+                    
+                    if (valorUsuario === respuestaCorrecta) {
+                        correctas++;
+                        checkSpan.innerHTML = '✅';
+                        checkSpan.style.color = '#22c55e';
+                        input.style.borderColor = '#22c55e';
+                    } else {
+                        checkSpan.innerHTML = '❌';
+                        checkSpan.style.color = '#ef4444';
+                        input.style.borderColor = '#ef4444';
+                    }
+                }
+            }
+            
+            const porcentaje = Math.round((correctas / total) * 100);
+            const resultadoSpan = document.getElementById('resultadoTexto');
+            if (resultadoSpan) {
+                resultadoSpan.innerHTML = `${correctas}/${total} respuestas correctas (${porcentaje}%) - ${porcentaje === 100 ? '🎉 ¡Excelente! Completaste todas las palabras.' : '📚 Sigue practicando, revisa las respuestas marcadas con ❌.'}`;
+            }
+        };
+        
+        btn.onclick = verificar;
+    }, 500);
+}
+// ====================================================
+// JUEGO: ORDENAR LETRAS (pestaña ej5)
+// ====================================================
+// ====================================================
+// JUEGO: ORDENAR LETRAS (pestaña ej5)
+// ====================================================
+function inicializarOrdenarLetras(modal) {
+    const container = modal.querySelector('#ordenarLetrasContainer');
+    if (!container) return;
+    
+    const palabras = [
+        { desordenada: "DALIADC", correcta: "CALIDAD", pista: "Grado en que un software cumple requisitos" },
+        { desordenada: "SEBSUPAR", correcta: "PRUEBAS", pista: "Actividades para encontrar defectos" },
+        { desordenada: "OSI", correcta: "ISO", pista: "Organización internacional de normalización" },
+        { desordenada: "MIC C", correcta: "CMMI", pista: "Modelo de madurez de procesos" },
+        { desordenada: "MUCR S", correcta: "SCRUM", pista: "Metodología ágil con sprints" },
+        { desordenada: "AQ", correcta: "QA", pista: "Aseguramiento de calidad - Previene defectos" },
+        { desordenada: "CQ", correcta: "QC", pista: "Control de calidad - Encuentra defectos" },
+        { desordenada: "RROE", correcta: "ERROR", pista: "Defecto en el software" },
+        { desordenada: "MHEOB", correcta: "BOEHM", pista: "Autor de la ley de costos de errores" }
+    ];
+    
+    let preguntaActual = 0;
+    let aciertos = 0;
+    let letrasReveladas = 0;
+    
+    function mostrarPregunta() {
+        if (preguntaActual >= palabras.length) {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <h3>🎉 ¡Juego completado!</h3>
+                    <p>Respuestas correctas: ${aciertos}/${palabras.length}</p>
+                    <button class="fill-btn" onclick="location.reload()">🔄 Jugar de nuevo</button>
+                </div>
+            `;
+            return;
+        }
+        
+        letrasReveladas = 0;
+        const p = palabras[preguntaActual];
+        
+        // Generar pista con letras reveladas (máximo 2)
+        let palabraConGuiones = '';
+        for (let i = 0; i < p.correcta.length; i++) {
+            palabraConGuiones += '_ ';
+        }
+        
+        container.innerHTML = `
+            <div style="text-align: center;">
+                <p style="font-size: 1.8rem; letter-spacing: 8px; margin-bottom: 10px; font-family: monospace;"><strong>${p.desordenada.toUpperCase()}</strong></p>
+                <p style="margin-bottom: 20px;">💡 Pista: ${p.pista}</p>
+                <p style="margin-bottom: 10px;">📝 Longitud: ${p.correcta.length} letras</p>
+                <p style="margin-bottom: 20px; font-size: 1.2rem; letter-spacing: 5px;" id="pistaLetras">${palabraConGuiones}</p>
+                <input type="text" id="respuestaOrdenar" placeholder="Escribe la palabra ordenada" style="background: var(--primary); border: 1px solid var(--border); padding: 12px 20px; border-radius: 40px; color: white; width: 250px; text-align: center; text-transform: uppercase;">
+                <div style="margin-top: 10px;">
+                    <button class="fill-btn" id="revelarLetraBtn" style="background: var(--info); margin-right: 10px;">🔍 Revelar letra (máx 2)</button>
+                    <button class="fill-btn" id="verificarOrdenarBtn" style="background: var(--success);">✅ Verificar</button>
+                </div>
+                <div id="feedbackOrdenar" style="margin-top: 15px;"></div>
+                <p style="margin-top: 20px;">Progreso: ${preguntaActual + 1}/${palabras.length} | ✅ Aciertos: ${aciertos}</p>
+            </div>
+        `;
+        
+        const input = document.getElementById('respuestaOrdenar');
+        const verificarBtn = document.getElementById('verificarOrdenarBtn');
+        const revelarBtn = document.getElementById('revelarLetraBtn');
+        const pistaLetrasSpan = document.getElementById('pistaLetras');
+        
+        // Función para revelar una letra (máximo 2)
+        revelarBtn.onclick = () => {
+            if (letrasReveladas >= 2) {
+                alert('Ya has revelado el máximo de 2 letras.');
+                return;
+            }
+            
+            // Encontrar una posición no revelada
+            let posicionesActuales = pistaLetrasSpan.innerHTML;
+            let letrasMostradas = [];
+            for (let i = 0; i < p.correcta.length; i++) {
+                if (pistaLetrasSpan.innerHTML[i * 2] !== '_') {
+                    letrasMostradas.push(i);
+                }
+            }
+            
+            for (let i = 0; i < p.correcta.length; i++) {
+                if (!letrasMostradas.includes(i)) {
+                    // Revelar esta letra
+                    let nuevoTexto = '';
+                    for (let j = 0; j < p.correcta.length; j++) {
+                        if (j === i) {
+                            nuevoTexto += p.correcta[j] + ' ';
+                        } else if (letrasMostradas.includes(j)) {
+                            nuevoTexto += p.correcta[j] + ' ';
+                        } else {
+                            nuevoTexto += '_ ';
+                        }
+                    }
+                    pistaLetrasSpan.innerHTML = nuevoTexto;
+                    letrasReveladas++;
+                    break;
+                }
+            }
+            
+            if (letrasReveladas === 2) {
+                revelarBtn.disabled = true;
+                revelarBtn.style.opacity = '0.5';
+            }
+        };
+        
+        verificarBtn.onclick = () => {
+            const respuesta = input.value.trim().toUpperCase();
+            if (respuesta === p.correcta) {
+                aciertos++;
+                document.getElementById('feedbackOrdenar').innerHTML = '<span style="color: #22c55e;">✅ ¡Correcto!</span>';
+                preguntaActual++;
+                setTimeout(mostrarPregunta, 1200);
+            } else {
+                document.getElementById('feedbackOrdenar').innerHTML = `<span style="color: #ef4444;">❌ Incorrecto. La respuesta correcta era: ${p.correcta}</span>`;
+                preguntaActual++;
+                setTimeout(mostrarPregunta, 1500);
+            }
+        };
+    }
+    
+    mostrarPregunta();
+}
+
+// ====================================================
+// JUEGO: SELECCIÓN MÚLTIPLE (pestaña ej6)
+// ====================================================
+// ====================================================
+// JUEGO: SELECCIÓN MÚLTIPLE (pestaña ej6)
+// ====================================================
+function inicializarSeleccionMultiple(modal) {
+    const container = modal.querySelector('#seleccionMultipleContainer');
+    if (!container) return;
+    
+    const preguntas = [
+        { texto: "¿Qué significa QC en calidad de software?", opciones: ["Quality Code", "Quality Control", "Quick Check", "Query Command"], correcta: 1 },
+        { texto: "¿Cuál es el nivel más alto de CMMI?", opciones: ["Definido", "Gestionado", "Cuantitativo", "Optimizado"], correcta: 3 },
+        { texto: "Según la Ley de Boehm, corregir un error en producción cuesta hasta:", opciones: ["10x más", "50x más", "100x más", "200x más"], correcta: 2 },
+        { texto: "¿Cuántas características de calidad define ISO 25010?", opciones: ["6", "8", "10", "12"], correcta: 1 },
+        { texto: "¿Qué relación UML es OBLIGATORIA entre casos de uso?", opciones: ["Extend", "Include", "Generalización", "Asociación"], correcta: 1 },
+        { texto: "¿Qué prueba verifica que cambios no rompan lo existente?", opciones: ["Unitaria", "Integración", "Regresión", "Humo"], correcta: 2 },
+        { texto: "¿Qué herramienta se usa para pruebas de carga?", opciones: ["JUnit", "Selenium", "JMeter", "Postman"], correcta: 2 },
+        { texto: "¿Qué significa SUS?", opciones: ["System User Score", "Software Usability Standard", "System Usability Scale", "Simple User Scale"], correcta: 2 },
+        { texto: "¿Qué modelo de calidad fue pionero en 1977?", opciones: ["ISO 25010", "CMMI", "McCall", "ISO 9126"], correcta: 2 },
+        { texto: "Las pruebas de caja negra se basan en:", opciones: ["Código fuente", "Estructura interna", "Entradas y salidas", "Algoritmos complejos"], correcta: 2 }
+    ];
+    
+    let preguntaActual = 0;
+    let aciertos = 0;
+    
+    function mostrarPregunta() {
+        if (preguntaActual >= preguntas.length) {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <h3>🎉 ¡Cuestionario completado!</h3>
+                    <p>Respuestas correctas: ${aciertos}/${preguntas.length}</p>
+                    <button class="fill-btn" onclick="location.reload()">🔄 Jugar de nuevo</button>
+                </div>
+            `;
+            return;
+        }
+        
+        const p = preguntas[preguntaActual];
+        let html = `
+            <div style="text-align: center;">
+                <p style="font-size: 1.1rem; margin-bottom: 20px;"><strong>${p.texto}</strong></p>
+                <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+        `;
+        
+        p.opciones.forEach((opt, optIdx) => {
+            html += `<button class="fill-btn opcion-multiple-ej6" data-opcion="${optIdx}" style="width: 80%; margin: 0; background: var(--secondary);">${opt}</button>`;
+        });
+        
+        html += `
+                </div>
+                <div id="feedbackMultipleEj6" style="margin-top: 20px;"></div>
+                <p style="margin-top: 20px;">Progreso: ${preguntaActual + 1}/${preguntas.length} | ✅ Aciertos: ${aciertos}</p>
+            </div>
+        `;
+        
+        container.innerHTML = html;
+        
+        document.querySelectorAll('.opcion-multiple-ej6').forEach(btn => {
+            btn.onclick = () => {
+                const seleccion = parseInt(btn.dataset.opcion);
+                if (seleccion === p.correcta) {
+                    aciertos++;
+                    document.getElementById('feedbackMultipleEj6').innerHTML = '<span style="color: #22c55e;">✅ ¡Correcto!</span>';
+                } else {
+                    document.getElementById('feedbackMultipleEj6').innerHTML = `<span style="color: #ef4444;">❌ Incorrecto. La respuesta correcta era: ${p.opciones[p.correcta]}</span>`;
+                }
+                preguntaActual++;
+                setTimeout(mostrarPregunta, 1500);
+            };
+        });
+    }
+    
+    mostrarPregunta();
 }
 // Exponer funciones globalmente
 window.cargarVF = cargarVF;
